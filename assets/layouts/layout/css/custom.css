@@ -1,0 +1,25 @@
+/* here you can put your own css to customize and override the theme */
+.padding-r {
+	padding-right: 5px;
+}
+
+.padding-l {
+	padding-left: 5px;
+}
+
+.padding-t {
+	padding-top: 5px;
+}
+
+.padding-b {
+	padding-bottom: 5px;
+}
+
+.padding {
+    padding: 5px 3px 5px 8px;
+}
+
+.padding-lr {
+	padding-right: 5px;
+	padding-left: 5px;
+}
