@@ -1,0 +1,1 @@
+wexaver_web_register
