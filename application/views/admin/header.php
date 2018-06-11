@@ -46,7 +46,7 @@
                 <div class="page-header-inner ">
                     <!-- BEGIN LOGO -->
                     <div class="page-logo">
-                        <a href="<?php echo base_url()?>index.php/welcome">
+                        <a href="#">
                              <img src="/assets/layouts/layout/img/wexaver.png" alt="logo" class="logo-default" /> </a> 
                         <div class="menu-toggler sidebar-toggler">
                             <span></span>
