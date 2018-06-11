@@ -1,356 +1,492 @@
 <!DOCTYPE html>
-<html >
-<head>
-  <!-- Site made with Mobirise Website Builder v4.7.1, https://mobirise.com -->
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v4.7.1, mobirise.com">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="assets/images/wexaver-logo-128x128.png" type="image/x-icon">
-  <meta name="description" content="">
-  <title>Home</title>
-  <link rel="stylesheet" href="/assets/home/assets/web/assets/mobirise-icons/mobirise-icons.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,400i,600,600i">
-  <link rel="stylesheet" href="/assets/home/assets/tether/tether.min.css">
-  <link rel="stylesheet" href="/assets/home/assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/assets/home/assets/animate.css/animate.min.css">
-  <link rel="stylesheet" href="/assets/home/assets/dropdown/css/style.css">
-  <link rel="stylesheet" href="/assets/home/assets/theme/css/style.css">
-  <link rel="stylesheet" href="/assets/home/assets/wowslider-init/style.css">
-  <link rel="stylesheet" href="/assets/home/assets/mobirise/css/mbr-additional.css" type="text/css">
-  
-  
-  
-<link rel="stylesheet" href = "/assets/home/assets/wowslider-init/boundary/style.css"></link></head>
-<body>
-  <section class="menu1" id="menu1-0" data-rv-view="0">
+<html lang="en">
 
-    <nav class="navbar navbar-dropdown navbar-fixed-top">
-        <div class="container-fluid">
+  <head>
 
-            <div class="mbr-table">
-                <div class="mbr-table-cell logo">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-                    <div class="navbar-brand">
-                        <a href="index.html#header4-1" class="navbar-logo"><img src="/assets/home/assets/images/wexaver-logo-128x128.png" alt="Mobirise" style="height: 3.5rem;"></a>
-                        <a class="navbar-caption" href="index.html#header4-1">Wexaver</a>
-                    </div>
+    <title>Wexaver Smart Saver</title>
 
-                </div>
-                <div class="mbr-table-cell text">
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/home/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-                    <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-                        <div class="hamburger-icon"></div>
-                    </button>
+    <!-- Custom fonts for this template -->
+    <link href="../assets/home/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
 
-                     <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar">
-                        <li class="nav-item">
-                            <a class="nav-link link" href="<?php echo base_url()?>welcome/aboutus">TENTANG KAMI</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link link" href="<?php echo base_url()?>welcome/fuel">MINYAK</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link link" href="<?php echo base_url()?>welcome/grocer">BARANG DAPUR</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link link" href="<?php echo base_url()?>welcome/insurance">INSURANS</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link link" href="<?php echo base_url()?>welcome/sme" aria-expanded="false">SME</a>
-                        </li>
-                     </ul>
+    <!-- Custom styles for this template -->
+    <link href="../assets/home/vendor/css/grayscale.css" rel="stylesheet">
+    <link href="../assets/home/vendor/style.css" rel="stylesheet">
 
-                    <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-                        <div class="close-icon"></div>
-                    </button>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-                </div>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-            </div>
+  </head>
 
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="<?php echo base_url()?>welcome/home">WeXaver</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>welcome/aboutus">Tentang Kami</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>welcome/motor">Insurans Kenderaan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>welcome/fuel">Petrol & Diesel</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>welcome/grocer">Barang Dapur</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>welcome/insurance">Manfaat Perlindungan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>welcome/faq">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>welcome/table">Log Masuk</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
-</section>
-
-<div id="header4-1" custom-code="true" data-rv-view="2" class="mbr-after-navbar"><section class="mbr-section mbr-section-hero mbr-section-full header4 mbr-section-with-arrow" data-rv-view="40" style="background-image: url(/assets/home/assets/images/website-layout-1-1024x768.jpg);  margin-top: 90px;">
-
-    <!-- <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(209, 209, 202);"></div> -->
-
-    <div class="mbr-table-cell">
-
-        <div class="container">
-            <div class="row heading">
-                <div class="col-md-10 col-md-offset-5 text-xs-right">
-
-                   <!-- <h1 class="mbr-section-title display-1 heading-title mbr-editable-content" style=" font-family: &quot;Droid Serif&quot;, serif; color: rgb(10, 49, 4);">&nbsp; WEXAVER SMART SAVER</h1>-->
-                    
-                    
-                </div>
-            </div>
-        </div>
-
-        <div class="container-fluid">
-            <div class="col-xs-12 col-lg-10 col-lg-offset-1">
-                
-            </div>
-        </div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="../assets/home/images/wexaver header.jpg" alt="First slide">
     </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="../assets/home/images/header.jpg" alt="Promotion1">
+      <div class="carousel-caption d-none d-md-block" >
+        <h1 style="text-align: top;">Promotion 1</h1>
+        <p>...</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="../assets/home/images/header.jpg" alt="Promotion2">
+      <div class="carousel-caption d-none d-md-block" >
+        <h1 style="text-align: top;">Promotion 2</h1>
+        <p>...</p>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <div class="mbr-arrow mbr-arrow-floating" aria-hidden="true"><a href="#content5-40"><i class="mbri-down"></i></a></div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-</section></div>
+    <div id="accordion">
+    <div class="card">
+    <div class="card-header collap" id="headingZero" align="center">
+      <h5 class="mb-0">
+        <button class="btn btn-success" data-toggle="collapse" data-target="#collapseZero" aria-expanded="true" aria-controls="collapseZero" style="width: 70%; text-align: center;">
+          INSURANS KENDERAAN
+        </button>
+      </h5>
+    </div>
+    <div id="collapseZero" class="collap collapse" aria-labelledby="headingZero" data-parent="#accordion">
+      <div class="card text-center">
+<!--         <div class="card-header"> Ganjaran Tunai 20% Insurans Kenderaan</div> -->
+          <div class="card-body">
+            <h5 class="card-title">Ganjaran Tunai 20% Untuk Pembelian Insuran Kenderaan</h5>
+            <p class="card-text">Membaharui Insuran Kenderaan Dengan Kami Dan Nikmati Ganjaran Tunai Sebanyak 20%</p>
 
-<div id="content5-40" custom-code="true" data-rv-view="392"><section class="mbr-section content5" data-rv-view="392" style="background: linear-gradient(to right top, rgb(25, 182, 143), rgb(68, 100, 148)) rgb(25, 182, 143); padding-top: 20px; padding-bottom: 0px; margin-top:20px">
-
-    
-
-        <div class="container">
-            <div class="row heading">
-                <div class="col-md-10">
-
-                    <h1 class="mbr-section-title display-1 heading-title mbr-editable-content">GANJARAN KAD WEXAVER<br></h1>
-                    
-                    
-                </div>
-            </div>
-        </div>
-
-</section></div>
-
-<div id="tabs2-3y" custom-code="true" data-rv-view="334"><section class="mbr-section mbr-section--bg-adapted mbr-section--relative tabs1 tabs2" data-rv-view="365" style="background-color: rgb(255, 255, 255); padding-top: 50px; padding-bottom: 100px;">
-    <div class="elements-content">
-        
-        <div class="container">
             <div class="row">
-                <div class="col-md-10 col-md-offset-1">
-
-                    <div class="clearfix"></div>
-                    <ul class="nav nav-tabs mbr-editable-content" role="tablist"><li class="nav-item" style="display: inline-block;"><a class="nav-link active" role="tab" data-toggle="tab" href="#tab1tabs2-3w" aria-expanded="true" style=" font-family: &quot;Droid Serif&quot;, serif; color: rgb(0, 0, 0);"><h3>Petrol dan Diesel</h3></a></li><li class="nav-item" style="display: inline-block;"><a class="nav-link" role="tab" data-toggle="tab" href="#tab2tabs2-3w" aria-expanded="false" style=" font-family: &quot;Droid Serif&quot;, serif; color: rgb(0, 0, 0);"><h3>Barang Dapur</h3></a></li><li class="nav-item" style="display: inline-block;"><a class="nav-link" role="tab" data-toggle="tab" href="#tab3tabs2-3w" aria-expanded="false" style=" font-family: &quot;Droid Serif&quot;, serif; color: rgb(0, 0, 0);"><h3>Manfaat Perlindungan</h3></a></li></ul>
-
-                    <div class="tab-content noScroll">
-                        <div id="tab1tabs2-3w" class="tab-pane in active" role="tabpanel">
-                            <div class="row">
-                                <div class="col-md-6 content">
-                                    <div class="wraper">
-                                        
-                                        
-                                        <div class="tab-list-wraper">
-                                            <ul class="tab-list mbr-editable-content" style=" font-family: &quot;Droid Serif&quot;, serif; color: rgb(0, 0, 0);"><h5><li>Isi petrol &amp; diesel di semua stesen minyak jenama Petronas</li></h5><br><h5><li>Guna Kad WeXaver untuk pembelian petrol &amp; diesel di stesen minyak jenama Petronas</li></h5><br><h5><li>Dapat Ganjaran tunai 3 sen untuk setiap liter pembelian petrol &amp; diesel sepanjang tahun</li></h5></ul>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="mbr-figure"><img src="/assets/home/assets/images/isi-1-600x400.jpg"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="tab2tabs2-3w" class="tab-pane" role="tabpanel">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="wraper">
-                                        
-                                        
-                                        <div class="tab-list-wraper">
-                                                <ul class="tab-list mbr-editable-content" style=" font-family: &quot;Droid Serif&quot;, serif; color: rgb(0, 0, 0);"><h5><li>Beli barang dapur jenama Cadbury, Coca Cola, Colgate, Dutch Lady, Dynamo, Lifebuoy, Maggi, Milo dan Nescafe di mana-mana jenama pasaraya</li></h5><br><h5><li>Hantar gambar resit pembelian barang dapur jenama terpilih melalui whatsaap ke WeXaver Careline 013-2755 329</li></h5><br><h5><li>Dapat ganjaran tunai 30 sen untuk setiap barang dapur jenama terpilih sepanjang tahun</li></h5></ul>
-                                        </div>
-                                    
-                                    </div>     
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="mbr-figure"><img src="/assets/home/assets/images/barangdapur-1-600x300.jpg"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="tab3tabs2-3w" class="tab-pane" role="tabpanel">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="wraper">
-                                        
-                                        
-                                        <div class="tab-list-wraper">
-                                                <ul class="tab-list mbr-editable-content"><h5><li>Manfaat perlindungan sehingga RM10,000 jika mengalami ketidakupayaan kekal akibat kemalangan.</li></h5><br><h5><li>Sumbangan sebanyak RM10,000 jika berlaku kematian akibat kemalangan dan denggi.</li></h5><br><h5><li>Manfaat lain seperti elaun harian hospital, ganti rugi ragut, elaun ambulan dan khairat kematian.</li></h5></ul>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="mbr-figure"><img src="/assets/home/assets/images/insurance-2-600x393.jpg"></div>
-                                </div>
-                            </div>
-                        </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              <div class="card col-sm-4" style="border: transparent;"></div>
+              <div class="card col-sm-4" style="border: transparent;" align="center">
+                <img class="card-img-top" src="../assets/home/images/car.png" alt="Card image cap" style="height: 80%;width: 50%">
+                <hr>
+                <h4 class="card-title">Insuran Kenderaan</h4>
+                
+              </div>
             </div>
-</section></div>
 
-<section class="mbr-section content5" id="content5-36" data-rv-view="4" style="background: linear-gradient(to right top, rgb(25, 182, 143), rgb(68, 100, 148)) rgb(25, 182, 143); padding-top: 20px; padding-bottom: 0px;">
-
-    
-
-        <div class="container">
-            <div class="row heading">
-                <div class="col-md-10">
-
-                    <h1 class="mbr-section-title display-1 heading-title">CLIENT</h1>
-                    
-                    
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <center>
+                  <img class="d-block w-90" src="../assets/home/images/ganjaran1.png" style="height: 80%; width: 80%; padding-top: 5%;" >
+                  </center>
                 </div>
+              </div>
             </div>
-        </div>
 
-</section>
-
-<div id="tabs3-3o" custom-code="true" data-rv-view="7"><section class="mbr-section mbr-section--bg-adapted mbr-section--relative tabs3" data-rv-view="71" style="background-color: rgb(255, 255, 255); padding-top: 50px; padding-bottom: 50px;">
-    <div class="elements-content">
+          </div>
         
-        <div class="container">
-            
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="content">
-                        <div class="wraper">
-                            <div id="tab2tabs3-3oundefined" class="tab-pane" role="tabpanel">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="mbr-figure"><img src="/assets/home/assets/images/petron1-600x450.jpg">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header collap" id="headingOne" align="center">
+      <h5 class="mb-0">
+        <button class="btn btn-success" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="width: 70%; text-align: center;">
+          MANFAAT PETROL / DIESEL
+        </button>
+      </h5>
+    </div>
+    <div id="collapseOne" class="collap collapse" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card text-center">
+        <!-- <div class="card-header">Manfaat Petrol & Diesel</div> -->
+          <div class="card-body">
+            <h5 class="card-title">Beli petrol atau diesel dan dapatkan ganjaran tunai 3 sen setiap liter</h5>
+              <div class="row">
+                <div class="card col-sm-4" style=" border: transparent;">
+                  <br>
+                  <i class="fa fa-users" style="font-size:68px;color:black"></i>
+                  <div class="card-body">
+                    <p class="card-text">Pengguna kenderaan yang ingin mengisi petrol dan diesel di semua stesen minyak jenama Petronas.</p>
+                  </div>
+                </div>
+                <div class="card col-sm-4" style=" border: transparent;">
+                  <br>
+                  <i class="fa fa-credit-card" style="font-size:68px;color:black"></i>
+                  <div class="card-body">
+                    <p class="card-text">Guna kad Wexaver untuk pembelian Petrol dan Diesel di stesen minyak jenama Petronas.</p>
+                  </div>
+                </div>
+                <div class="card col-sm-4" style=" border: transparent;">
+                  <br>
+                  <i class="fa fa-money" style="font-size:68px;color:black"></i>
+                  <div class="card-body">
+                    <p class="card-text">Dapatkan ganjaran tunai 3 sen untuk setiap liter pembelian petrol dan diesel sepanjang tahun.</p>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="card-header">Calculator For Fuel Saving</div>
+          <div class="card-body" >
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-8">
+
+                  <form>
+                  <select class="col-sm-8 form-control form-control-sm" name="term">
+                    <option value = 2.20>RON 95</option>
+                    <option value = 2.47>RON 97</option>
+                    <option value = 2.18>DIESEL</option>
+                    <option value = 2.28>DIESEL EURO 5</option>
+                  </select>
+                  <br>
+                  <div class="form-group row">
+                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Jumlah Perbelanjaan</label>
+                    <div class="col-sm-6">
+                      <input type="email" class="form-control form-control-sm" name="nprice">
                     </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Harga Petrol</label>
+                    <div class="col-sm-6">
+                      <input type="email" class="form-control form-control-sm" id="fuelprice">
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-outline-success" onclick="calcpayments()">KIRA</button>
+
+                  <br>
+
+                  <div class="form-group row">
+                    <label for="cashback" class="col-sm-5 col-form-label" style="font-size: 25px; font-weight: bold; text-align: right; color: black;"> Jumlah Ganjaran Tunai</label>
+                    <div class="col-sm-3">
+                      <div id = "monthlypayment" style="font-size: 25px; font-weight: bold; padding-top: 2%; color: #000;"> RM 0 </div>
+                    </div>
+                  </div>
+                  </form>
+
                 </div>
-                
-                <div class="col-md-6">
-                    <div class="clearfix"></div>
-                    <div class="tab-content noScroll">
-                        <div id="tab1tabs3-3oundefined" class="tab-pane in active" role="tabpanel">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="mbr-figure"><img src="/assets/home/assets/images/petronas-600x309.jpg"></div>
-                                </div>
-                            </div>
-                        </div>      
-   
-                </div>
+              </div>
             </div>
-        </div>
-        </div>
-</div></section></div>
-
-<section class="mbr-section content5" id="content5-33" data-rv-view="8" style="background: linear-gradient(to right top, rgb(25, 182, 143), rgb(68, 100, 148)) rgb(25, 182, 143); padding-top: 20px; padding-bottom: 0px;">
-
-    
-
-        <div class="container">
-            <div class="row heading">
-                <div class="col-md-10">
-
-                    <h1 class="mbr-section-title display-1 heading-title">TESTIMONI</h1>
-                    
-                    
-                </div>
-            </div>
-        </div>
-
-</section>
-
-<section class="mbr-wowslider-container mbr-section mbr-section__container carousel slide mbr-section-nopadding mbr-wowslider-container--boundary" data-ride="carousel" data-keyboard="false" data-wrap="true" data-interval="false" id="wowslider-31" data-rv-view="11" style="background-color: rgb(255, 255, 255);">
-    <div class="mbr-wowslider">
-        <div class="ws_images">
-            <ul>
-                <li>
-                    
-                    <img src="assets/images/testi8-1-1024x576.jpg" alt="title 1" title="title 1"> text 1
-                </li><li>
-                    
-                    <img src="assets/images/testi3-2-1024x576.jpg" alt="title 2" title="title 2"> text 2
-                </li><li>
-                    
-                    <img src="assets/images/testi7-1-1024x576.jpg" alt="title 3" title="title 3"> text 3
-                </li>
-            </ul>
-        </div>
-        <div class="ws_bullets">
-            <div>
-                <a href="#" title="">
-                    <span><img alt="slide1" src="/assets/home/assets/images/testi8-1-85x48.png"></span>
-                </a><a href="#" title="">
-                    <span><img alt="slide1" src="/assets/home/assets/images/testi3-1-85x48.png"></span>
-                </a><a href="#" title="">
-                    <span><img alt="slide1" src="/assets/home/assets/images/testi7-1-85x48.png"></span>
-                </a>
-            </div>
-        </div>
-        <div class="ws_shadow"></div>
-        <div class="mbr-wowslider-options">
-            <div class="params" data-paddingbottom="0" data-anim-type="kenburns" data-theme="boundary" data-autoplay="true" data-paddingtop="3" data-fullscreen="true" data-showbullets="false" data-timeout="2" data-duration="2" data-height="576" data-width="1024" data-responsive="1" data-showcaptions="false" data-captionseffect="slide" data-hidecontrols="false"></div>
-        </div>
-</div></section>
-
-<section class="mbr-section buttons1 mbr-section__container" id="buttons1-1p" data-rv-view="23" style="background-color: rgb(255, 255, 255); padding-top: 60px; padding-bottom: 60px;">
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="text-xs-center"><a class="btn btn-lg btn-primary" href="https://mobirise.com/mobirise-free-win.zip">DAFTAR</a> </div>
-            </div>
+          </div>  
         </div>
     </div>
-
-</section>
-
-<div id="footer3-10" custom-code="true" data-rv-view="25"><section class="mbr-section mbr-section-md-padding footer3" data-rv-view="726" style="background-color: rgb(255, 255, 255); padding-top: 30px; padding-bottom: 30px;">
-    
-    <div class="container">
-        <div class="row">
-              <div class="col-xs-12 col-lg-4">
-                <p class="mbr-section-text text-2 title mbr-editable-content">ADDRESS</p>
-                <h3 class="mbr-section-title display-3 number mbr-editable-content">Level 6, UOA Corporate Tower, Bangsar South City, 59200 Kuala Lumpur</h3>
-              </div>
-              <div class="col-xs-12 col-lg-4">
-                <p class="mbr-section-text text-2 title mbr-editable-content">CONTACT US</p>
-                <h3 class="mbr-section-title display-3 number mbr-editable-content">+6013-2755 329</h3>
-              </div>
-                
-
-            <div class="col-xs-12 col-lg-4">
-                <p class="mbr-section-text text-2 title mbr-editable-content">EMAIL US</p>
-                <h3 class="mbr-section-title display-3 number mbr-editable-content"><div><span style="color: inherit; letter-spacing: 0px;">welcome@wexaver.com</span><br></div></h3>
-              </div>
-
-        </div>
-    </div></section></div>
-
-<footer class="mbr-small-footer mbr-section mbr-section-nopadding footer4" id="footer4-a" data-rv-view="26" style="background-color: rgb(255, 255, 253); padding-top: 0rem; padding-bottom: 0rem;">
-    
-    <div class="container">
-        <p class="text-xs-center"><br>Copyright (c) 2018 Wexaver.</p>
+  </div>
+  <div class="card">
+    <div class="card-header collap" id="headingTwo" align="center">
+      <h5 class="mb-0">
+        <button class="btn btn-success" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="width: 70%; text-align: center;">
+          MANFAAT BARANG DAPUR
+        </button>
+      </h5>
     </div>
-</footer>
+    <div id="collapseTwo" class="collap collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+
+      <div class="card text-center">
+        <!-- <div class="card-header">Manfaat Barang Dapur</div> -->
+      <div class="card-body">
+            <h5 class="card-title">Dapatkan Ganjaran Tunai 30sen Setiap Barang</h5>
+              <div class="row">
+                <div class="card col-sm-4" style=" border: transparent;">
+                  <br>
+                  <i class="fa fa-users" style="font-size:68px;color:black"></i>
+                  <div class="card-body">
+                    <p class="card-text">Beli barang dapur jenama Cadbury, Coca Cola, Colgate, Dutch Lady, Dynamo, Lifebuoy, Maggi, Milo dan Nescafe dimana-mana pasaraya.</p>
+                  </div>
+                </div>
+                <div class="card col-sm-4" style=" border: transparent;">
+                  <br>
+                  <i class="fa fa-credit-card" style="font-size:68px;color:black"></i>
+                  <div class="card-body">
+                    <p class="card-text">Hantar gambar resit pembelian barang dapur jenama terpilih melalui Whatsapp ke WeXaver Careline 013-2755329.</p>
+                  </div>
+                </div>
+                <div class="card col-sm-4" style=" border: transparent;">
+                  <br>
+                  <i class="fa fa-money" style="font-size:68px;color:black"></i>
+                  <div class="card-body">
+                    <p class="card-text">Dapat ganjaran tunai 30 sen untuk setiap barang dapur jenama terpilih sepanjang tahun.</p>
+                  </div>
+                </div>
+                <marquee width="100%" direction="left" scrollamount="12">
+            <img src="../assets/home/images/cadbury2.jpg" style="width: 30%; height: 30%">
+            <img src="../assets/home/images/maggi.png" style="width: 30%; height: 30%;">
+            <img src="../assets/home/images/coke.jpg" style="width: 30%; height: 30%;">
+            <img src="../assets/home/images/colgate.png" style="width:30%; height: 30%;">
+            <img src="../assets/home/images/dutchlady.jpg" style="width: 30%; height: 30%;">
+            <img src="../assets/home/images/dynamo.jpg" style="width: 30%; height: 30%;">
+            <img src="../assets/home/images/lifebouy.png" style="width: 30%; height: 30%;">
+            <img src="../assets/home/images/milo.png" style="width: 30%; height: 30%;">
+            <img src="../assets/home/images/nescafe.jpg" style="width: 30%; height: 30%;">
+          </marquee>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="card">
+    <div class="card-header collap" id="headingThree" align="center">
+      <h5 class="mb-0">
+        <button class="btn btn-success" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="width: 70%; text-align: center;">
+          MANFAAT PELINDUNGAN
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collap collapse" aria-labelledby="headingThree" data-parent="#accordion">
+        
+  <br>
+
+  <div class="card text-center">
+    <!-- <div class="card-header">
+      Manfaat Perlindungan
+    </div> -->
+    <div class="card-body">
+    <div class="row">
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <center><span>
+          <img src="../assets/home/images/hospital.png" width="150" height="150" style="justify-content: center; margin-top: 5%;"></span></center>
+          <div class="caption">
+            <br>
+            <p align="center" class="card-text mbr-section-text text-1 mbr-editable-content" style="font-family: &quot;Open Sans&quot;, sans-serif; font-size: 20px;">​​Sumbangan khairat kematian akibat kemalangan<br>RM11,500</p>
+          </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+          <center><img src="../assets/home/images/OKU.png" width="150" height="150" style="justify-content: center; margin-top: 5%;"></center>
+          <div class="caption"><br>
+            <p align="center" class="card-text mbr-section-text text-1 mbr-editable-content" style="font-family: &quot;Open Sans&quot;, sans-serif; font-size: 20px;">​​Sumbangan ketidakupayaan kekal akibat kemalangan<br>RM10,000</p>
+          </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+          <center><img src="../assets/home/images/orangsakit.png" width="150" height="150" style="justify-content: center; margin-top: 5%;"></center>
+          <div class="caption"><br>
+            <p align="center" class="card-text mbr-section-text text-1 mbr-editable-content" style="font-family: &quot;Open Sans&quot;, sans-serif; font-size: 20px;">​​Sumbangan khairat kematian biasa<br>RM1,200</p>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br><br><br>
+
+<div class = "container">
+    <div class = 'row'>
+        <div class="col-md-4">
+            <div class="thumbnail">
+              <center><img src="../assets/home/images/ambulance.png" width="150" height="150" style="justify-content: center; margin-top: 5%;"></center>
+              <div class="caption"><br>
+                <p align="center" class="card-text mbr-section-text text-1 mbr-editable-content" style="font-family: &quot;Open Sans&quot;, sans-serif; font-size: 20px;">​​Sumbangan caj ambulan akibaat kemalangan<br>RM350.</p>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="thumbnail">
+              <center><img src="../assets/home/images/snatcher.png" width="150" height="150" style="justify-content: center; margin-top: 5%;"></center>
+              <div class="caption"><br>
+                <p align="center" class="card-text mbr-section-text text-1 mbr-editable-content" style="font-family: &quot;Open Sans&quot;, sans-serif; font-size: 20px;">​​Ganti rugi musibah ragut<br>RM300</p>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+          <div class="thumbnail">
+              <center><img src="../assets/home/images/hospital.png" width="150" height="150" style=" justify-content: center; margin-top: 5%;"></center>
+              <div class="caption"><br>
+                <p align="center" class="card-text mbr-section-text text-1 mbr-editable-content" style="font-family: &quot;Open Sans&quot;, sans-serif; font-size: 20px;">Elaun harian hospital akibat kemalangan<br>RM30.</p>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>
+  </div>
+  
+</div>
+
+  </div>
+
+  <div class="card">
+    <div class="card-header collap" id="headingFourth" align="center">
+      <h5 class="mb-0">
+        <button class="btn btn-success" data-toggle="collapse" data-target="#collapseFourth" aria-expanded="false" aria-controls="collapseFourth" style="width: 70%; text-align: center;">
+          JENAMA YANG DITAWARKAN
+        </button>
+      </h5>
+    </div>
+    <div id="collapseFourth" class="collap collapse" aria-labelledby="headingFourth" data-parent="#accordion">
+
+      <div class="card text-center">
+ <!--  <div class="card-header">
+    Jenama Yang Ditawarkan
+  </div> -->
 
 
-  <script src="/assets/home/assets/web/assets/jquery/jquery.min.js"></script>
-  <script src="/assets/home/assets/tether/tether.min.js"></script>
-  <script src="/assets/home/assets/bootstrap/js/bootstrap.min.js"></script>
-  <script src="/assets/home/assets/smooth-scroll/smooth-scroll.js"></script>
-  <script src="/assets/home/assets/viewport-checker/jquery.viewportchecker.js"></script>
-  <script src="/assets/home/assets/wowslider-plugin/wowslider.js"></script>
-  <script src="/assets/home/assets/touch-swipe/jquery.touch-swipe.min.js"></script>
-  <script src="/assets/home/assets/dropdown/js/script.min.js"></script>
-  <script src="/assets/home/assets/theme/js/script.js"></script>
-  <script src="/assets/home/assets/wowslider-effect/effects.js"></script>
-  <script src="/assets/home/assets/wowslider-init/script.js"></script>
+  <div class="card-body">
+
+    <span class="square border border-secondary"><img class="img1" src="../assets/home/images/lifebouy.png" style="width:200px; height: 130px; border: 5%; border-color: black;"></span>
+    <span class="square border border-secondary"><img class="img1" src="../assets/home/images/milo-logo.png" style="width:200px; height: 130px"></span>
+    <span class="square border border-secondary"><img class="img1" src="../assets/home/images/maggi-logo.png" style="width:200px; height: 130px"></span>
+    <span class="square border border-secondary"><img class="img1" src="../assets/home/images/dutch-logo.jpg" style="width:200px; height: 130px"></span>
+    <span class="square border border-secondary"><img class="img1" src="../assets/home/images/Colgate-logo.png" style="width:200px; height: 130px"></span>
+    <span class="square border border-secondary"><img class="img1" src="../assets/home/images/coke-logo.png" style="width:200px; height: 130px"></span>
+    <span class="square border border-secondary"><img class="img1" src="../assets/home/images/Cadbury.png" style="width:200px; height: 130px"></span>
+    <span class="square border border-secondary"><img class="img1" src="../assets/home/images/dynamo-logo.jpg" style="width:200px; height: 130px"></span>
+    <span class="square border border-secondary"><img class="img1" src="../assets/home/images/Nescafe.png" style="width:200px; height: 130px"></span>
+    <span class="square border border-secondary"><img class="img1" src="../assets/home/images/petronas.png" style="width:140px; height: 130px"></span>
+    <span class="square border border-secondary"><img class="img1" src="../assets/home/images/Allianz-logo.png" style="width:200px; height: 130px"></span>
+    <span class="square border border-secondary"><img class="img1" src="../assets/home/images/ikhlas.png" style="width:220px; height: 130px"></span>
+    <span class="square border border-secondary"><img class="img1" src="../assets/home/images/p&o.png" style="width:200px; height: 130px"></span>
+    <span class="square border border-secondary"><img class="img1" src="../assets/home/images/etiqa.png" style="width:200px; height: 130px"></span>
+    <span class="square border border-secondary"><img class="img1" src="../assets/home/images/takafulmalaysia.jpg" style="width:220px; height: 130px"></span>
+  </div>
   
-  
-  <input name="animation" type="hidden">
-   <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon"></i></a></div>
+</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header collap" id="headingFifth" align="center">
+      <h5 class="mb-0">
+        <button class="btn btn-success" data-toggle="collapse" data-target="#collapseFifth" aria-expanded="false" aria-controls="collapseFifth" style="width: 70%; text-align: center;">
+          RAKAN KERJASAMA
+        </button>
+      </h5>
+    </div>
+    
+    <div id="collapseFifth" class="collap collapse" aria-labelledby="headingFifth" data-parent="#accordion">
+      <div class="card text-center">
+  <!-- <div class="card-header">
+    Rakan Kerjasama
+  </div> -->
+  <div class="card-body" >
+      <img class="img1 border border-secondary" src="../assets/home/images/dbkl.jpg" style="width:200px; height: 200px;">
+      <img class="img1 border border-secondary" src="../assets/home/images/thelorry.jpg" style="width:200px; height: 200px;">
+      <img class="img1 border border-secondary" src="../assets/home/images/droupr.png" style="width:200px; height: 200px">
+      <img class="img1 border border-secondary" src="../assets/home/images/goget_logo.png" style="width:200px">
+      <img class="img1 border border-secondary" src="../assets/home/images/qwork.png" style="width:200px; height: 200px">
+      <img class="img1 border border-secondary" src="../assets/home/images/tnb.jpg" style="width:200px; height: 200px">
+      <span class="square1 border border-secondary">
+      <img src="../assets/home/images/matdespatch.png" style="width:180px; border: 1%; border-color: white; 
+       align-content: top; justify-content: center; margin-top: 30%">
+      </span>
+</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header collap" id="headingSixth" align="center">
+      <h5 class="mb-0">
+        <button class="btn btn-success" data-toggle="collapse" data-target="#collapseSixth" aria-expanded="false" aria-controls="collapseSixth" style="width: 70%; text-align: center;">
+          TESTIMONI
+        </button>
+      </h5>
+    </div>
+    <div id="collapseSixth" class="collap collapse" aria-labelledby="headingSixth" data-parent="#accordion">
+
+      <div class="card text-center">
+        <!-- <div class="card-header">
+          Testimoni
+        </div> -->
+        <div class="card-body">
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <center><img class="d-block w-50" src="../assets/home/images/Testimonial.png" style="width:40%; height: 30%" ></center>
+          </div>
+          <div class="carousel-item">
+            <center><img class="d-block w-50" src="../assets/home/images/Testimonial3.png" style="width:40%; height: 30%" ></center>
+          </div>
+          <div class="carousel-item">
+            <center><img class="d-block w-50" src="../assets/home/images/Testimonial2.png" style="width:40%; height: 30%" ></center>
+          </div>
+          <div class="carousel-item">
+            <center><img class="d-block w-50" src="../assets/home/images/Testimonial4.png" style="width:40%; height: 30%" ></center>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+    <!-- Footer -->
+    <footer>
+      <center>
+      <a href="<?php echo base_url()?>welcome/table" class="btn btn-success btn-lg active" role="button" aria-pressed="true">DAFTAR</a></center>
+      <br>
+      <div class="container text-center">
+        <p>Copyright &copy; Your Website 2018</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../assets/home/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/home/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="../assets/home/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="../assets/home/vendor/js/grayscale.js"></script>
+
   </body>
+
 </html>

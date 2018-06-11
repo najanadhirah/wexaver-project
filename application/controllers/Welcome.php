@@ -45,14 +45,17 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('index');
 	}
-
 	public function aboutus()
 	{
-		$this->load->view('aboutus');
+		$this->load->view('aboutUs');
 	}
 	public function fuel()
 	{
 		$this->load->view('fuel');
+	}
+	public function motor()
+	{
+		$this->load->view('motor');
 	}
 	public function grocer()
 	{
@@ -66,5 +69,58 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('sme');
 	}
+
+	public function table(){
+		$query = $this->db->get('package');
+    	$data['row'] = $query->result_array();
+    	//var_dump($data);
+		$this->load->view('table1',$data);
+
+
+	}
+
+	public function profile(){
+		$id = $this->session->userdata('id');
+		$query = $this->db->get_where('membership', array('id' => $id));
+    	$data = $query->row_array();
+    	$w_id = $data['w_id'];
+    	$data1 = $this->mymodel->select_upload($w_id);
+    	$parent_data = array('row'=>$data,'user' => $data1);
+		$this->load->view('profile',$parent_data);
+	}
+
+	public function loginUser(){
+		// 1) validate all from input
+		$this->form_validation->set_rules('email', 'Email', 'trim|required');
+		$this->form_validation->set_rules('password', 'Password', 'trim|required|callback_checkUser');
+		// 2) checking the validation input run true or not
+		if ($this->form_validation->run() === TRUE) {
+			// 1) delcare the variable from form input 
+			$email = $this->input->post('email');
+			//2)*** set sessions based on username
+      		$this->mainlib->setSessionUser($email);
+      		//3)*** redirect to welcome page
+            $this->profile();
+		}
+		else{
+			$this->load->view('loginUser');
+		}
+		//$this->load->view('loginUser');
+	}
+
+	/****************
+	**  CALLBACKS  ** 
+	*****************/
+
+	public function checkUser(){
+    	$ispassOk = $this->mymodel->userLogin($this->input->post('email'),$this->input->post('password'));
+        if ($ispassOk) {
+          return TRUE;
+        }
+        else{
+        	$this->form_validation->set_message('checkAdmin', 'You have input the wrong password');
+          return FALSE;
+        }
+  	}
 
 }

@@ -94,20 +94,19 @@ License: You must have a valid license purchased only from themeforest(the above
                         <!-- END PAGE HEADER-->
                         <div class="row">
                             <div class="col-md-12">
-                                <!-- <div class="m-heading-1 border-green m-bordered">
-                                    <h3>Twitter Bootstrap Wizard Plugin</h3>
-                                    <p> This twitter bootstrap plugin builds a wizard out of a formatter tabbable structure. It allows to build a wizard functionality using buttons to go through the different wizard steps and using events allows to hook into
-                                        each step individually. </p>
-                                    <p> For more info please check out
-                                        <a class="btn red btn-outline" href="http://vadimg.com/twitter-bootstrap-wizard-example" target="_blank">the official documentation</a>
+                                <div class="m-heading-1 border-green m-bordered">
+                                    <h3>Online Registration Form</h3>
+                                    <p> If you have received your card from WeXaver Agent, </p>
+                                    <p> Please click this button for registration
+                                        <a class="btn red btn-outline" href="http://vadimg.com/twitter-bootstrap-wizard-example" target="_blank">Register Offline</a>
                                     </p>
-                                </div> -->
+                                </div> 
                                 <div class="portlet light bordered" id="form_wizard_1">
                                     <div class="portlet-title">
                                         <div class="caption">
                                             <i class=" icon-layers font-red"></i>
                                             <span class="caption-subject font-red bold uppercase"> Register Membership -
-                                                <span class="step-title"> Offline </span>
+                                                <span class="step-title"> Online </span>
                                             </span>
                                         </div>
                                         <div class="actions">
@@ -145,9 +144,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                                             <a href="#tab3" data-toggle="tab" class="step active">
                                                                 <span class="number"> 3 </span>
                                                                 <span class="desc">
-                                                                    <i class="fa fa-check"></i> Billing Setup </span>
+                                                                    <i class="fa fa-check"></i> Vehicle Details </span>
                                                             </a>
-                                                        </li>
+                                                        </li> 
                                                         <li>
                                                             <a href="#tab4" data-toggle="tab" class="step">
                                                                 <span class="number"> 4 </span>
@@ -167,12 +166,39 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         <div class="tab-pane active" id="tab1">
                                                             <h3 class="block">Provide your account details</h3>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-3">Username
+                                                                <label class="control-label col-md-3">Fullname
                                                                     <span class="required"> * </span>
                                                                 </label>
                                                                 <div class="col-md-4">
-                                                                    <input type="text" class="form-control" name="username" />
-                                                                    <span class="help-block"> Provide your username </span>
+                                                                    <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Siti Nurhaliza binti Tarudin" />
+                                                                    <span class="help-block"> Provide your Fullname </span>
+                                                                </div>
+                                                            </div>
+                                                             <div class="form-group">
+                                                                <label class="control-label col-md-3">Ic Number
+                                                                    <span class="required"> * </span>
+                                                                </label>
+                                                                <div class="col-md-4">
+                                                                    <input type="text" class="form-control" name="ic" id="ic" placeholder="888888-88-8888" />
+                                                                    <span class="help-block"> Provide your ic number </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-3">Email
+                                                                    <span class="required"> * </span>
+                                                                </label>
+                                                                <div class="col-md-4">
+                                                                    <input type="text" class="form-control" name="email" id="email" placeholder="alias@gmail.com" />
+                                                                    <span class="help-block"> Provide your email address </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-3">Phone Number
+                                                                    <span class="required"> * </span>
+                                                                </label>
+                                                                <div class="col-md-4">
+                                                                    <input type="text" class="form-control" name="phone" id="phone" minlength="10" maxlength="11" placeholder="012-3456789" />
+                                                                    <span class="help-block"> Provide your phone number </span>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
@@ -180,7 +206,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                     <span class="required"> * </span>
                                                                 </label>
                                                                 <div class="col-md-4">
-                                                                    <input type="password" class="form-control" name="password" id="submit_form_password" />
+                                                                    <input type="password" class="form-control" name="password" id="submit_form_password" placeholder="******" />
                                                                     <span class="help-block"> Provide your password. </span>
                                                                 </div>
                                                             </div>
@@ -189,52 +215,27 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                     <span class="required"> * </span>
                                                                 </label>
                                                                 <div class="col-md-4">
-                                                                    <input type="password" class="form-control" name="rpassword" />
+                                                                    <input type="password" class="form-control" name="rpassword" id="rpassword" placeholder="******" />
                                                                     <span class="help-block"> Confirm your password </span>
                                                                 </div>
                                                             </div>
-                                                            <div class="form-group">
-                                                                <label class="control-label col-md-3">Email
-                                                                    <span class="required"> * </span>
-                                                                </label>
-                                                                <div class="col-md-4">
-                                                                    <input type="text" class="form-control" name="email" />
-                                                                    <span class="help-block"> Provide your email address </span>
-                                                                </div>
-                                                            </div>
                                                         </div>
+
+                                                        <!-- Tabe 2 == Profile Setup -->
                                                         <div class="tab-pane" id="tab2">
                                                             <h3 class="block">Provide your profile details</h3>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-3">Fullname
+                                                                <label class="control-label col-md-3">Average Use Fuel (RM)
                                                                     <span class="required"> * </span>
                                                                 </label>
                                                                 <div class="col-md-4">
-                                                                    <input type="text" class="form-control" name="fullname" />
-                                                                    <span class="help-block"> Provide your fullname </span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="control-label col-md-3">Phone Number
-                                                                    <span class="required"> * </span>
-                                                                </label>
-                                                                <div class="col-md-4">
-                                                                    <input type="text" class="form-control" name="phone" />
-                                                                    <span class="help-block"> Provide your phone number </span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="control-label col-md-3">Gender
-                                                                    <span class="required"> * </span>
-                                                                </label>
-                                                                <div class="col-md-4">
-                                                                    <div class="radio-list">
-                                                                        <label>
-                                                                            <input type="radio" name="gender" value="M" data-title="Male" /> Male </label>
-                                                                        <label>
-                                                                            <input type="radio" name="gender" value="F" data-title="Female" /> Female </label>
-                                                                    </div>
-                                                                    <div id="form_gender_error"> </div>
+                                                                    <select name="average" id="average_list" class="form-control">
+                                                                        <option value="RM1   - RM100" > RM1 - RM100 </option>
+                                                                        <option value="RM101 - RM200" > RM101 - RM200 </option>
+                                                                        <option value="RM201 - RM300" > RM201 - RM300 </option>
+                                                                        <option value="RM301 - RM400" > RM301 - RM400 </option>
+                                                                        <option value="   >RM401"     > >RM401        </option>
+                                                                    </select>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
@@ -242,7 +243,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                     <span class="required"> * </span>
                                                                 </label>
                                                                 <div class="col-md-4">
-                                                                    <input type="text" class="form-control" name="address" />
+                                                                    <textarea class="form-control" rows="3"></textarea>
                                                                     <span class="help-block"> Provide your street address </span>
                                                                 </div>
                                                             </div>
@@ -251,88 +252,93 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                     <span class="required"> * </span>
                                                                 </label>
                                                                 <div class="col-md-4">
-                                                                    <input type="text" class="form-control" name="city" />
+                                                                    <input type="text" class="form-control" name="city" id="city" placeholder="Sepang" />
                                                                     <span class="help-block"> Provide your city or town </span>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-3">Country</label>
+                                                                <label class="control-label col-md-3">Poscode
+                                                                    <span class="required"> * </span>
+                                                                </label>
                                                                 <div class="col-md-4">
-                                                                    <select name="country" id="country_list" class="form-control">
-                                                                        <option value=""></option>
-                                                                        <option value="AF">Afghanistan</option>
-                                                                        <option value="AL">Albania</option>
-                                                                        <option value="DZ">Algeria</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="control-label col-md-3">Remarks</label>
-                                                                <div class="col-md-4">
-                                                                    <textarea class="form-control" rows="3" name="remarks"></textarea>
+                                                                    <input type="text" class="form-control" name="poscode" id="poscode" placeholder="12345" />
+                                                                    <span class="help-block"> Provide your poscode </span>
                                                                 </div>
                                                             </div>
                                                         </div>
+
+                                                        <!-- tab 3 == vehicle Details -->
                                                         <div class="tab-pane" id="tab3">
-                                                            <h3 class="block">Provide your billing and credit card details</h3>
+                                                            <h3 class="block">Provide your vehicle details</h3>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-3">Card Holder Name
+                                                                <label class="control-label col-md-3">Vehicle Model
                                                                     <span class="required"> * </span>
                                                                 </label>
                                                                 <div class="col-md-4">
-                                                                    <input type="text" class="form-control" name="card_name" />
+                                                                    <input type="text" class="form-control" id="vmodel" name="vmodel" placeholder="Toyota Vios" />
                                                                     <span class="help-block"> </span>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-3">Card Number
+                                                                <label class="control-label col-md-3"></label>
+                                                                 <div class="col-md-4">
+                                                                <div class="icheck-inline">
+                                                                            <label><input type="radio" name="radio2" class="icheck"> Manual </label>
+                                                                            <label><input type="radio" name="radio2" class="icheck"> Auto </label>
+                                                                </div>
+                                                            </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-3">Vehicle CC
                                                                     <span class="required"> * </span>
                                                                 </label>
                                                                 <div class="col-md-4">
-                                                                    <input type="text" class="form-control" name="card_number" />
+                                                                    <input type="text" placeholder="1500" class="form-control" id="cc" name="vcc" />
                                                                     <span class="help-block"> </span>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-3">CVC
+                                                                <label class="control-label col-md-3">Vehicle Plate No.
                                                                     <span class="required"> * </span>
                                                                 </label>
                                                                 <div class="col-md-4">
-                                                                    <input type="text" placeholder="" class="form-control" name="card_cvc" />
+                                                                    <input type="text" placeholder="WWW1234" class="form-control" id="vmanufactured" name="vmanufactured" />
                                                                     <span class="help-block"> </span>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-3">Expiration(MM/YYYY)
+                                                                <label class="control-label col-md-3">Year of Manufactured
                                                                     <span class="required"> * </span>
                                                                 </label>
                                                                 <div class="col-md-4">
-                                                                    <input type="text" placeholder="MM/YYYY" maxlength="7" class="form-control" name="card_expiry_date" />
-                                                                    <span class="help-block"> e.g 11/2020 </span>
+                                                                    <input type="text" placeholder="2005" class="form-control" id="vmanufactured" name="vmanufactured" />
+                                                                    <span class="help-block"> </span>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-3">Payment Options
+                                                                <label class="control-label col-md-3">Road tax Expired Date (DD/MM/YYYY)
                                                                     <span class="required"> * </span>
                                                                 </label>
                                                                 <div class="col-md-4">
-                                                                    <div class="checkbox-list">
-                                                                        <label>
-                                                                            <input type="checkbox" name="payment[]" value="1" data-title="Auto-Pay with this Credit Card." /> Auto-Pay with this Credit Card </label>
-                                                                        <label>
-                                                                            <input type="checkbox" name="payment[]" value="2" data-title="Email me monthly billing." /> Email me monthly billing </label>
-                                                                    </div>
-                                                                    <div id="form_payment_error"> </div>
+                                                                    <input type="text" placeholder="DD/MM/YYYY" class="form-control" id="road_tax" name="road_tax" />
+                                                                    <span class="help-block"> e.g 09/11/2020 </span>
                                                                 </div>
                                                             </div>
                                                         </div>
+
                                                         <div class="tab-pane" id="tab4">
                                                             <h3 class="block">Confirm your account</h3>
                                                             <h4 class="form-section">Account</h4>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-3">Username:</label>
+                                                                <label class="control-label col-md-3">Fullname:</label>
                                                                 <div class="col-md-4">
-                                                                    <p class="form-control-static" data-display="username"> </p>
+                                                                    <p class="form-control-static" data-display="fullname"> </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-3">Nric:</label>
+                                                                <div class="col-md-4">
+                                                                    <p class="form-control-static" data-display="ic"> </p>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
@@ -341,23 +347,17 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                     <p class="form-control-static" data-display="email"> </p>
                                                                 </div>
                                                             </div>
-                                                            <h4 class="form-section">Profile</h4>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-3">Fullname:</label>
-                                                                <div class="col-md-4">
-                                                                    <p class="form-control-static" data-display="fullname"> </p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="control-label col-md-3">Gender:</label>
-                                                                <div class="col-md-4">
-                                                                    <p class="form-control-static" data-display="gender"> </p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="control-label col-md-3">Phone:</label>
+                                                                <label class="control-label col-md-3">Phone Number:</label>
                                                                 <div class="col-md-4">
                                                                     <p class="form-control-static" data-display="phone"> </p>
+                                                                </div>
+                                                            </div>
+                                                            <h4 class="form-section">Profile</h4>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-3">Average Fuel Spent:</label>
+                                                                <div class="col-md-4">
+                                                                    <p class="form-control-static" data-display="average"> </p>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
@@ -367,52 +367,40 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-3">City/Town:</label>
+                                                                <label class="control-label col-md-3">City / Town:</label>
                                                                 <div class="col-md-4">
                                                                     <p class="form-control-static" data-display="city"> </p>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-3">Country:</label>
+                                                                <label class="control-label col-md-3">Poscode:</label>
                                                                 <div class="col-md-4">
-                                                                    <p class="form-control-static" data-display="country"> </p>
+                                                                    <p class="form-control-static" data-display="poscode"> </p>
+                                                                </div>
+                                                            </div>
+                                                            <h4 class="form-section">Vehicke</h4>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-3">Vehicle Model</label>
+                                                                <div class="col-md-4">
+                                                                    <p class="form-control-static" data-display="vmodel"> </p>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-3">Remarks:</label>
+                                                                <label class="control-label col-md-3">Vehicle CC:</label>
                                                                 <div class="col-md-4">
-                                                                    <p class="form-control-static" data-display="remarks"> </p>
-                                                                </div>
-                                                            </div>
-                                                            <h4 class="form-section">Billing</h4>
-                                                            <div class="form-group">
-                                                                <label class="control-label col-md-3">Card Holder Name:</label>
-                                                                <div class="col-md-4">
-                                                                    <p class="form-control-static" data-display="card_name"> </p>
+                                                                    <p class="form-control-static" data-display="vcc"> </p>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-3">Card Number:</label>
+                                                                <label class="control-label col-md-3">Vehicle Manufactured:</label>
                                                                 <div class="col-md-4">
-                                                                    <p class="form-control-static" data-display="card_number"> </p>
+                                                                    <p class="form-control-static" data-display="vmanufactured"> </p>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-3">CVC:</label>
+                                                                <label class="control-label col-md-3">Road Tax:</label>
                                                                 <div class="col-md-4">
-                                                                    <p class="form-control-static" data-display="card_cvc"> </p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="control-label col-md-3">Expiration:</label>
-                                                                <div class="col-md-4">
-                                                                    <p class="form-control-static" data-display="card_expiry_date"> </p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="control-label col-md-3">Payment Options:</label>
-                                                                <div class="col-md-4">
-                                                                    <p class="form-control-static" data-display="payment[]"> </p>
+                                                                    <p class="form-control-static" data-display="road_tax"> </p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -426,9 +414,10 @@ License: You must have a valid license purchased only from themeforest(the above
                                                             <a href="javascript:;" class="btn btn-outline green button-next"> Continue
                                                                 <i class="fa fa-angle-right"></i>
                                                             </a>
-                                                            <a href="javascript:;" class="btn green button-submit"> Submit
+                                                            <a data-toggle="modal" href="#basic" class="btn btn-outline green button-submit"> Submit
                                                                 <i class="fa fa-check"></i>
                                                             </a>
+                                                            <!-- <a class="btn red btn-outline sbold" data-toggle="modal" href="#basic"> View Demo </a> -->
                                                         </div>
                                                     </div>
                                                 </div>
@@ -441,7 +430,34 @@ License: You must have a valid license purchased only from themeforest(the above
                     </div>
                     <!-- END CONTENT BODY -->
                     </div>
-                
+
+                <div class="modal fade bs-modal-lg" id="basic" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                    <h4 class="modal-title" align="center">Payment Details</h4>
+                                                </div>
+                                                <div class="modal-body" align="center"> 
+                                                    <p>Thanks for joining us. Please proceed with your payment through these options :</p>
+                                                    <ul style="list-style-type:none">
+                                                        <li align="center">1) Proceed your payment with CDM transfer to our Maybank account 
+                                                            <br>(<b>WEXAVER ACCOUNT : 514 253 530 276</b>).</li>
+                                                        <li align="center">2) Proceed your payment with onilne transfer to our Maybank account 
+                                                            <br>(<b>WEXAVER ACCOUNT : 514 253 530 276</b>).</li> 
+                                                    </ul>
+                                                    <p>Once you have made payment please sent your payment receipt by 
+                                                        <br> email ( <b>welcome@wexaver.com</b> ) or whatsapp ( <b>013-2755329</b> ).</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn dark btn-outline" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                            <!-- /.modal-content -->
+                                        </div>
+                                        <!-- /.modal-dialog -->
+                                    </div>
+                                    <!-- /.modal -->
             </div>
             <!-- END CONTAINER -->
             <!-- BEGIN FOOTER -->
@@ -476,7 +492,8 @@ License: You must have a valid license purchased only from themeforest(the above
         <script src="/assets/global/scripts/app.min.js" type="text/javascript"></script>
         <!-- END THEME GLOBAL SCRIPTS -->
         <!-- BEGIN PAGE LEVEL SCRIPTS -->
-        <script src="/assets/pages/scripts/form-wizard.min.js" type="text/javascript"></script>
+        <script src="/assets/pages/scripts/form-wizard.js" type="text/javascript"></script>
+        <script src="/assets/pages/scripts/ui-modals.min.js" type="text/javascript"></script>
         <!-- END PAGE LEVEL SCRIPTS -->
         <!-- BEGIN THEME LAYOUT SCRIPTS -->
         <script src="/assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>

@@ -1,314 +1,140 @@
 <!DOCTYPE html>
-<html >
-<head>
-  <!-- Site made with Mobirise Website Builder v4.7.1, https://mobirise.com -->
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v4.7.1, mobirise.com">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="assets/images/wexaver-logo-128x128.png" type="image/x-icon">
-  <meta name="description" content="">
-  <title>barang dapur</title>
-  <link rel="stylesheet" href="/assets/home/assets/web/assets/mobirise-icons/mobirise-icons.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,400i,600,600i">
-  <link rel="stylesheet" href="/assets/home/assets/tether/tether.min.css">
-  <link rel="stylesheet" href="/assets/home/assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/assets/home/assets/dropdown/css/style.css">
-  <link rel="stylesheet" href="/assets/home/assets/animate.css/animate.min.css">
-  <link rel="stylesheet" href="/assets/home/assets/theme/css/style.css">
-  <link rel="stylesheet" href="/assets/home/assets/mobirise/css/mbr-additional.css" type="text/css">
-  
-  
-  
-</head>
-<body>
-  <section class="menu1" id="menu1-20" data-rv-view="190">
+<html lang="en">
 
-    <nav class="navbar navbar-dropdown navbar-fixed-top">
-        <div class="container-fluid">
+  <head>
 
-            <div class="mbr-table">
-                <div class="mbr-table-cell logo">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-                    <div class="navbar-brand">
-                        <a href="index.html#header4-1" class="navbar-logo"><img src="/assets/home/assets/images/wexaver-logo-128x128.png" alt="Mobirise" style="height: 3.5rem;"></a>
-                        <a class="navbar-caption" href="<?php echo base_url()?>welcome/home">Wexaver</a>
-                    </div>
+    <title>Wexaver Smart Saver</title>
 
-                </div>
-                <div class="mbr-table-cell text">
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/home/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-                    <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-                        <div class="hamburger-icon"></div>
-                    </button>
+    <!-- Custom fonts for this template -->
+    <link href="../assets/home/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
 
-                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar">
-                        <li class="nav-item">
-                            <a class="nav-link link" href="<?php echo base_url()?>welcome/aboutus">TENTANG KAMI</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link link" href="<?php echo base_url()?>welcome/fuel">MINYAK</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link link" href="<?php echo base_url()?>welcome/grocer">BARANG DAPUR</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link link" href="<?php echo base_url()?>welcome/insurance">INSURANS</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link link" href="<?php echo base_url()?>welcome/sme" aria-expanded="false">SME</a>
-                        </li>
-                     </ul>
+    <!-- Custom styles for this template -->
+    <link href="../assets/home/vendor/css/grayscale.css" rel="stylesheet">
+    <link href="../assets/home/vendor/style.css" rel="stylesheet">
 
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-                    <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-                        <div class="close-icon"></div>
-                    </button>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-                </div>
+  </head>
 
-            </div>
+  <body id="page-top">
 
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="<?php echo base_url()?>welcome/home">WeXaver</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>welcome/aboutus">Tentang Kami</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>welcome/motor">Insurans Kenderaan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>welcome/fuel">Petrol & Diesel</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>welcome/grocer">Barang Dapur</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>welcome/insurance">Manfaat Perlindungan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>welcome/faq">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>welcome/table">Log Masuk</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
-</section>
 
-<div id="features15-2n" custom-code="true" data-rv-view="194" class="mbr-after-navbar"><section class="mbr-section mbr-section-hero features15" data-rv-view="139" style="background: linear-gradient(to right top, rgb(31, 128, 104), rgb(43, 68, 132)) rgb(31, 128, 104); padding-top: 40px; padding-bottom: 160px; margin-top: 100px;">
-    
-      <div class="container">
-        <div class="row heading">
-            <div class="col-md-10 col-md-offset-1 text-xs-center">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-                <!--<h1 class="mbr-section-title display-3 heading-title mbr-editable-content">Guna Kad WeXaver&nbsp;</h1>-->
-                <h1 class="card-title mbr-section-subtitle sub-2 mbr-editable-content" style="font-size: 60px; font-family: &quot;Droid Serif&quot;, serif; color: rgb(255, 252, 246);">Manfaat Barang Dapur</h1>
-                <p class="mbr-section-text text-1 heading-text mbr-editable-content" style="font-family: &quot;Open Sans&quot;, sans-serif; font-size: 20px; color: rgb(255, 255, 253);">Dapat Ganjaran Tunai 30 Sen Setiap Barang</p>
-                
-            </div>
-        </div>
-    </div>
-
-    
-
-        
-
-        <div class="container">
-            <div class="col-xs-12">
-                <div class="row">
-
-                    <div class="mbr-cards-col col-xs-12 col-lg-4">
-                        <div class="card" style="text-align: center;">
-                            <div class="card-img col-xs-3 col-lg-12" style="text-align: center;"><span class="mbri-shopping-cart mbr-iconfont"></span></div>
-                            <div class="card-box col-xs-9 col-lg-12">
-                                <h4 class="card-title mbr-section-subtitle sub-2 mbr-editable-content" style="font-family: &quot;Droid Sans&quot;, sans-serif; font-size: 30px; color: rgb(255, 255, 253);">BELI</h4>
-                                <p class="card-text mbr-section-text text-1 mbr-editable-content" style="font-family: &quot;Open Sans&quot;, sans-serif; font-size: 20px; color: rgb(255, 255, 253);">​​Beli barang dapur jenama Cadbury, Coca Cola, Colgate, Dutch Lady, Dynamo, Lifebuoy, Maggi, Milo dan Nescafe di mana-mana jenama pasaraya.</p>
-                                
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-
-                    <div class="mbr-cards-col col-xs-12 col-lg-4">
-                        <div class="card" style="text-align: center;">
-                            <div class="card-img col-xs-3 col-lg-12" style="text-align: center;"><span class="mbri-touch mbr-iconfont"></span></div>
-                            <div class="card-box col-xs-9 col-lg-12">
-                                <h4 class="card-title mbr-section-subtitle sub-2 mbr-editable-content" style="font-family: &quot;Droid Sans&quot;, sans-serif; font-size: 30px; color: rgb(255, 255, 253);">HANTAR</h4>
-                                <p class="card-text mbr-section-text text-1 mbr-editable-content" style="font-family: &quot;Open Sans&quot;, sans-serif; font-size: 20px; color: rgb(255, 255, 253);">Hantar gambar resit pembelian barang dapur jenama terpilih melalui whatsaap ke WeXaver Careline 013-2755 329.</p>
-                                
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-
-                    <div class="mbr-cards-col col-xs-12 col-lg-4">
-                        <div class="card" style="text-align: center;">
-                            <div class="card-img col-xs-3 col-lg-12" style="text-align: center;"><span class="mbri-like mbr-iconfont"></span></div>
-                            <div class="card-box col-xs-9 col-lg-12">
-                                <h4 class="card-title mbr-section-subtitle sub-2 mbr-editable-content" style="font-family: &quot;Droid Sans&quot;, sans-serif; font-size: 30px; color: rgb(255, 255, 253);">JIMAT​</h4>
-                                <p class="card-text mbr-section-text text-1 mbr-editable-content" style="font-family: &quot;Open Sans&quot;, sans-serif; font-size: 20px; color: rgb(255, 255, 253);">Dapat ganjaran tunai 30 sen untuk setiap barang dapur jenama terpilih sepanjang tahun.</p>
-                                
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-
-                    
-
+      <div class="card text-center">
+      <div class="card-body">
+            <h5 class="card-title" style="font-family: &quot;Droid Serif&quot;, serif; font-size: 30px; color: black; padding-top: 10%; padding-bottom: 3%;">Dapatkan Ganjaran Tunai 30sen Setiap Barang</h5>
+              <div class="row">
+                <div class="card col-sm-4" style=" border: transparent;">
+                  <br>
+                  <i class="fa fa-users" style="font-size:68px;color:black"></i>
+                  <div class="card-body">
+                    <p class="card-text" style="font-size: 16px; color: black;">Beli barang dapur jenama Cadbury, Coca Cola, Colgate, Dutch Lady, Dynamo, Lifebuoy, Maggi, Milo dan Nescafe dimana-mana pasaraya.</p>
+                  </div>
                 </div>
-            </div>
-        </div>
-
-
-</section></div>
-
-<section class="mbr-section mbr-section__container carousel slide features1 mbr-section-nopadding" data-ride="carousel" data-keyboard="false" data-wrap="true" data-pause="false" data-interval="5000" id="features1-2q" data-rv-view="195" style="background-color: rgb(255, 255, 255);">
-    
-    <div class="container boxed-slider" style="padding-top: 80px; padding-bottom: 80px;">
-        
-        <div class="carousel-inner" role="listbox">
-            <div class="carousel-item dark center active">
-                    <div class="container-slide">
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2 text-xs-center">
-                                <h2 class="mbr-section-title display-3">Senarai Barang</h2>
-                                
-
-                                
-                            </div>
-                            <div class="col-xs-12">
-                                <div class="media" style="background-image: url(/assets/home/assets/images/maggi-1-496x423.png);">
-                                </div>
-                            </div>
-                        </div>
+                <div class="card col-sm-4" style=" border: transparent;">
+                  <br>
+                  <i class="fa fa-credit-card" style="font-size:68px;color:black"></i>
+                  <div class="card-body">
+                    <p class="card-text" style="font-size: 16px; color: black;">Hantar gambar resit pembelian barang dapur jenama terpilih melalui Whatsapp ke WeXaver Careline 013-2755329.</p>
+                  </div>
                 </div>
-            </div><div class="carousel-item dark center">
-                    <div class="container-slide">
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2 text-xs-center">
-                                <h2 class="mbr-section-title display-3">Senarai Barang</h2>
-                                
-
-                                
-                            </div>
-                            <div class="col-xs-12">
-                                <div class="media" style="background-image: url(/assets/home/assets/images/lifebouy-4-532x336.png);">
-                                </div>
-                            </div>
-                        </div>
+                <div class="card col-sm-4" style=" border: transparent;">
+                  <br>
+                  <i class="fa fa-money" style="font-size:68px;color:black"></i>
+                  <div class="card-body">
+                    <p class="card-text" style="font-size: 16px; color: black;">Dapat ganjaran tunai 30 sen untuk setiap barang dapur jenama terpilih sepanjang tahun.</p>
+                  </div>
                 </div>
-            </div><div class="carousel-item dark center">
-                    <div class="container-slide">
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2 text-xs-center">
-                                <h2 class="mbr-section-title display-3">Senarai Barang</h2>
-                                
-
-                                
-                            </div>
-                            <div class="col-xs-12">
-                                <div class="media" style="background-image: url(/assets/home/assets/images/dutchlady-4-1700x1162.jpg);">
-                                </div>
-                            </div>
-                        </div>
-                </div>
-            </div><div class="carousel-item dark center">
-                    <div class="container-slide">
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2 text-xs-center">
-                                <h2 class="mbr-section-title display-3">Senarai Barang</h2>
-                                
-
-                                
-                            </div>
-                            <div class="col-xs-12">
-                                <div class="media" style="background-image: url(/assets/home/assets/images/nescafe-2-480x250.jpg);">
-                                </div>
-                            </div>
-                        </div>
-                </div>
-            </div><div class="carousel-item dark center">
-                    <div class="container-slide">
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2 text-xs-center">
-                                <h2 class="mbr-section-title display-3">Senarai Barang</h2>
-                                
-
-                                
-                            </div>
-                            <div class="col-xs-12">
-                                <div class="media" style="background-image: url(/assets/home/assets/images/coke2-2-320x158.jpg);">
-                                </div>
-                            </div>
-                        </div>
-                </div>
-            </div><div class="carousel-item dark center">
-                    <div class="container-slide">
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2 text-xs-center">
-                                <h2 class="mbr-section-title display-3">Senarai Barang</h2>
-                                
-
-                                
-                            </div>
-                            <div class="col-xs-12">
-                                <div class="media" style="background-image: url(/assets/home/assets/images/nescafe-2-480x250.jpg);">
-                                </div>
-                            </div>
-                        </div>
-                </div>
-            </div>
-        </div>
-
-        <a data-app-prevent-settings="" class="left carousel-control" role="button" data-slide="prev" href="#features1-2q">
-            <span class="mbri-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a data-app-prevent-settings="" class="right carousel-control" role="button" data-slide="next" href="#features1-2q">
-            <span class="mbri-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-
-        <ol class="carousel-indicators">
-            <li data-app-prevent-settings="" data-target="#features1-2q" data-slide-to="0" class="active"></li><li data-app-prevent-settings="" data-target="#features1-2q" data-slide-to="1"></li><li data-app-prevent-settings="" data-target="#features1-2q" data-slide-to="2"></li><li data-app-prevent-settings="" data-target="#features1-2q" data-slide-to="3"></li><li data-app-prevent-settings="" data-target="#features1-2q" data-slide-to="4"></li><li data-app-prevent-settings="" data-target="#features1-2q" class="" data-slide-to="5"></li>
-        </ol>
-    </div>
-</section>
-
-<section class="mbr-section buttons1 mbr-section__container" id="buttons1-2i" data-rv-view="211" style="background-color: rgb(255, 255, 255); padding-top: 60px; padding-bottom: 0px;">
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="text-xs-center"><a class="btn btn-lg btn-primary" href="https://mobirise.com/mobirise-free-win.zip">DAFTAR</a> </div>
-            </div>
-        </div>
-    </div>
-
-</section>
-
-<div id="footer3-27" custom-code="true" data-rv-view="213"><section class="mbr-section mbr-section-md-padding footer3" data-rv-view="678" style="background-color: rgb(255, 255, 255); padding-top: 30px; padding-bottom: 30px;">
-    
-    <div class="container">
-        <div class="row">
-              <div class="col-xs-12 col-lg-4">
-                <p class="mbr-section-text text-2 title mbr-editable-content"><br><br>ADDRESS</p>
-                <h3 class="mbr-section-title display-3 number mbr-editable-content" style="font-size: 25px;">Level 6, UOA Corporate Tower, Bangsar South City, 59200 Kuala Lumpur</h3>
+                <marquee width="100%" direction="left" scrollamount="12">
+            <img src="../assets/home/images/cadbury2.jpg" style="width: 30%; height: 30%">
+            <img src="../assets/home/images/maggi.png" style="width: 30%; height: 30%;">
+            <img src="../assets/home/images/coke.jpg" style="width: 30%; height: 30%;">
+            <img src="../assets/home/images/colgate.png" style="width:30%; height: 30%;">
+            <img src="../assets/home/images/dutchlady.jpg" style="width: 30%; height: 30%;">
+            <img src="../assets/home/images/dynamo.jpg" style="width: 30%; height: 30%;">
+            <img src="../assets/home/images/lifebouy.png" style="width: 30%; height: 30%;">
+            <img src="../assets/home/images/milo.png" style="width: 30%; height: 30%;">
+            <img src="../assets/home/images/nescafe.jpg" style="width: 30%; height: 30%;">
+          </marquee>
               </div>
-              <div class="col-xs-12 col-lg-4">
-                <p class="mbr-section-text text-2 title mbr-editable-content"><br><br>CONTACT US</p>
-                <h3 class="mbr-section-title display-3 number mbr-editable-content" style="font-size: 25px;">+6013-2755 329</h3>
-              </div>
-                
-
-            <div class="col-xs-12 col-lg-4">
-                <p class="mbr-section-text text-2 title mbr-editable-content"><br><br>EMAIL US</p>
-                <h3 class="mbr-section-title display-3 number mbr-editable-content"><div><span style="color: inherit; letter-spacing: 0px;">welcome@wexaver.com</span><br></div></h3>
-              </div>
-
+          </div>
         </div>
-    </div>
-</section></div>
-
-<footer class="mbr-small-footer mbr-section mbr-section-nopadding footer4" id="footer4-21" data-rv-view="192" style="background-color: rgb(255, 255, 253); padding-top: 0rem; padding-bottom: 0rem;">
-    
-    <div class="container">
-        <p class="text-xs-center"><br>Copyright (c) 2018 Wexaver.</p>
-    </div>
-</footer>
 
 
-  <script src="/assets/home/assets/web/assets/jquery/jquery.min.js"></script>
-  <script src="/assets/home/assets/tether/tether.min.js"></script>
-  <script src="/assets/home/assets/bootstrap/js/bootstrap.min.js"></script>
-  <script src="/assets/home/assets/smooth-scroll/smooth-scroll.js"></script>
-  <script src="/assets/home/assets/viewport-checker/jquery.viewportchecker.js"></script>
-  <script src="/assets/home/assets/dropdown/js/script.min.js"></script>
-  <script src="/assets/home/assets/touch-swipe/jquery.touch-swipe.min.js"></script>
-  <script src="/assets/home/assets/bootstrap-carousel-swipe/bootstrap-carousel-swipe.js"></script>
-  <script src="/assets/home/assets/theme/js/script.js"></script>
-  
-  
-  <input name="animation" type="hidden">
-   <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon"></i></a></div>
+    <!-- Footer -->
+    <footer>
+      <center>
+      <a href="<?php echo base_url()?>welcome/table" class="btn btn-success btn-lg active" role="button" aria-pressed="true">DAFTAR</a></center>
+      <br>
+      <div class="container text-center">
+        <p>Copyright &copy; Your Website 2018</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="assets/home/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/home/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="assets/home/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="assets/home/vendor/js/grayscale.js"></script>
+
   </body>
+
 </html>

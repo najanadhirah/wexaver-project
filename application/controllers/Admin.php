@@ -25,7 +25,7 @@ class Admin extends CI_Controller {
 		$data['js_page_level_plugins'] = '';
 		$data['js_page_level_scripts'] = '<script src="/assets/custom/js/year.js" type="text/javascript"></script>';
 
-		$query 	= $this->db->query('select name from month');
+		$query 	= $this->db->query('select month from month');
 		$data['month'] = $query->result_array();
 
 		$this->load->view('admin/header',$data);
@@ -72,7 +72,7 @@ class Admin extends CI_Controller {
         <script src="/assets/global/plugins/bootstrap-toastr/toastr.min.js" type="text/javascript"></script>';
 		$data['js_page_level_scripts'] = '<script src="/assets/pages/scripts/portlet-ajax.min.js" type="text/javascript"></script>';
 
-		$query 	= $this->db->query('select name from month');
+		$query 	= $this->db->query('select month from month');
 		$data['month'] = $query->result_array();
 
 		$this->load->view('admin/header',$data);
@@ -360,4 +360,5 @@ class Admin extends CI_Controller {
         	$this->promo();
       	}
 	}
+
 }

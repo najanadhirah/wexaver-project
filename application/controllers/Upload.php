@@ -57,7 +57,7 @@ class Upload extends CI_Controller {
 			// 2) process csv file -> dbase
 			$this->load->library('csvreader');
 
-			$pathOpen = $config['upload_path'] .'/'.$name.'/'.$name.'/';
+			$pathOpen = $config['upload_path'] .'/'.$name.'/';
 			$files = scandir($pathOpen);
 			// we should know which company via Folder's name. Petronas / Petron?
 			// still a BAD assumption
@@ -121,7 +121,7 @@ class Upload extends CI_Controller {
 									$tx_amount  = ltrim($tx_amount, '-');
 									$card_numb  = ltrim($card_numb, "'");
 									$w_numb      = preg_replace('/\s+/', '', $w_numb);
-									$udate 		= $month.' '.$year;
+									$udate 		= $month.''.$year;
 									$this->mymodel->insertLog($date,$time,$tx_type,$card_numb,$w_numb,$tx_amount,$st_name,$odometer,$litre,$product,$type,$udate);
 							    break;
 							    case 'Petron':
@@ -141,7 +141,7 @@ class Upload extends CI_Controller {
 									//$field['Driver Card'];						//null
 									//$field['Driver Name'];						//null
 									$odometer 	= $field['Odometer'];				//odometer
-									$udate 		= $month.' '.$year;					//month statement
+									$udate 		= $month.''.$year;					//month statement
 									$type 		= 'Petron';							//type of petrol
 									$w_numb 	= preg_replace('/\s+/','',$w_numb);
 									// save into log	
@@ -243,7 +243,7 @@ class Upload extends CI_Controller {
     								//$field['Incentive Paid to Agent?']; 
     								//$field['Note'];
     								$w_id 		  = preg_replace('/\s+/', '', $w_id);
-									$this->mymodel->insertMembers($acc,$card_numb,$w_numb,$card_pass,$name,$email,$phone_no,$address,$state,$postcode,$fuel_type,$avg_spend,$grocer_brand,$name_bnf,$ic_bnf,$hp_bnf,$relationship,$w_id,$introducer,$date_joined,$agent_name,$agent_no);
+									$this->mymodel->insertMembers($acc,$card_numb,$w_numb,$ic_number,$card_pass,$name,$email,$phone_no,$address,$state,$postcode,$fuel_type,$avg_spend,$grocer_brand,$name_bnf,$ic_bnf,$hp_bnf,$relationship,$w_id,$introducer,$date_joined,$agent_name,$agent_no);
 					    	}else{
 					    			//$field[﻿'NO']; 
     								$acc      	  = $field['ACCOUNT']; 
@@ -274,7 +274,7 @@ class Upload extends CI_Controller {
     								//$field['Incentive Paid to Agent?']; 
     								//$field['Note'];
     								$w_id 		  = preg_replace('/\s+/', '', $w_id);
-									$this->mymodel->insertUnassigned($acc,$card_numb,$w_numb,$card_pass,$name,$email,$phone_no,$address,$state,$postcode,$fuel_type,$avg_spend,$grocer_brand,$name_bnf,$ic_bnf,$hp_bnf,$relationship,$w_id,$introducer,$date_joined,$agent_name,$agent_no);
+									$this->mymodel->insertUnassigned($acc,$card_numb,$w_numb,$ic_number,$card_pass,$name,$email,$phone_no,$address,$state,$postcode,$fuel_type,$avg_spend,$grocer_brand,$name_bnf,$ic_bnf,$hp_bnf,$relationship,$w_id,$introducer,$date_joined,$agent_name,$agent_no);
 					    	}
 					    }
 				}	

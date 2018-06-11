@@ -6,9 +6,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 class Register extends CI_Controller {
+	
+	
+	public function personalInfo(){
+		$this->load->view('personalInfo');
+	}
 	/* BEGIN REGISTER PART */
-	public function registerOnline(){
-		$this->load->view('registerOnline');
+	public function registerOnline($package){
+		$data = $this->uri->segment(3);
+		echo $data;
+		$this->load->view('registerOnline',$data);
 	}
 	/* END OF REGISTER*/
 
@@ -53,7 +60,7 @@ class Register extends CI_Controller {
 							//print_r($regPetron);
 							$this->mymodel->updateUnassignedPetron($acc,$card_numb,$w_numb,$pass,$fullname,$email,$phone,$address,$city,$poscode,$fuel_brand,$average_usage,$grocer_brand,$bnf_name,$bnf_ic,$bnf_hp,$bnf_relay,$w_id,$reference,$date_joined,$reg_type,$password,$mark);							
 						}else{
-							$regPetronas  = $this->wexaver_db->getUnassigned();
+							$regPetronas  = $this->mymodel->getUpt();
 							$acc 		= $regPetronas['account'];
 							$card_numb 	= $regPetronas['card_numb'];
 							$w_numb 	= $regPetronas['w_numb'];
@@ -68,5 +75,9 @@ class Register extends CI_Controller {
 				'status' 		=> 'Success',
 			));
 		
+	}
+
+	public function pricing(){
+		$this->load->view('pricing');
 	}
 }

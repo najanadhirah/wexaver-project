@@ -36,7 +36,7 @@
         <div class="col-md-4">
             <select class="form-control" name="month">
                 <?php foreach ($month as $value){ ?>
-                    <option><?php echo $value['name'] ?></option>
+                    <option><?php echo $value['month'] ?></option>
                 <?php } ?>
             </select>
         </div>

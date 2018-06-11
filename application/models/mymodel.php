@@ -29,8 +29,31 @@
     }
   }
 
+  public function UserLogin($email,$pass){
+    $query = $this->db->get_where('membership', array('email' => $email));
+    $row = $query->row();
+    if ($pass == "") {
+      return FALSE; // wrong password
+    }else if (isset($row)){
+      $cpass = $row->password;
+        if ($cpass == $pass) {
+          return TRUE;
+        }else{
+          return FALSE;
+        }
+    }else{
+      return FALSE;
+    }
+  }
+
   public function getAdmin($uname){
     $query = $this->db->get_where('admin', array('username' => $uname));
+    $row = $query->row_array();
+    return $row; 
+  }
+
+  public function getUser($email){
+    $query = $this->db->get_where('membership', array('email' => $email));
     $row = $query->row_array();
     return $row; 
   }
@@ -98,13 +121,14 @@
   }
 
   /*BELOW ALL QUERY FOR UPLOAD*/
-  public function insertMembers($acc,$card_numb,$w_numb,$card_pass,$name,$email,$phone_no,$address,$state,$postcode,$fuel_type,$avg_spend,$grocer_brand,$name_bnf,$ic_bnf,$hp_bnf,$relationship,$w_id,$introducer,$date_joined,$agent_name,$agent_no){
+  public function insertMembers($acc,$card_numb,$w_numb,$ic_number,$card_pass,$name,$email,$phone_no,$address,$state,$postcode,$fuel_type,$avg_spend,$grocer_brand,$name_bnf,$ic_bnf,$hp_bnf,$relationship,$w_id,$introducer,$date_joined,$agent_name,$agent_no){
       $data = array(
         'account'       =>$acc,
         'card_numb'     =>$card_numb,
         'w_numb'        =>$w_numb,
         'card_pass'     =>$card_pass,
         'name'          =>$name,
+        'nric'          =>$ic_number,
         'email'         =>$email,
         'phone_no'      =>$phone_no,
         'address'       =>$address,
@@ -126,13 +150,14 @@
     $this->db->insert('membership',$data);
   }
 
-  public function insertUnassigned($acc,$card_numb,$w_numb,$card_pass,$name,$email,$phone_no,$address,$state,$postcode,$fuel_type,$avg_spend,$grocer_brand,$name_bnf,$ic_bnf,$hp_bnf,$relationship,$w_id,$introducer,$date_joined,$agent_name,$agent_no){
+  public function insertUnassigned($acc,$card_numb,$w_numb,$ic_number,$card_pass,$name,$email,$phone_no,$address,$state,$postcode,$fuel_type,$avg_spend,$grocer_brand,$name_bnf,$ic_bnf,$hp_bnf,$relationship,$w_id,$introducer,$date_joined,$agent_name,$agent_no){
       $data = array(
         'account'       =>$acc,
         'card_numb'     =>$card_numb,
         'w_numb'        =>$w_numb,
         'card_pass'     =>$card_pass,
         'name'          =>$name,
+        'nric'          =>$ic_number,
         'email'         =>$email,
         'phone_no'      =>$phone_no,
         'address'       =>$address,
@@ -263,6 +288,24 @@
   public function select_sumr($w_id){
     $sql = "SELECT SUM(tx_amount) AS totalr_topup FROM log WHERE w_id = '$w_id' AND tx_type = 'Reload'";
     $query = $this->db->query($sql);
+    return $query->row_array();
+  }
+
+  public function select_upload($w_id){
+    $this->db->distinct();
+    $this->db->select('upload_date');
+    $this->db->where('w_id',$w_id);
+    $query = $this->db->get('log');
+    return $query->result_array();
+  }
+
+  public function getlogsPdf($w_id,$date){
+    $query =  $this->db->query ('SELECT * FROM log WHERE w_id = "$w_id" AND upload_date = "$date" ');
+    return $query->result_array();
+  }
+
+  public function getlogUser($date){
+    $query =  $this->db->query ('SELECT * FROM log WHERE upload_date = "$date" ');
     return $query->row_array();
   }
   /*end of view pdf query*/

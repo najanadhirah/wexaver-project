@@ -23,4 +23,16 @@ class Mainlib {
   		return;
   	}
 
+  	public function setSessionUser($email) {
+  		$user = $this->CI->mymodel->getUser($email);
+
+  		$sess_array = array(
+        'id'      => $user['id'],
+        'email'   => $user['email'],
+  		);
+
+  		$this->CI->session->set_userdata($sess_array);
+  		return;
+  	}
+
 }

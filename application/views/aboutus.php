@@ -1,179 +1,129 @@
 <!DOCTYPE html>
-<html >
-<head>
-  <!-- Site made with Mobirise Website Builder v4.7.1, https://mobirise.com -->
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v4.7.1, mobirise.com">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="assets/images/wexaver-logo-128x128.png" type="image/x-icon">
-  <meta name="description" content="">
-  <title>about us</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,400i,600,600i">
-  <link rel="stylesheet" href="/assets/home/assets/tether/tether.min.css">
-  <link rel="stylesheet" href="/assets/home/assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/assets/home/assets/animate.css/animate.min.css">
-  <link rel="stylesheet" href="/assets/home/assets/dropdown/css/style.css">
-  <link rel="stylesheet" href="/assets/home/assets/theme/css/style.css">
-  <link rel="stylesheet" href="/assets/home/assets/mobirise/css/mbr-additional.css" type="text/css">
-  
-  
-  
-</head>
-<body>
-  <section class="menu1" id="menu1-2r" data-rv-view="222">
+<html lang="en">
 
-    <nav class="navbar navbar-dropdown navbar-fixed-top">
-        <div class="container-fluid">
+  <head>
 
-            <div class="mbr-table">
-                <div class="mbr-table-cell logo">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-                    <div class="navbar-brand">
-                        <a href="index.html#header4-1" class="navbar-logo"><img src="/assets/home/assets/images/wexaver-logo-128x128.png" alt="Mobirise" style="height: 3.5rem;"></a>
-                        <a class="navbar-caption" href="<?php echo base_url()?>welcome/home">Wexaver</a>
-                    </div>
+    <title>Wexaver Smart Saver</title>
 
-                </div>
-                <div class="mbr-table-cell text">
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/home/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-                    <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-                        <div class="hamburger-icon"></div>
-                    </button>
+    <!-- Custom fonts for this template -->
+    <link href="../assets/home/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
 
-                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar">
-                        <li class="nav-item">
-                            <a class="nav-link link" href="<?php echo base_url()?>welcome/aboutus">TENTANG KAMI</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link link" href="<?php echo base_url()?>welcome/fuel">MINYAK</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link link" href="<?php echo base_url()?>welcome/grocer">BARANG DAPUR</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link link" href="<?php echo base_url()?>welcome/insurance">INSURANS</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link link" href="<?php echo base_url()?>welcome/sme" aria-expanded="false">SME</a>
-                        </li>
-                     </ul>
+    <!-- Custom styles for this template -->
+    <link href="../assets/home/vendor/css/grayscale.css" rel="stylesheet">
+    <link href="../assets/home/vendor/style.css" rel="stylesheet">
 
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-                    <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-                        <div class="close-icon"></div>
-                    </button>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-                </div>
+  </head>
 
-            </div>
+  <body id="page-top">
 
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="<?php echo base_url()?>welcome/home">WeXaver</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>welcome/aboutus">Tentang Kami</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>welcome/motor">Insurans Kenderaan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>welcome/fuel">Petrol & Diesel</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>welcome/grocer">Barang Dapur</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>welcome/insurance">Manfaat Perlindungan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>welcome/faq">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>welcome/table">Log Masuk</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
-</section>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <div class="card text-center" style="padding-top: 10%;">
+      <div class="card-body" >
+            <h5 class="card-title" style="font-family: &quot;Droid Serif&quot;, serif; font-size: 30px; color: black;">Tentang Kami</h5>
+              <div class="row">
+                <div class="card col-sm-6" style=" border: transparent;">
+                  <div class="card-body">
+                    <p class="card-text" style="font-size: 16px; color: black;">Waktu tahun 2017, Izzu dan Adam sedang minum teh tarik selepas balik kerja. Macam biasa, seperti banyak rakyat Malaysia, mereka stress dengan kos barang yang setiap minggu lagi banyak naik daripada turun.</p>
 
-<div id="content8-2w" custom-code="true" data-rv-view="226" class="mbr-after-navbar"><section class="mbr-section mbr-section-hero features15" data-rv-view="139" style="background: linear-gradient(to right top, rgb(31, 128, 104), rgb(43, 68, 132)) rgb(31, 128, 104); padding-top: 20px; padding-bottom: 20px; margin-top: 100px;">
+                    <p class="card-text" style="font-size: 16px; color: black;">Waktu tahun 2017, Izzu dan Adam sedang minum teh tarik selepas balik kerja. Macam biasa, seperti banyak rakyat Malaysia, mereka stress dengan kos barang yang setiap minggu lagi banyak naik daripada turun.</p>
 
-    
 
-    <div class="container">
-        <div class="row heading">
-            <div class="col-md-10 col-md-offset-1 text-xs-center">
-
-                <!--<h1 class="mbr-section-title display-3 heading-title mbr-editable-content">Guna Kad WeXaver&nbsp;</h1>-->
-                <h1 class="card-title mbr-section-subtitle sub-2 mbr-editable-content" style="font-size: 60px; font-family: &quot;Droid Serif&quot;, serif; color: rgb(255, 255, 253);">TENTANG WEXAVER</h1>
-                
-                
-            </div>
-        </div>
-    </div>
-
-    
-    <div class="mbr-table mbr-table-full">
-        <div class="mbr-table-cell">
-
-            <div class="container">
-                <div class="row">
-                    <div class="mbr-table-md-up">
-
-                        <div class="mbr-table-cell col-md-5 text-md-right">
-
-                            
-
-                            <div class="mbr-section-text lead">
-                                <p class="mbr-editable-content" style="font-size: 20px; font-family: &quot;Droid Serif&quot;, serif; color: rgb(209, 209, 202);">Waktu tu tahun 2017, beberapa orang kawan sedang minum teh tarik selepas habis kerja. Macam biasa, seperti banyak rakyat Malaysia, diorang stress sangat dengan kos barang yang tiap-tiap minggu lagi banyak naik dari turun.<br><br>Beberapa minggu lepas tu, diorang buat sesuatu yang luar biasa. Diorang terus berhenti kerja dan bertekad menyelesaikan masalah besar ini. Diorang ada simple idea – jom kita semua beli beramai-ramai dan dapat ganjaran cash untuk pembelian macam-macam barang.<br><br>Diorang inilah yang memulakan kami, WeXaver (disebut sebagai "We-Saver"), yang menawarkan ganjaran cash untuk pembelian macam-macam barang di Malaysia. <br><br>Sikit sikit, hasrat kami untuk menjadikan Malaysia sebagai suatu tempat yang lebih baik semakin mendapat sokongan dan sambutan semua. Terima kasih kami ucapkan!<br></p>
-                            </div>
-
-                            
-
-                        </div>
-                        <div class="mbr-table-cell mbr-valign-top col-md-7 image-size" style="width: 16%;">
-                            <div class="mbr-figure"><img src="/assets/home/assets/images/izzu-3-219x219.jpg"></div>
-                        </div>
-                        <div class="mbr-table-cell mbr-valign-top col-md-7 image-size" style="width: 16%;">
-                        <div class="mbr-figure"><img src="/assets/home/assets/images/adam-1-196x219.jpg"></div>
-                        </div>
-
-                    </div>
+                    <p class="card-text" style="font-size: 16px; color: black;">Waktu tahun 2017, Izzu dan Adam sedang minum teh tarik selepas balik kerja. Macam biasa, seperti banyak rakyat Malaysia, mereka stress dengan kos barang yang setiap minggu lagi banyak naik daripada turun.</p>
+                  </div>
                 </div>
-            </div>
-    </div></div></section></div>
 
-<section class="mbr-section buttons1 mbr-section__container" id="buttons1-2u" data-rv-view="227" style="background-color: rgb(255, 255, 255); padding-top: 60px; padding-bottom: 0px;">
+                <div class="card col-sm-3" style=" border: transparent;">
+                  <div class="card-body">
+                    <img src="../assets/home/images/izzu-3-219x219.jpg" class="img-thumbnail" style="width: 100%; height:100%">
+                  </div>
+                </div>
+                 <div class="card col-sm-3" style=" border: transparent;">
+                  <div class="card-body">
+                    <img src="../assets/home/images/adam-1-196x219.jpg" class="img-thumbnail" style="width: 100%; height: 100%">
+                  </div>
+                </div>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="text-xs-center"><a class="btn btn-lg btn-primary" href="https://mobirise.com/mobirise-free-win.zip">DAFTAR</a> </div>
-            </div>
-        </div>
-    </div>
-
-</section>
-
-<div id="footer3-2v" custom-code="true" data-rv-view="229"><section class="mbr-section mbr-section-md-padding footer3" data-rv-view="678" style="background-color: rgb(255, 255, 255); padding-top: 30px; padding-bottom: 30px;">
-    
-    <div class="container">
-        <div class="row">
-              <div class="col-xs-12 col-lg-4">
-                <p class="mbr-section-text text-2 title mbr-editable-content"><br><br>ADDRESS</p>
-                <h3 class="mbr-section-title display-3 number mbr-editable-content" style="font-size: 25px;">Level 6, UOA Corporate Tower, Bangsar South City, 59200 Kuala Lumpur</h3>
-              </div>
-              <div class="col-xs-12 col-lg-4">
-                <p class="mbr-section-text text-2 title mbr-editable-content"><br><br>CONTACT US</p>
-                <h3 class="mbr-section-title display-3 number mbr-editable-content" style="font-size: 25px;">+6013-2755 329</h3>
-              </div>
                 
-
-            <div class="col-xs-12 col-lg-4">
-                <p class="mbr-section-text text-2 title mbr-editable-content"><br><br>EMAIL US</p>
-                <h4 class="mbr-section-title display-3 number mbr-editable-content"><div><span style="color: inherit; letter-spacing: 0px;">welcome@wexaver.com</span><br></div></h4>
               </div>
-
+          </div>
         </div>
-    </div>
-</section></div>
-
-<footer class="mbr-small-footer mbr-section mbr-section-nopadding footer4" id="footer4-2s" data-rv-view="224" style="background-color: rgb(255, 255, 253); padding-top: 0rem; padding-bottom: 0rem;">
-    
-    <div class="container">
-        <p class="text-xs-center"><br>Copyright (c) 2018 Wexaver.</p>
-    </div>
-</footer>
 
 
-  <script src="/assets/home/assets/web/assets/jquery/jquery.min.js"></script>
-  <script src="/assets/home/assets/tether/tether.min.js"></script>
-  <script src="/assets/home/assets/bootstrap/js/bootstrap.min.js"></script>
-  <script src="/assets/home/assets/smooth-scroll/smooth-scroll.js"></script>
-  <script src="/assets/home/assets/viewport-checker/jquery.viewportchecker.js"></script>
-  <script src="/assets/home/assets/dropdown/js/script.min.js"></script>
-  <script src="/assets/home/assets/touch-swipe/jquery.touch-swipe.min.js"></script>
-  <script src="/assets/home/assets/theme/js/script.js"></script>
-  
-  
-  <input name="animation" type="hidden">
-   <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon"></i></a></div>
+    <!-- Footer -->
+    <footer>
+      <center>
+      <a href="<?php echo base_url()?>welcome/table" class="btn btn-success btn-lg active" role="button" aria-pressed="true">DAFTAR</a></center>
+      <br>
+      <div class="container text-center">
+        <p>Copyright &copy; Your Website 2018</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="assets/home/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/home/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="assets/home/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="assets/home/vendor/js/grayscale.js"></script>
+
   </body>
+
 </html>

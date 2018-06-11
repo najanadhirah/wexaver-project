@@ -95,13 +95,12 @@ License: You must have a valid license purchased only from themeforest(the above
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="m-heading-1 border-green m-bordered">
-                                    <h3>Twitter Bootstrap Wizard Plugin</h3>
-                                    <p> This twitter bootstrap plugin builds a wizard out of a formatter tabbable structure. It allows to build a wizard functionality using buttons to go through the different wizard steps and using events allows to hook into
-                                        each step individually. </p>
-                                    <p> For more info please check out
-                                        <a class="btn red btn-outline" href="<?php echo base_url()?>index.php/register/registerOffline">Register Offline Form</a>
+                                    <h3>Online Registration Form</h3>
+                                    <p> If you have received your card from WeXaver Agent, </p>
+                                    <p> Please click this button for registration
+                                        <a class="btn red btn-outline" href="http://vadimg.com/twitter-bootstrap-wizard-example" target="_blank">Register Offline</a>
                                     </p>
-                                </div>
+                                </div> 
                                 <div class="portlet light bordered" id="form_wizard_1">
                                     <div class="portlet-title">
                                         <div class="caption">
@@ -123,7 +122,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                         </div>
                                     </div>
                                     <div class="portlet-body form">
-                                        <form class="form-horizontal" action="<?php echo base_url()?>register/formRegister" id="submit_form" method="POST">
+                                        <form class="form-horizontal" action="#" id="submit_form" method="POST">
                                             <div class="form-wizard">
                                                 <div class="form-body">
                                                     <ul class="nav nav-pills nav-justified steps">
@@ -141,13 +140,13 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                     <i class="fa fa-check"></i> Profile Setup </span>
                                                             </a>
                                                         </li>
-                                                         <li>
+                                                        <li>
                                                             <a href="#tab3" data-toggle="tab" class="step active">
                                                                 <span class="number"> 3 </span>
                                                                 <span class="desc">
-                                                                    <i class="fa fa-check"></i> Beneficiary Setup </span>
+                                                                    <i class="fa fa-check"></i> Vehicle Details </span>
                                                             </a>
-                                                        </li>
+                                                        </li> 
                                                         <li>
                                                             <a href="#tab4" data-toggle="tab" class="step">
                                                                 <span class="number"> 4 </span>
@@ -171,8 +170,17 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                     <span class="required"> * </span>
                                                                 </label>
                                                                 <div class="col-md-4">
-                                                                    <input type="text" class="form-control" name="fullname" id="fullname" required/>
-                                                                    <span class="help-block"> Provide your fullname </span>
+                                                                    <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Siti Nurhaliza binti Tarudin" />
+                                                                    <span class="help-block"> Provide your Fullname </span>
+                                                                </div>
+                                                            </div>
+                                                             <div class="form-group">
+                                                                <label class="control-label col-md-3">Ic Number
+                                                                    <span class="required"> * </span>
+                                                                </label>
+                                                                <div class="col-md-4">
+                                                                    <input type="text" class="form-control" name="ic" id="ic" placeholder="888888-88-8888" />
+                                                                    <span class="help-block"> Provide your ic number </span>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
@@ -180,7 +188,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                     <span class="required"> * </span>
                                                                 </label>
                                                                 <div class="col-md-4">
-                                                                    <input type="text" class="form-control" name="email" id="email" />
+                                                                    <input type="text" class="form-control" name="email" id="email" placeholder="alias@gmail.com" />
                                                                     <span class="help-block"> Provide your email address </span>
                                                                 </div>
                                                             </div>
@@ -189,7 +197,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                     <span class="required"> * </span>
                                                                 </label>
                                                                 <div class="col-md-4">
-                                                                    <input type="text" class="form-control" name="phone" id="phone" />
+                                                                    <input type="text" class="form-control" name="phone" id="phone" minlength="10" maxlength="11" placeholder="012-3456789" />
+                                                                    <?php $data = $this->uri->segment(3);?>
+                                                                     <input type="hidden" class="form-control" name="package" id="package" value="<?php echo $data; ?>" />
                                                                     <span class="help-block"> Provide your phone number </span>
                                                                 </div>
                                                             </div>
@@ -198,7 +208,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                     <span class="required"> * </span>
                                                                 </label>
                                                                 <div class="col-md-4">
-                                                                    <input type="password" class="form-control" name="password" id="submit_form_password" />
+                                                                    <input type="password" class="form-control" name="password" id="submit_form_password" placeholder="******" />
+
                                                                     <span class="help-block"> Provide your password. </span>
                                                                 </div>
                                                             </div>
@@ -207,29 +218,21 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                     <span class="required"> * </span>
                                                                 </label>
                                                                 <div class="col-md-4">
-                                                                    <input type="password" class="form-control" name="rpassword" id="rpassword" />
+                                                                    <input type="password" class="form-control" name="rpassword" id="rpassword" placeholder="******" />
                                                                     <span class="help-block"> Confirm your password </span>
                                                                 </div>
                                                             </div>
                                                         </div>
 
+                                                        <!-- Tabe 2 == Profile Setup -->
                                                         <div class="tab-pane" id="tab2">
                                                             <h3 class="block">Provide your profile details</h3>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-3">Fuels Brand</label>
-                                                                <span class="required"> * </span>
+                                                                <label class="control-label col-md-3">Average Use Fuel (RM)
+                                                                    <span class="required"> * </span>
+                                                                </label>
                                                                 <div class="col-md-4">
-                                                                    <select name="fuel_brand" id="fuel_brand" class="form-control">
-                                                                        <option value="Petron">Petron</option>
-                                                                        <option value="Petronas">Petronas</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="control-label col-md-3">Average Use Fuel (RM)</label>
-                                                                <span class="required"> * </span>
-                                                                <div class="col-md-4">
-                                                                    <select name="average_usage" id="average_usage" class="form-control">
+                                                                    <select name="average" id="average_list" class="form-control">
                                                                         <option value="RM1   - RM100" > RM1 - RM100 </option>
                                                                         <option value="RM101 - RM200" > RM101 - RM200 </option>
                                                                         <option value="RM201 - RM300" > RM201 - RM300 </option>
@@ -239,27 +242,11 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-3">Grocery Brand</label>
-                                                                <span class="required"> * </span>
-                                                                <div class="col-md-4">
-                                                                    <select name="grocer_brand" id="grocer_brand" class="form-control">
-                                                                        <option value="AEON">AEON Big</option>
-                                                                        <option value="Econsave">Econsave</option>
-                                                                        <option value="Giant">Giant</option>
-                                                                        <option value="Mydin">Mydin</option>
-                                                                        <option value="NSK">NSK</option>
-                                                                        <option value="Tesco">Tesco</option>
-                                                                        <option value="99 Speedmart">99 Speedmart</option>
-                                                                        <option value="Others">Others</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
                                                                 <label class="control-label col-md-3">Address
                                                                     <span class="required"> * </span>
                                                                 </label>
                                                                 <div class="col-md-4">
-                                                                    <input type="text" class="form-control" name="address" id="address" />
+                                                                    <textarea class="form-control" rows="3"></textarea>
                                                                     <span class="help-block"> Provide your street address </span>
                                                                 </div>
                                                             </div>
@@ -268,7 +255,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                     <span class="required"> * </span>
                                                                 </label>
                                                                 <div class="col-md-4">
-                                                                    <input type="text" class="form-control" name="city" id="city" />
+                                                                    <input type="text" class="form-control" name="city" id="city" placeholder="Sepang" />
                                                                     <span class="help-block"> Provide your city or town </span>
                                                                 </div>
                                                             </div>
@@ -277,58 +264,71 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                     <span class="required"> * </span>
                                                                 </label>
                                                                 <div class="col-md-4">
-                                                                    <input type="text" class="form-control" name="poscode" id="poscode" />
+                                                                    <input type="text" class="form-control" name="poscode" id="poscode" placeholder="12345" />
                                                                     <span class="help-block"> Provide your poscode </span>
                                                                 </div>
                                                             </div>
+                                                        </div>
+
+                                                        <!-- tab 3 == vehicle Details -->
+                                                        <div class="tab-pane" id="tab3">
+                                                            <h3 class="block">Provide your vehicle details</h3>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-3">Reference
+                                                                <label class="control-label col-md-3">Vehicle Model
                                                                     <span class="required"> * </span>
                                                                 </label>
                                                                 <div class="col-md-4">
-                                                                    <input type="text" class="form-control" name="reference" id="reference" />
+                                                                    <input type="text" class="form-control" id="vmodel" name="vmodel" placeholder="Toyota Vios" />
+                                                                    <span class="help-block"> </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-3"></label>
+                                                                 <div class="col-md-4">
+                                                                <div class="icheck-inline">
+                                                                            <label><input type="radio" name="radio2" class="icheck"> Manual </label>
+                                                                            <label><input type="radio" name="radio2" class="icheck"> Auto </label>
+                                                                </div>
+                                                            </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-3">Vehicle CC
+                                                                    <span class="required"> * </span>
+                                                                </label>
+                                                                <div class="col-md-4">
+                                                                    <input type="text" placeholder="1500" class="form-control" id="cc" name="vcc" />
+                                                                    <span class="help-block"> </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-3">Vehicle Plate No.
+                                                                    <span class="required"> * </span>
+                                                                </label>
+                                                                <div class="col-md-4">
+                                                                    <input type="text" placeholder="WWW1234" class="form-control" id="vmanufactured" name="vmanufactured" />
+                                                                    <span class="help-block"> </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-3">Year of Manufactured
+                                                                    <span class="required"> * </span>
+                                                                </label>
+                                                                <div class="col-md-4">
+                                                                    <input type="text" placeholder="2005" class="form-control" id="vmanufactured" name="vmanufactured" />
+                                                                    <span class="help-block"> </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-3">Road tax Expired Date (DD/MM/YYYY)
+                                                                    <span class="required"> * </span>
+                                                                </label>
+                                                                <div class="col-md-4">
+                                                                    <input type="text" placeholder="DD/MM/YYYY" class="form-control" id="road_tax" name="road_tax" />
+                                                                    <span class="help-block"> e.g 09/11/2020 </span>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                         <div class="tab-pane" id="tab3">
-                                                            <h3 class="block">Provide your beneficiary details</h3>
-                                                            <div class="form-group">
-                                                                <label class="control-label col-md-3">Beneficiary Name
-                                                                    <span class="required"> * </span>
-                                                                </label>
-                                                                <div class="col-md-4">
-                                                                    <input type="text" class="form-control" name="bnf_name" id="bnf_name" />
-                                                                    <span class="help-block"> </span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="control-label col-md-3">Beneficiary IC
-                                                                    <span class="required"> * </span>
-                                                                </label>
-                                                                <div class="col-md-4">
-                                                                    <input type="text" class="form-control" name="bnf_ic" id="bnf_ic" />
-                                                                    <span class="help-block"> </span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="control-label col-md-3">Beneficiary Phone Number
-                                                                    <span class="required"> * </span>
-                                                                </label>
-                                                                <div class="col-md-4">
-                                                                    <input type="text" placeholder="" class="form-control" name="bnf_hp" id="bnf_hp" />
-                                                                    <span class="help-block"> </span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="control-label col-md-3">Beneficiary Relationship
-                                                                    <span class="required"> * </span>
-                                                                </label>
-                                                                <div class="col-md-4">
-                                                                    <input type="text" placeholder="" class="form-control" name="bnf_relay" id="bnf_relay" />
-                                                                    <span class="help-block"> </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+
                                                         <div class="tab-pane" id="tab4">
                                                             <h3 class="block">Confirm your account</h3>
                                                             <h4 class="form-section">Account</h4>
@@ -336,6 +336,12 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                 <label class="control-label col-md-3">Fullname:</label>
                                                                 <div class="col-md-4">
                                                                     <p class="form-control-static" data-display="fullname"> </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-3">Nric:</label>
+                                                                <div class="col-md-4">
+                                                                    <p class="form-control-static" data-display="ic"> </p>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
@@ -352,27 +358,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                                             </div>
                                                             <h4 class="form-section">Profile</h4>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-3">Selected Partner:</label>
+                                                                <label class="control-label col-md-3">Average Fuel Spent:</label>
                                                                 <div class="col-md-4">
-                                                                    <p class="form-control-static" data-display="partner"> </p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="control-label col-md-3">Fuel Brand:</label>
-                                                                <div class="col-md-4">
-                                                                    <p class="form-control-static" data-display="fuel_brand"> </p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="control-label col-md-3">Average Usage:</label>
-                                                                <div class="col-md-4">
-                                                                    <p class="form-control-static" data-display="average_usage"> </p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="control-label col-md-3">Grocery Brand:</label>
-                                                                <div class="col-md-4">
-                                                                    <p class="form-control-static" data-display="grocer_brand"> </p>
+                                                                    <p class="form-control-static" data-display="average"> </p>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
@@ -382,40 +370,40 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-3">City:</label>
+                                                                <label class="control-label col-md-3">City / Town:</label>
                                                                 <div class="col-md-4">
                                                                     <p class="form-control-static" data-display="city"> </p>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-3">Reference:</label>
+                                                                <label class="control-label col-md-3">Poscode:</label>
                                                                 <div class="col-md-4">
-                                                                    <p class="form-control-static" data-display="reference"> </p>
+                                                                    <p class="form-control-static" data-display="poscode"> </p>
                                                                 </div>
                                                             </div>
-                                                            <h4 class="form-section">Beneficiary Details</h4>
+                                                            <h4 class="form-section">Vehicke</h4>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-3">Beneficiary Name:</label>
+                                                                <label class="control-label col-md-3">Vehicle Model</label>
                                                                 <div class="col-md-4">
-                                                                    <p class="form-control-static" data-display="bnf_name"> </p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="control-label col-md-3">Beneficiary IC :</label>
-                                                                <div class="col-md-4">
-                                                                    <p class="form-control-static" data-display="bnf_ic"> </p>
+                                                                    <p class="form-control-static" data-display="vmodel"> </p>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-3">Beneficiary Phone Number:</label>
+                                                                <label class="control-label col-md-3">Vehicle CC:</label>
                                                                 <div class="col-md-4">
-                                                                    <p class="form-control-static" data-display="bnf_hp"> </p>
+                                                                    <p class="form-control-static" data-display="vcc"> </p>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-3">Beneficiary Relationship:</label>
+                                                                <label class="control-label col-md-3">Vehicle Manufactured:</label>
                                                                 <div class="col-md-4">
-                                                                    <p class="form-control-static" data-display="bnf_relay"> </p>
+                                                                    <p class="form-control-static" data-display="vmanufactured"> </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-3">Road Tax:</label>
+                                                                <div class="col-md-4">
+                                                                    <p class="form-control-static" data-display="road_tax"> </p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -429,9 +417,10 @@ License: You must have a valid license purchased only from themeforest(the above
                                                             <a href="javascript:;" class="btn btn-outline green button-next"> Continue
                                                                 <i class="fa fa-angle-right"></i>
                                                             </a>
-                                                            <a id="register-submit-btn" type="submit" class="btn green button-submit"> Submit
+                                                            <a data-toggle="modal" href="#basic" class="btn btn-outline green button-submit"> Submit
                                                                 <i class="fa fa-check"></i>
                                                             </a>
+                                                            <!-- <a class="btn red btn-outline sbold" data-toggle="modal" href="#basic"> View Demo </a> -->
                                                         </div>
                                                     </div>
                                                 </div>
@@ -444,7 +433,34 @@ License: You must have a valid license purchased only from themeforest(the above
                     </div>
                     <!-- END CONTENT BODY -->
                     </div>
-                
+
+                <div class="modal fade bs-modal-lg" id="basic" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                    <h4 class="modal-title" align="center">Payment Details</h4>
+                                                </div>
+                                                <div class="modal-body" align="center"> 
+                                                    <p>Thanks for joining us. Please proceed with your payment through these options :</p>
+                                                    <ul style="list-style-type:none">
+                                                        <li align="center">1) Proceed your payment with CDM transfer to our Maybank account 
+                                                            <br>(<b>WEXAVER ACCOUNT : 514 253 530 276</b>).</li>
+                                                        <li align="center">2) Proceed your payment with onilne transfer to our Maybank account 
+                                                            <br>(<b>WEXAVER ACCOUNT : 514 253 530 276</b>).</li> 
+                                                    </ul>
+                                                    <p>Once you have made payment please sent your payment receipt by 
+                                                        <br> email ( <b>welcome@wexaver.com</b> ) or whatsapp ( <b>013-2755329</b> ).</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="submit" id="register-submit-btn" class="btn dark btn-outline" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                            <!-- /.modal-content -->
+                                        </div>
+                                        <!-- /.modal-dialog -->
+                                    </div>
+                                    <!-- /.modal -->
             </div>
             <!-- END CONTAINER -->
             <!-- BEGIN FOOTER -->
@@ -477,10 +493,11 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- END PAGE LEVEL PLUGINS -->
         <!-- BEGIN THEME GLOBAL SCRIPTS -->
         <script src="/assets/global/scripts/app.min.js" type="text/javascript"></script>
+        <!-- <script src="/assets/custom/js/general.js" type="text/javascript"></script> -->
         <!-- END THEME GLOBAL SCRIPTS -->
         <!-- BEGIN PAGE LEVEL SCRIPTS -->
-        <script src="/assets/pages/scripts/form-wizard.min.js" type="text/javascript"></script>
-        <script src="/assets/custom/js/general.js" type="text/javascript"></script>
+        <script src="/assets/pages/scripts/form-wizard.js" type="text/javascript"></script>
+        <script src="/assets/pages/scripts/ui-modals.min.js" type="text/javascript"></script>
         <!-- END PAGE LEVEL SCRIPTS -->
         <!-- BEGIN THEME LAYOUT SCRIPTS -->
         <script src="/assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
