@@ -94,19 +94,19 @@ License: You must have a valid license purchased only from themeforest(the above
                         <!-- END PAGE HEADER-->
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="m-heading-1 border-green m-bordered">
-                                    <h3>Online Registration Form</h3>
-                                    <p> If you have received your card from WeXaver Agent, </p>
-                                    <p> Please click this button for registration
-                                        <a class="btn red btn-outline" href="http://vadimg.com/twitter-bootstrap-wizard-example" target="_blank">Register Offline</a>
-                                    </p>
-                                </div> 
+                               <!--  <div class="m-heading-1 border-green m-bordered">
+                                   <h3>Online Registration Form</h3>
+                                   <p> If you have received your card from WeXaver Agent, </p>
+                                   <p> Please click this button for registration
+                                       <a class="btn red btn-outline" href="<?php echo base_url()?>register/registerOffline" target="_blank">Register Offline</a>
+                                   </p>
+                               </div>  -->
                                 <div class="portlet light bordered" id="form_wizard_1">
                                     <div class="portlet-title">
                                         <div class="caption">
                                             <i class=" icon-layers font-red"></i>
                                             <span class="caption-subject font-red bold uppercase"> Register Membership -
-                                                <span class="step-title"> Online </span>
+                                                <span class="step-title"> Offline </span>
                                             </span>
                                         </div>
                                         <div class="actions">
@@ -198,7 +198,18 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                 </label>
                                                                 <div class="col-md-4">
                                                                     <input type="text" class="form-control" name="phone" id="phone" minlength="10" maxlength="11" placeholder="012-3456789" />
+                                                                    <?php $data = $this->uri->segment(3);?>
+                                                                     <input type="hidden" class="form-control" name="package" id="package" value="<?php echo $data; ?>" />
                                                                     <span class="help-block"> Provide your phone number </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-3">Reference
+                                                                    <span class="required"> * </span>
+                                                                </label>
+                                                                <div class="col-md-4">
+                                                                    <input type="text" class="form-control" name="reference" id="reference" placeholder="WXR 1" />
+                                                                    <span class="help-block"> Provide your reference </span>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
@@ -207,6 +218,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                 </label>
                                                                 <div class="col-md-4">
                                                                     <input type="password" class="form-control" name="password" id="submit_form_password" placeholder="******" />
+
                                                                     <span class="help-block"> Provide your password. </span>
                                                                 </div>
                                                             </div>
@@ -243,7 +255,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                     <span class="required"> * </span>
                                                                 </label>
                                                                 <div class="col-md-4">
-                                                                    <textarea class="form-control" rows="3"></textarea>
+                                                                    <textarea class="form-control" name="address" id="address" rows="3"></textarea>
                                                                     <span class="help-block"> Provide your street address </span>
                                                                 </div>
                                                             </div>
@@ -261,7 +273,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                     <span class="required"> * </span>
                                                                 </label>
                                                                 <div class="col-md-4">
-                                                                    <input type="text" class="form-control" name="poscode" id="poscode" placeholder="12345" />
+                                                                    <input type="text" class="form-control" name="postcode" id="postcode" placeholder="12345" />
                                                                     <span class="help-block"> Provide your poscode </span>
                                                                 </div>
                                                             </div>
@@ -283,8 +295,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                 <label class="control-label col-md-3"></label>
                                                                  <div class="col-md-4">
                                                                 <div class="icheck-inline">
-                                                                            <label><input type="radio" name="radio2" class="icheck"> Manual </label>
-                                                                            <label><input type="radio" name="radio2" class="icheck"> Auto </label>
+                                                            <label><input type="radio" name="radio2" id="radio1" value="Manual" class="icheck"> Manual </label>
+                                                            <label><input type="radio" name="radio2" id="radio2" value="Auto" class="icheck"> Auto </label>
                                                                 </div>
                                                             </div>
                                                             </div>
@@ -302,7 +314,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                     <span class="required"> * </span>
                                                                 </label>
                                                                 <div class="col-md-4">
-                                                                    <input type="text" placeholder="WWW1234" class="form-control" id="vmanufactured" name="vmanufactured" />
+                                                                    <input type="text" placeholder="WWW1234" class="form-control" id="vplate" name="vplate" />
                                                                     <span class="help-block"> </span>
                                                                 </div>
                                                             </div>
@@ -360,12 +372,12 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                     <p class="form-control-static" data-display="average"> </p>
                                                                 </div>
                                                             </div>
-                                                            <div class="form-group">
+                                                            <!-- <div class="form-group">
                                                                 <label class="control-label col-md-3">Address:</label>
                                                                 <div class="col-md-4">
                                                                     <p class="form-control-static" data-display="address"> </p>
                                                                 </div>
-                                                            </div>
+                                                            </div> -->
                                                             <div class="form-group">
                                                                 <label class="control-label col-md-3">City / Town:</label>
                                                                 <div class="col-md-4">
@@ -375,7 +387,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                             <div class="form-group">
                                                                 <label class="control-label col-md-3">Poscode:</label>
                                                                 <div class="col-md-4">
-                                                                    <p class="form-control-static" data-display="poscode"> </p>
+                                                                    <p class="form-control-static" data-display="postcode"> </p>
                                                                 </div>
                                                             </div>
                                                             <h4 class="form-section">Vehicke</h4>
@@ -450,7 +462,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         <br> email ( <b>welcome@wexaver.com</b> ) or whatsapp ( <b>013-2755329</b> ).</p>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn dark btn-outline" data-dismiss="modal">Close</button>
+                                                    <button type="submit" id="off-submit-btn" class="btn dark btn-outline" data-dismiss="modal">Close</button>
                                                 </div>
                                             </div>
                                             <!-- /.modal-content -->
@@ -490,9 +502,10 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- END PAGE LEVEL PLUGINS -->
         <!-- BEGIN THEME GLOBAL SCRIPTS -->
         <script src="/assets/global/scripts/app.min.js" type="text/javascript"></script>
+        <script src="/assets/custom/js/off.js" type="text/javascript"></script>
         <!-- END THEME GLOBAL SCRIPTS -->
         <!-- BEGIN PAGE LEVEL SCRIPTS -->
-        <script src="/assets/pages/scripts/form-wizard.js" type="text/javascript"></script>
+        <script src="/assets/pages/scripts/form-wizard1.js" type="text/javascript"></script>
         <script src="/assets/pages/scripts/ui-modals.min.js" type="text/javascript"></script>
         <!-- END PAGE LEVEL SCRIPTS -->
         <!-- BEGIN THEME LAYOUT SCRIPTS -->

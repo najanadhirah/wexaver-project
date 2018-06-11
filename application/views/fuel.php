@@ -30,28 +30,29 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <script language="JavaScript" type="text/javascript">
-      function calcpayments()
+     function calcpayments()
 
-      {
-      var nprice=document.forms[0].nprice.value;
+     {
+     var nprice=document.forms[0].nprice.value;
 
-      var t;
+     var t;
 
-      for (i=0; i<document.forms[0].term.options.length; i++)
+     for (i=0; i<document.forms[0].term.options.length; i++)
 
-      {
+     {
 
-      if (document.forms[0].term.options[i].selected)
-      t = document.forms[0].term.options[i].value;
-      }
+     if (document.forms[0].term.options[i].selected)
+     t = document.forms[0].term.options[i].value;
+     }
 
-      var result=Math.round((nprice/t) * 0.03) ; 
+     var result1=(nprice/t) * 0.03 ;
+     var result = result1.toFixed(2); 
 
-      document.getElementById("monthlypayment").innerHTML=result;
-      document.getElementById("fuelprice").innerHTML=t;
+     document.getElementById("monthlypayment").innerHTML=result;
+     document.getElementById("fuelprice").innerHTML=t;
 
-      }
-    </script>
+     }
+   </script>
 
   </head>
 
@@ -82,9 +83,9 @@
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>welcome/insurance">Manfaat Perlindungan</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>welcome/faq">FAQ</a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>welcome/table">Log Masuk</a>
             </li>
@@ -128,46 +129,45 @@
                 </div>
               </div>
           </div>
-          <div class="card-header">Calculator For Fuel Saving</div>
+          <div class="card-header">Kalkulator Penjimatan</div>
           <div class="card-body" >
             <div class="container">
               <div class="row">
                 <div class="col-sm-3"></div>
                 <div class="col-sm-8">
 
-                  <form>
-                  <select class="col-sm-8 form-control form-control-sm" name="term">
-                    <option value = 2.20>RON 95</option>
-                    <option value = 2.47>RON 97</option>
-                    <option value = 2.18>DIESEL</option>
-                    <option value = 2.28>DIESEL EURO 5</option>
-                  </select>
-                  <br>
-                  <div class="form-group row">
-                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Jumlah Perbelanjaan</label>
-                    <div class="col-sm-6">
-                      <input type="email" class="form-control form-control-sm" name="nprice">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Harga Petrol</label>
-                    <div class="col-sm-6">
-                      <input type="email" class="form-control form-control-sm" id="fuelprice">
-                    </div>
-                  </div>
-                  <button type="button" class="btn btn-outline-success" onclick="calcpayments()">KIRA</button>
+                  
+<form>
+                 <select class="col-sm-8 form-control form-control-sm" name="term">
+                   <option value = 2.20>RON 95</option>
+                   <option value = 2.18>DIESEL</option>
+                 </select>
+                 <br>
+                 <div class="form-group row">
+                   <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Jumlah Perbelanjaan</label>
+                   <div class="col-sm-6">
+                     <input type="email" class="form-control form-control-sm" name="nprice">
+                   </div>
+                 </div>
+                 <div class="form-group row">
+                   <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm" style="text-align: left;">Harga Petrol &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; RM</label>
+                   <div class="col-sm-2">
+                    <!--  <input type="email" id = "fuelprice" class="form-control form-control-sm"> -->
+                     <div id = "fuelprice" style="font-size: 18px; font-weight: bold; padding-top: 2%; color: #000; text-align: left"> 0 </div>
+                   </div>
+                 </div>
+                 <button type="button" class="btn btn-outline-success" onclick="calcpayments()">KIRA</button>
 
-                  <br>
+                 <br>
 
-                  <div class="form-group row">
-                    <label for="cashback" class="col-sm-5 col-form-label" style="font-size: 25px; font-weight: bold; text-align: right; color: black;"> Jumlah Ganjaran Tunai</label>
-                    <div class="col-sm-3">
-                      <div id = "monthlypayment" style="font-size: 25px; font-weight: bold; padding-top: 2%; color: #000;"> RM 0 </div>
-                    </div>
-                  </div>
+                 <div class="form-group row">
+                   <label for="cashback" class="col-sm-6 col-form-label" style="font-size: 20px; font-weight: bold; text-align: left; color: black;"> Jumlah Ganjaran Tunai &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; RM</label>
+                   <div class="col-sm-3">
+                     <div id = "monthlypayment" style="font-size: 25px; font-weight: bold; padding-top: 2%; color: #000; text-align: left;">0 </div>
+                   </div>
+                 </div>
 
-                  </form>
-
+                 </form>
                 </div>
               </div>
             </div>

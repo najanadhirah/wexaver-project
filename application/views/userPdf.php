@@ -76,7 +76,7 @@ $tbl ='
   }
  }
 
-  if ($row['total_topup'] == 0) {
+   if ($row['total_topup'] == 0) {
     $total_topup = number_format( (float) $row['total_topup'], 2, '.', '');
     $amounts = $purchase['totalp_topup'];
     $amount = number_format( (float) $amounts, 2, '.', '');
@@ -85,6 +85,14 @@ $tbl ='
     $usage_cashback = $total_cashback - $bonus_cashback;
   }elseif($row['total_litre'] == 0){
     $total_litre = 0;
+    $total_topup = number_format( (float) $row['total_topup'], 2, '.', '');
+    $amounts = $purchase['totalp_topup'];
+    $amount = number_format( (float) $amounts, 2, '.', '');
+    $total_cashback = number_format( (float) $row['total_amount'], 2, '.', '');
+    $bonus_cashback = number_format( (float) $row['rebate_topup'], 2, '.', '');
+    $usage_cashback = $total_cashback - $bonus_cashback;
+  }else{
+    $total_litre = $row['total_litre'];
     $total_topup = number_format( (float) $row['total_topup'], 2, '.', '');
     $amounts = $purchase['totalp_topup'];
     $amount = number_format( (float) $amounts, 2, '.', '');

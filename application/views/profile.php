@@ -22,7 +22,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
     <head>
         <meta charset="utf-8" />
-        <title>Metronic Admin Theme #1 | User Profile 2</title>
+        <title>Wexaver | User Profile</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="Preview page of Metronic Admin Theme #1 for user profile sample" name="description" />
@@ -61,8 +61,8 @@ License: You must have a valid license purchased only from themeforest(the above
                 <div class="page-header-inner ">
                     <!-- BEGIN LOGO -->
                     <div class="page-logo">
-                        <a href="index.html">
-                            <img src="/assets/layouts/layout/img/logo.png" alt="logo" class="logo-default" /> </a>
+                        <a href="#">
+                            <img src="/assets/layouts/layout/img/wexaver.png" alt="logo" class="logo-default" /> </a>
                         <div class="menu-toggler sidebar-toggler">
                             <span></span>
                         </div>
@@ -189,14 +189,14 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <div class="col-md-3">
                                                 <ul class="list-unstyled profile-nav">
                                                     <li>
-                                                        <img src="/assets/pages/media/profile/people19.png" class="img-responsive pic-bordered" alt="" />
+                                                        <img src="/assets/pages/media/profile/user1.png" class="img-responsive pic-bordered" alt="" />
                                                     </li>
                                                 </ul>
                                             </div>
                                             <div class="col-md-9">
                                                 <div class="row">
                                                     <div class="col-md-8 profile-info">
-                                                        <h1 class="font-green sbold uppercase"><?php echo $row['w_id'];?> [ ] </h1>
+                                                        <h1 class="font-green sbold uppercase"><?php echo $row['w_id'];?> [ <?php echo $row['package'] ?> ] </h1>
                                                         <h1 class="font-green sbold uppercase"><?php echo $row['name'];?></h1>
                                                         <p> <?php echo $row['address']?></p>
                                                         <p>
@@ -210,9 +210,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                                             <li>
                                                                 <i class="fa fa-phone"></i> <?php echo $row['phone_no']; ?> </li>
                                                             <li>
-                                                                <i class="fa fa-star"></i> <?php echo $row['type']; ?></li>
-                                                            <li>
-                                                                <i class="fa fa-heart"></i> <?php echo $row['grocer_brand']; ?> </li>
+                                                                <i class="fa fa-car"></i> <?php echo $row['vmodel']; ?></li>
+                                                            <!-- <li>
+                                                                <i class="fa fa-heart"></i> <?php echo $row['vplate']; ?> </li> -->
                                                         </ul>
                                                     </div>
                                                     <!--end col-md-8-->

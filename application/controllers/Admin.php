@@ -267,6 +267,35 @@ class Admin extends CI_Controller {
   	}
 	/*end of pdf */
 
+	public function formpromo(){
+		$this->form_validation->set_rules('min_amount', 'Minimum Topup', 'trim|required');
+      	$this->form_validation->set_rules('rebate_amount', 'Topup Rebate', 'trim|required');
+        $this->form_validation->set_rules('min_petrol', 'Minimum Petrol', 'trim|required');
+        $this->form_validation->set_rules('rebate_petrol', 'Petrol Rebate', 'trim|required');
+        // 1)validate form input
+        if ($this->form_validation->run() === TRUE){
+       	// 2)declare variable
+		$min_topup     = $this->input->post('min_amount');
+        $topup_rebate  = $this->input->post('rebate_amount');
+        $min_petrol    = $this->input->post('min_petrol');
+        $petrol_rebate = $this->input->post('rebate_petrol');
+        // 3)mkae sure there's no past data by delete the table
+        $this->mymodel->delTemp();
+        $rebate = '0.03';
+        // 4)select all diff data only
+        $data_user= $this->mymodel->select_distinct();
+
+        	foreach ($data_user as $key => $value) {
+        		$w_id = $value['w_id'];
+        		$card_numb = $value['card_numb'];
+        		var_dump($w_id);
+        		$data = $this->mymodel->select_master($w_id,$card_numb);
+        		               echo "<pre>";
+       						var_dump($data);
+        	}
+    	}
+	}
+
 	/* functions start here */
 
 	public function funcPromo(){
@@ -286,6 +315,7 @@ class Admin extends CI_Controller {
         $rebate = '0.03';
         // 4)select all diff data only
         $data_user= $this->mymodel->select_distinct();
+               
 
         if ($data_user != NULL) {
         // 5)create table 
@@ -302,10 +332,10 @@ class Admin extends CI_Controller {
         foreach ($data_reload as $key => $value) {
         $total_topup  = $value['total_topup'];
         // 8)select all user from master based on id and card numb
-        $data = $this->mymodel->select_master($w_id,$card_numb);
+        $data = $this->mymodel->select_master($card_numb);
         foreach ($data as $key => $value) {
         $email = $value['email'];
-        $w_id = $value['w_id'];
+        $w_id = $value['w_numb'];
         $introducer = $value['introducer'];
         // 9)insert into temp table 1
         $this->mymodel->insertTemp($w_id,$total_litre,$total_topup,$email);

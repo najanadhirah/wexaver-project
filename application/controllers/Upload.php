@@ -120,7 +120,8 @@ class Upload extends CI_Controller {
 									$time		= $field[1];						 //time
 									$tx_amount  = ltrim($tx_amount, '-');
 									$card_numb  = ltrim($card_numb, "'");
-									$w_numb      = preg_replace('/\s+/', '', $w_numb);
+									$w_number 	= explode("WXR",$w_numb);
+									$w_numb      = $w_number[1];
 									$udate 		= $month.''.$year;
 									$this->mymodel->insertLog($date,$time,$tx_type,$card_numb,$w_numb,$tx_amount,$st_name,$odometer,$litre,$product,$type,$udate);
 							    break;
@@ -142,8 +143,10 @@ class Upload extends CI_Controller {
 									//$field['Driver Name'];						//null
 									$odometer 	= $field['Odometer'];				//odometer
 									$udate 		= $month.''.$year;					//month statement
-									$type 		= 'Petron';							//type of petrol
-									$w_numb 	= preg_replace('/\s+/','',$w_numb);
+									$type 		= 'Petron';
+									$w_numb		= explode(" ", $w_numb);							//type of petrol
+									
+									$w_numb 	= $w_numb[1];
 									// save into log	
 									$this->mymodel->insertLog($date,$time,$tx_type,$card_numb,$w_numb,$tx_amount,$st_name,$odometer,$litre,$product,$type,$udate);
 							    break;
@@ -159,7 +162,7 @@ class Upload extends CI_Controller {
 			}
 			rmdir($pathOpen);
 			// 4) show done
-			redirect('admin/tableLogs','refresh');
+			//redirect('admin/tableLogs','refresh');
 		}
 	}
 	/*

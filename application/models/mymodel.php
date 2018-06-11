@@ -35,7 +35,7 @@
     if ($pass == "") {
       return FALSE; // wrong password
     }else if (isset($row)){
-      $cpass = $row->password;
+      $cpass = $row->card_pass;
         if ($cpass == $pass) {
           return TRUE;
         }else{
@@ -58,13 +58,13 @@
     return $row; 
   }
 
-  public function insertLog($date,$time,$tx_type,$card_num,$w_num,$tx_amount,$st_name,$odometer,$litre,$product,$type,$udate){
+  public function insertLog($date,$time,$tx_type,$card_numb,$w_numb,$tx_amount,$st_name,$odometer,$litre,$product,$type,$udate){
     $data = array(
       'date'        => $date,
       'time'        => $time,
       'tx_type'     => $tx_type,
-      'card_numb'   => $card_num,
-      'w_id'        => $w_num,
+      'card_numb'   => $card_numb,
+      'w_id'        => $w_numb,
       'tx_amount'   => $tx_amount,
       'st_name'     => $st_name,
       'odometer'    => $odometer,
@@ -211,9 +211,8 @@
     return $query->result_array();
   }
   //select where user id from temp table equal to main table
-  public function select_master($w_id,$card_numb){
-    $sql = "SELECT w_id,introducer,email FROM membership WHERE w_id = '$w_id' AND card_numb = '$card_numb' ";
-    $query = $this->db->query($sql);
+  public function select_master($card_numb){
+    $query = $this->db->get_where('membership', array('card_numb' => $card_numb));
     return $query->result_array();
   }
   //insert into temp table
@@ -311,94 +310,140 @@
   /*end of view pdf query*/
 
   /* start part register */
-  public function updateUnassigned($acc,$card_numb,$w_numb,$pass,$name,$email,$hp_no,$address,$state,$poscode,$petrol_brand,$petrol_spend,$grocer_brand,$name_bnf,$nric_bnf,$hp_bnf,$relationship,$w_id,$reference,$date_joined,$reg_type,$password,$mark){
-        $data = array(
-          'name' => $name,
-          'email'=> $email,
-          'phone_no'=> $hp_no,
-          'address' => $address,
-          'state'   => $state,
-          'poscode'=> $poscode,
-          'type'    =>$petrol_brand,
-          'avg_fuel'=> $petrol_spend,
-          'grocer_brand'=>$grocer_brand,
-          'name_bnf'    => $name_bnf,
-          'nric_bnf'    => $nric_bnf,
-          'phone_no_bnf'=> $hp_bnf,
-          'relationship'=> $relationship,
-          'w_id'        => $w_id,
-          'introducer'  => $reference,
-          'date_joined' => $date_joined,
-          'reg_type'    => 0,
-          'password'    => $password,
-          'mark'        => 1,
-        );
-        $this->db->set('name','email','phone_no','address','state','poscode','type','avg_fuel','grocer_brand','name_bnf','nric_bnf','phone_no_bnf','relationship','w_id','introducer','date_joined','reg_type','password','mark');
-        $array = array('w_numb' => $w_numb, 'card_numb' => $card_numb);
-        $this->db->where($array);
-        $this->db->update('unassigned',$data);
-        $this->insertMembership($acc,$card_numb,$w_numb,$pass,$name,$email,$hp_no,$address,$state,$poscode,$petrol_brand,$petrol_spend,$grocer_brand,$name_bnf,$nric_bnf,$hp_bnf,$relationship,$w_id,$reference,$date_joined,$reg_type,$password,$mark);
-    }
-    public function updateUnassignedPetron($acc,$card_numb,$w_numb,$pass,$fullname,$email,$phone,$address,$city,$poscode,$fuel_brand,$average_usage,$grocer_brand,$bnf_name,$bnf_ic,$bnf_hp,$bnf_relay,$w_id,$reference,$date_joined,$reg_type,$password,$mark){
+  public function updateUnassigned($fullname,$ic,$email,$phone,$w_numb){
         $data = array(
           'name' => $fullname,
           'email'=> $email,
-          'phone_no'=> $phone,
-          'address' => $address,
-          'state'   => $city,
-          'poscode'=> $poscode,
-          'type'    =>$fuel_brand,
-          'avg_fuel'=> $average_usage,
-          'grocer_brand'=>$grocer_brand,
-          'name_bnf'    => $bnf_name,
-          'nric_bnf'    => $bnf_ic,
-          'phone_no_bnf'=> $bnf_hp,
-          'relationship'=> $bnf_relay,
-          'w_id'        => $w_id,
-          'introducer'  => $reference,
-          'date_joined' => $date_joined,
-          'reg_type'    => $reg_type,
-          'password'    => $password,
-          'mark'        => $mark,
+          'nric'=> $ic,
         );
-        $this->db->set('name','email','phone_no','address','state','poscode','type','avg_fuel','grocer_brand','name_bnf','nric_bnf','phone_no_bnf','relationship','w_id','introducer','date_joined','reg_type','password','mark');
-        $array = array('w_numb' => $w_numb, 'card_numb' => '');
+        $this->db->set('name','email','phone_no','nric');
+        $array = array('w_numb' => $w_numb);
         $this->db->where($array);
         $this->db->update('unassigned',$data);
-        $this->insertMembership($acc,$card_numb,$w_numb,$pass,$fullname,$email,$phone,$address,$city,$poscode,$fuel_brand,$average_usage,$grocer_brand,$bnf_name,$bnf_ic,$bnf_hp,$bnf_relay,$w_id,$reference,$date_joined,$reg_type,$password,$mark);
+    }
+    public function updateFree($acc,$card_numb,$w_numb,$pass,$fullname,$ic,$email,$phone,$package,$password,$average,$address,$city,$postcode,$vmodel,$radio2,$vcc,$vplate,$vmanufatured,$road_tax,$reg_type,$date_joined,$mark){
+        $data = array(
+          'account' => $acc,
+          'card_numb' => $card_numb,
+          'w_numb'  => $w_numb,
+          'card_pass'  => $password,
+          'name' => $fullname,
+          'email'=> $email,
+          'nric' => $ic,
+          'phone_no'=> $phone,
+          'package' => $package,
+          'address' => $address,
+          'state'   => $city,
+          'poscode'=> $postcode,
+          'avg_fuel'=> $average,
+          'vmodel'=>$vmodel,
+          'cartype'    => $radio2,
+          'vcc'    => $vcc,
+          'vplate'=> $vplate,
+          'vmanufactured'=> $vmanufatured,
+          'roadtax'  => $road_tax,
+          'date_joined' => $date_joined,
+          'reg_type'    => $reg_type,
+          'mark'        => $mark,
+        );
+        $this->updateUnassigned($fullname,$ic,$email,$phone,$w_numb);
+        $this->db->insert('membership',$data);
     }
     public function getUpt(){
-      $query = $this->db->get_where('unassigned', array('name' => '','card_numb'=>'','agent_name'=>''));
+      $query = $this->db->get_where('unassigned', array('name' => '','agent_name'=>''));
       return $query->row_array();
     }
-    public function insertMembership($acc,$card_numb,$w_numb,$pass,$fullname,$email,$phone,$address,$city,$poscode,$fuel_brand,$average_usage,$grocer_brand,$bnf_name,$bnf_ic,$bnf_hp,$bnf_relay,$w_id,$reference,$date_joined,$reg_type,$password,$mark){
+    public function updateNotFree($acc,$card_numb,$w_numb,$pass,$fullname,$ic,$email,$phone,$package,$password,$average,$address,$city,$postcode,$vmodel,$radio2,$vcc,$vplate,$vmanufatured,$road_tax,$reg_type,$w_id,$date_joined,$mark){
       $data = array(
           'account' => $acc,
-          'card_numb'=> $card_numb,
-          'w_numb' => $w_numb,
-          'card_pass'=> $pass,
+          'card_numb' => $card_numb,
+          'w_numb'  => $w_numb,
+          'card_pass'  => $password,
           'name' => $fullname,
           'email'=> $email,
+          'nric' => $ic,
           'phone_no'=> $phone,
+          'package' => $package,
           'address' => $address,
           'state'   => $city,
-          'poscode'=> $poscode,
-          'type'    =>$fuel_brand,
-          'avg_fuel'=> $average_usage,
-          'grocer_brand'=>$grocer_brand,
-          'name_bnf'    => $bnf_name,
-          'nric_bnf'    => $bnf_ic,
-          'phone_no_bnf'=> $bnf_hp,
-          'relationship'=> $bnf_relay,
+          'poscode'=> $postcode,
+          'avg_fuel'=> $average,
+          'vmodel'=>$vmodel,
+          'cartype'    => $radio2,
+          'vcc'    => $vcc,
+          'vplate'=> $vplate,
+          'vmanufactured'=> $vmanufatured,
           'w_id'        => $w_id,
-          'introducer'  => $reference,
+          'roadtax'  => $road_tax,
           'date_joined' => $date_joined,
           'reg_type'    => $reg_type,
-          'password'    => $password,
           'mark'        => $mark,
       );
+      $this->updateUnassigned($fullname,$ic,$email,$phone,$w_numb);
       $this->db->insert('membership',$data);
     }
   /* end of register */
+
+  public function updateFreeOffline($acc,$card_numb,$w_numb,$pass,$fullname,$ic,$email,$phone,$package,$password,$average,$address,$city,$postcode,$vmodel,$radio2,$vcc,$vplate,$vmanufatured,$road_tax,$reg_type,$date_joined,$mark,$reference){
+        $data = array(
+          'account' => $acc,
+          'card_numb' => $card_numb,
+          'w_numb'  => $w_numb,
+          'card_pass'  => $password,
+          'name' => $fullname,
+          'email'=> $email,
+          'nric' => $ic,
+          'phone_no'=> $phone,
+          'package' => $package,
+          'introducer' => $reference,
+          'address' => $address,
+          'state'   => $city,
+          'poscode'=> $postcode,
+          'avg_fuel'=> $average,
+          'vmodel'=>$vmodel,
+          'cartype'    => $radio2,
+          'vcc'    => $vcc,
+          'vplate'=> $vplate,
+          'vmanufactured'=> $vmanufatured,
+          'roadtax'  => $road_tax,
+          'date_joined' => $date_joined,
+          'reg_type'    => $reg_type,
+          'mark'        => $mark,
+        );
+        $this->updateUnassigned($fullname,$ic,$email,$phone,$w_numb);
+        $this->db->insert('membership',$data);
+    }
+
+    public function updateNotFreeOffline($acc,$card_numb,$w_numb,$pass,$fullname,$ic,$email,$phone,$package,$password,$average,$address,$city,$postcode,$vmodel,$radio2,$vcc,$vplate,$vmanufatured,$road_tax,$reg_type,$w_id,$date_joined,$mark,$reference){
+      $data = array(
+          'account' => $acc,
+          'card_numb' => $card_numb,
+          'w_numb'  => $w_numb,
+          'card_pass'  => $password,
+          'name' => $fullname,
+          'email'=> $email,
+          'nric' => $ic,
+          'phone_no'=> $phone,
+          'package' => $package,
+          'introducer' => $reference,
+          'address' => $address,
+          'state'   => $city,
+          'poscode'=> $postcode,
+          'avg_fuel'=> $average,
+          'vmodel'=>$vmodel,
+          'cartype'    => $radio2,
+          'vcc'    => $vcc,
+          'vplate'=> $vplate,
+          'vmanufactured'=> $vmanufatured,
+          'w_id'        => $w_id,
+          'roadtax'  => $road_tax,
+          'date_joined' => $date_joined,
+          'reg_type'    => $reg_type,
+          'mark'        => $mark,
+      );
+      $this->updateUnassigned($fullname,$ic,$email,$phone,$w_numb);
+      $this->db->insert('membership',$data);
+    }
+
 
 }

@@ -53,6 +53,11 @@ var FormWizard = function () {
                         maxlength: 11,
                         required: true
                     },
+                    phone: {
+                        minlength: 10,
+                        maxlength: 11,
+                        required: true
+                    },
                     ic: {
                         minlength: 12,
                         maxlength: 12,

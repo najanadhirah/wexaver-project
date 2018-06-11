@@ -5,6 +5,7 @@ var Custom = function () {
 	/****
 	* ajax - signup
 	*****/
+
 	$('#register-submit-btn').click(function(event){
 		event.preventDefault ? event.preventDefault() : (event.returnValue = false);
 
@@ -13,42 +14,48 @@ var Custom = function () {
         $("#register-submit-btn").html('<i class="fa fa-spinner fa-pulse fa-fw margin-bottom"></i><span class="sr-only">Signing...</span>');
 
         var fullname 	  = $("#fullname").val();
+        var ic            = $("#ic").val();
         var email 	      = $("#email").val();
         var phone 	      = $("#phone").val();
+        var package       = $("#package").val();
         var password      = $("#submit_form_password").val();
         var rpassword 	  = $("#rpassword").val();
-        var partner 	  = $("#partner").val();
-        var fuel_brand 	  = $("#fuel_brand").val();
-        var average_usage = $("#average_usage").val();
-        var grocer_brand  = $("#grocer_brand").val();
+        var average_list  = $("#average_list").val();
         var address       = $("#address").val();
         var city 		  = $("#city").val();
-        var poscode 	  = $("#poscode").val();
-        var reference     = $("#reference").val();
-        var bnf_name      = $("#bnf_name").val();
-        var bnf_ic 		  = $("#bnf_ic").val();
-        var bnf_hp 		  = $("#bnf_hp").val();
-        var bnf_relay     = $("#bnf_relay").val();
+        var postcode 	  = $("#postcode").val();
+        var vmodel        = $("#vmodel").val();
+
+        if (document.getElementById('radio1').checked) {
+            var radio2 = document.getElementById('radio1').value;
+        }else{
+            var radio2 = document.getElementById('radio2').value;
+        }
+        //var radio2        = $("#radio2").val();
+        var cc            = $("#cc").val();
+        var vplate 		  = $("#vplate").val();
+        var vmanufactured = $("#vmanufactured").val();
+        var road_tax      = $("#road_tax").val();
 
         $.post("/index.php/register/ajaxOnline",
         {
           	fullname	    : fullname,		
+			ic	  		: ic,
 			email	  		: email,
-			phone	  		: phone,
-			password		: password,
-			rpassword	    : rpassword,
-			partner			: partner,	
-			fuel_brand		: fuel_brand,
-			average_usage	: average_usage,
-			grocer_brand	: grocer_brand,
-			address  		: address,
-			city		    : city,
-			poscode		    : poscode,
-			reference		: reference,
-			bnf_name 		: bnf_name,
-			bnf_ic 			: bnf_ic,
-			bnf_relay 		: bnf_relay,
-			bnf_hp 			: bnf_hp,
+			phone		: phone,
+			package	    : package,
+			password			: password,	
+			rpassword		: rpassword,
+			average_list	: average_list,
+			address	: address,
+			city  		: city,
+			postcode		    : postcode,
+			vmodel		    : vmodel,
+			radio2		: radio2,
+			cc 		: cc,
+			vplate 			: vplate,
+			vmanufactured 		: vmanufactured,
+			road_tax 			: road_tax,
         },
         function(data,status){
             $("#register-submit-btn").html('Submit');
@@ -56,7 +63,7 @@ var Custom = function () {
 
         	if (data["status"] === "Success")
         	{
-                location.reload();
+                location.replace("http://192.168.0.106:84/");
         	}
         	else
         	{
@@ -65,6 +72,10 @@ var Custom = function () {
         });
 
 	});
+
+
+    
+
 
 	$('#myForm').submit(function() {
 		$(this).ajaxSubmit(options);
