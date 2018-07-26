@@ -66,7 +66,7 @@ class Upload extends CI_Controller {
 			$company= $name[0];
 			if ($company == 'Petron') 
 			{	
-				$udate 		= $month.' '.$year;
+				$udate 		= $month.$year;
 				$this->db->delete('log', array('upload_date' => $udate,'type' => $company));
 				// convert xlx to csv
 				$i_ = 0;
@@ -82,7 +82,7 @@ class Upload extends CI_Controller {
 					}
 				}
 			}else{
-				$udate 		= $month.' '.$year;
+				$udate 		= $month.$year;
 				$this->db->delete('log', array('upload_date' => $udate,'type' => $company));
 			}
 			//refresh 
@@ -162,7 +162,7 @@ class Upload extends CI_Controller {
 			}
 			rmdir($pathOpen);
 			// 4) show done
-			//redirect('admin/tableLogs','refresh');
+			redirect('admin/tableLogs','refresh');
 		}
 	}
 	/*

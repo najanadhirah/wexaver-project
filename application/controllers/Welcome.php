@@ -30,43 +30,73 @@ class Welcome extends CI_Controller {
 		$data['js_page_level_plugins'] = '';
 		$data['js_page_level_scripts'] = '';
 		//1)if set session success and get roles session equal to 1
-		if ($this->session->userdata('roles') == 'admin') {
+		
 			$this->load->view('admin/header',$data);
 			$this->load->view('admin/welcome_message',$data);
 			$this->load->view('admin/footer',$data);
-		}
-		//2)if set session success and get roles session not equal to 1
-		else{
-			show_404();
-		}
+		
 	}
 
 	public function home()
-	{
+	{	
+		$this->load->view('header');
 		$this->load->view('index');
+		$this->load->view('footer');
 	}
 	public function aboutus()
-	{
+	{	
+		$this->load->view('header');
 		$this->load->view('aboutUs');
+
 	}
 	public function fuel()
-	{
+	{	
+		$this->load->view('header');
 		$this->load->view('fuel');
+		$this->load->view('footer');
 	}
 	public function motor()
-	{
+	{	
+		$this->load->view('header');
 		$this->load->view('motor');
+		$this->load->view('footer');
 	}
 	public function grocer()
-	{
+	{	
+		$this->load->view('header');
 		$this->load->view('grocer');
+		$this->load->view('footer');
 	}
 	public function insurance()
-	{
+	{	
+		$this->load->view('header');
 		$this->load->view('insurance');
+		$this->load->view('footer');
 	}
-	public function sme()
-	{
+
+	public function sme(){
+		//1)validate form
+		$this->form_validation->set_rules('company_name','Company Name','trim|required');
+		$this->form_validation->set_rules('name','Name','trim|required');
+		$this->form_validation->set_rules('email','Email','trim|required');
+		$this->form_validation->set_rules('phone_number','Phone Number','trim|required');
+		$this->form_validation->set_rules('address','Address','trim|required');
+		$this->form_validation->set_rules('postcode','Postcode','trim|required');
+		$this->form_validation->set_rules('petrol_spend','Petrol Spend','trim|required');
+
+		if ($this->form_validation->run() === TRUE) {
+			$company_name = $this->input->post('company_name');
+			$name = $this->input->post('name');
+			$email = $this->input->post('email');
+			$phone_number = $this->input->post('phone_number');
+			$address = $this->input->post('address');
+			$postcode = $this->input->post('postcode');
+			$petrol_spend = $this->input->post('petrol_spend');
+
+			$this->mymodel->insertSme($company_name,$name,$email,$phone_number,$address,$postcode,$petrol_spend);
+		}
+		
+		$this->load->view('header');
 		$this->load->view('sme');
 	}
 
@@ -74,9 +104,9 @@ class Welcome extends CI_Controller {
 		$query = $this->db->get('package');
     	$data['row'] = $query->result_array();
     	//var_dump($data);
+    	$this->load->view('header');
 		$this->load->view('table1',$data);
-
-
+		$this->load->view('footer');
 	}
 
 	public function profile(){

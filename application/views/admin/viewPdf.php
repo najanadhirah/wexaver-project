@@ -15,24 +15,34 @@ $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 $pdf->SetFont('times', '', 8, '', true);
 $title = 'Summary Report';
 $pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH);
+$pdf->setPrintHeader(false);
+$pdf->setPrintFooter(false);
 
 if ($reload['totalr_topup'] == Null) {
 $pdf->AddPage();
+$datebeforesplit = $summary['upload_date'];
+$date = str_split($datebeforesplit, 4);
+
+$date1 =  $date[0] . " ". $date[1];
 
 $header =<<<EOD
-  <p> To : {$user['name']} <br> Month : {$summary['upload_date']}</p>
+
+<img src="http://www.wexaver.com/uploads/4/6/8/1/46813063/logo-large.png"  width="200" height="50">
+<br>
+<hr>
+  <p> To :  {$user['name']} <br> Month : $date1</p>
   <table width="100%">
       <tr >
-        <td  width="25%">WeXaver Member No. : </td>
-        <td  width="25%">{$user["w_id"]}</td>
+        <td  width="25%">WeXaver Member No. :  WXR {$user["w_numb"]} </td>
+        <td  width="25%"></td>
         <td  align="right" width="25%">Period : </td>
-        <td  width="25%">{$summary["upload_date"]} </td>
+        <td  width="25%"> $date1 </td>
       </tr> 
     </table >
   <p>Hi WeXaver Member,</p>
     <p>Welcome to WeXaver. Many thanks for becoming WeXaver member.</p>
-    <p>Kindly find attached details of your WeXaver membership for period {$summary['upload_date']}.</p>
-    <p>If you have any issues or queries, kindly contact WeXaver CareLine at <b>013-2755 329 </b>working days from 10am till 6pm) or e-mail us at <a href="mailto:welcome@wexaver.com">welcome@wexaver.com</a>.</p>
+    <p>Kindly find attached details of your WeXaver membership for period  $date1.</p>
+    <p>If you have any issues or queries, kindly contact WeXaver CareLine at <b>013-2755 329 </b>(working days from 10am till 6pm) or e-mail us at <a href="mailto:welcome@wexaver.com">welcome@wexaver.com</a>.</p>
 EOD;
 
 $tbl_header = '<table border="1" style="margin-bottom:15px;">';
@@ -77,7 +87,8 @@ $tbl ='
  }
 
    if ($row['total_topup'] == 0) {
-    $total_topup = number_format( (float) $row['total_topup'], 2, '.', '');
+    $total_topup = 0;
+    $total_litre = number_format( (float) $row['total_litre'], 2, '.', '');
     $amounts = $purchase['totalp_topup'];
     $amount = number_format( (float) $amounts, 2, '.', '');
     $total_cashback = number_format( (float) $row['total_amount'], 2, '.', '');
@@ -92,7 +103,7 @@ $tbl ='
     $bonus_cashback = number_format( (float) $row['rebate_topup'], 2, '.', '');
     $usage_cashback = $total_cashback - $bonus_cashback;
   }else{
-    $total_litre = $row['total_litre'];
+    $total_litre = number_format( (float) $row['total_litre'], 2, '.', '');
     $total_topup = number_format( (float) $row['total_topup'], 2, '.', '');
     $amounts = $purchase['totalp_topup'];
     $amount = number_format( (float) $amounts, 2, '.', '');
@@ -131,28 +142,36 @@ $tbl ='
            <td></td>
          </tr>';
 
- $footer = '<p>Your usage cashback amount for period '.$summary["upload_date"].' have been credited to your fuel card on 1st April 2018.</br> <p>Your promotion bonus cashback amount for period '.$summary["upload_date"].' will be credited to your fuel card by 10th April 2018.</p>Many thanks for your continuous support to WeXaver.</p>
+ $footer = '<p>Your usage cashback amount for period '.$date1.' have been credited to your fuel card on 1st July 2018.</br> <p>Your promotion bonus cashback amount for period '.$date1.' will be credited to your fuel card by 10th July 2018.</p>Many thanks for your continuous support to WeXaver.</p>
                 <p>Kind Regards, <br><b>WeXaver - Smart Saver </b>';
 
 $pdf->writeHTML($header . $tbl_header . $tbl . $tbl2 . $tbl_footer .$footer, true, false, false, false, '');
-$pdf->Output('Usage Details '.$summary['upload_date'].'.pdf', 'I'); 
+$user = $user['w_numb'];
+$pdf->Output('Usage Details WXR'.$user.' '.$date1.'.pdf', 'I'); 
 
 }else {
 $pdf->AddPage();
+$datebeforesplit = $summary['upload_date'];
+$date = str_split($datebeforesplit, 4);
+
+$date1 =  $date[0] . " ". $date[1];
 
 $header =<<<EOD
-  <p> To : {$user['name']} <br> Month : {$summary['upload_date']}</p>
+<img src="http://www.wexaver.com/uploads/4/6/8/1/46813063/logo-large.png"  width="200" height="50">
+<br>
+<hr>
+  <p> To : {$user['name']} <br> Month : $date1</p>
   <table width="100%">
       <tr >
-        <td  width="25%">WeXaver Member No. : </td>
-        <td  width="25%">{$user["w_id"]}</td>
-        <td  width="25%">Period : </td>
-        <td  width="25%">{$summary["upload_date"]} </td>
+        <td  width="25%">WeXaver Member No. : WXR {$user["w_numb"]}</td>
+        <td  width="25%"></td>
+        <td  align ="right" width="25%">Period : </td>
+        <td  width="25%"> $date1 </td>
       </tr> 
     </table >
   <p>Hi WeXaver Member,</p>
     <p>Welcome to WeXaver. Many thanks for becoming WeXaver member.</p>
-    <p>Kindly find attached details of your WeXaver membership for period {$summary['upload_date']}.</p>
+    <p>Kindly find attached details of your WeXaver membership for period $date1.</p>
     <p>If you have any issues or queries, kindly contact WeXaver CareLine at <b>013-2755 329 </b>working days from 10am till 6pm) or e-mail us at <a href="mailto:welcome@wexaver.com">welcome@wexaver.com</a>.</p>
 EOD;
 
@@ -191,8 +210,8 @@ $tbl ='
           <td align="center">'.$date.'<br>'.$time.'</td>
           <td align="center">'.$tx_type.'</td>
           <td align="center">'.$product.'</td>
-          <td align="right">'.$litre.'</td>
-          <td align="right">'.$tx_amount.'</td>
+          <td align="right">'.$litre .'</td>
+          <td align="right">'.$tx_amount .'</td>
           <td align="center">'.$st_name.'</td>
         </tr>';
   }
@@ -262,6 +281,7 @@ else {
 $tbl_header1 = '<p></p><table border="1">';
 $tbl_footer1 = '</table>';
 $tbl1 ='
+
   <tr>
     <td align="center" width="25%"><b>Date<br>Time</b></td>
         <td align="center" width="25%"><b>Transaction Type</b></td>
@@ -291,13 +311,13 @@ $tbl1 ='
 
  $tbl21 ='<tr>
           <td></td>
-          <td align="right" ><b>Total Reload</b></td>
+          <td align="center" ><b>Total Reload</b></td>
           <td align="right" colspan="3"><b>RM'.$total_reload.'</b></td>
           <td></td>
         </tr>';
 }
 
-$footer = '<p>Your usage cashback amount for period '.$summary["upload_date"].' have been credited to your fuel card on 1st April 2018.</br> <p>Your promotion bonus cashback amount for period '.$summary["upload_date"].' will be credited to your fuel card by 10th April 2018.</p>Many thanks for your continuous support to WeXaver.</p>
+$footer = '<p>Your usage cashback amount for period '.$date1.' have been credited to your fuel card on 1st July 2018.</br> <p>Your promotion bonus cashback amount for period '.$date1.' will be credited to your fuel card by 10th July 2018.</p>Many thanks for your continuous support to WeXaver.</p>
                 <p>Kind Regards, <br><b>WeXaver - Smart Saver </b>';
 
 $pdf->writeHTML($tbl_header . $tbl_footer . $tbl_header1 . $tbl1 . $tbl21 . $tbl_footer1 . $footer, true, false, false, false, '');
@@ -305,7 +325,8 @@ $pdf->writeHTML($tbl_header . $tbl_footer . $tbl_header1 . $tbl1 . $tbl21 . $tbl
 //exit;
 $pdf->setPage(1, true);
 $pdf->setPage(2, true);
-$pdf->Output('Usage Details '.$summary['upload_date'].'.pdf', 'I');
+$user = $user['w_numb'];
+$pdf->Output('Usage Details WXR'.$user.' '.$date1.'.pdf', 'I');
 }
 
 ?>

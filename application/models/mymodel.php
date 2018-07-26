@@ -268,19 +268,19 @@
     return $query->row_array();
   }
   public function getMemberships($w_id){
-    $query = $this->db->get_where('membership', array('w_id' => $w_id));
+    $query = $this->db->get_where('membership', array('w_numb' => $w_id));
     return $query->row_array();
   }
-  public function getlogs($w_id){
-    $query = $this->db->get_where('log', array('w_id' => $w_id));
+  public function getlogs($card){
+    $query = $this->db->get_where('log', array('card_numb' => $card));
     return $query->result_array();
   }
-  public function getlog_row($w_id){
-    $query = $this->db->get_where('log', array('w_id' => $w_id));
+  public function getlog_row($card){
+    $query = $this->db->get_where('log', array('card_numb' => $card));
     return $query->row_array();
   }
-  public function select_sump($w_id){
-    $sql = "SELECT SUM(tx_amount) AS totalp_topup FROM log WHERE w_id = '$w_id' AND tx_type = 'Purchase'";
+  public function select_sump($card){
+    $sql = "SELECT SUM(tx_amount) AS totalp_topup FROM log WHERE card_numb = '$card' AND tx_type = 'Purchase'";
     $query = $this->db->query($sql);
     return $query->row_array();
   }
@@ -445,5 +445,17 @@
       $this->db->insert('membership',$data);
     }
 
+  public function insertSme($company_name,$name,$email,$phone_number,$address,$postcode,$petrol_spend){
+    $data = array (
+      'company_name' => $company_name, 
+      'name' => $name,
+      'email' => $email,
+      'phone_number' => $phone_number,
+      'address' => $address,
+      'postcode' => $postcode,
+      'petrol_spend' => $petrol_spend,
+    );
+    $this->db->insert('sme',$data);
+  }
 
 }

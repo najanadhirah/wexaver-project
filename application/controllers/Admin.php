@@ -257,9 +257,10 @@ class Admin extends CI_Controller {
   		$this->load->library('Pdf');
       	$data  = $this->mymodel->getTemps($w_id);
       	$data1 = $this->mymodel->getMemberships($w_id);
-      	$data2 = $this->mymodel->getlogs($w_id);
-      	$data3 = $this->mymodel->getlog_row($w_id);
-      	$data4 = $this->mymodel->select_sump($w_id);
+      		$card	= $data1['card_numb'];
+      	$data2 = $this->mymodel->getlogs($card);
+      	$data3 = $this->mymodel->getlog_row($card);
+      	$data4 = $this->mymodel->select_sump($card);
       	$data5 = $this->mymodel->select_sumr($w_id);
 
       	$parent_data = array('row'=>$data,'user' => $data1,'summaries'=> $data2, 'summary' => $data3,'reload'=>$data5,'purchase'=>$data4);

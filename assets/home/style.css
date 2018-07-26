@@ -1,3 +1,9 @@
+
+.carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+
 .topnav {
   overflow: hidden;
   background-color: #333;
@@ -261,7 +267,7 @@ div.desc {
 .demo {cursor:pointer}
 
 .img1 {
-    border: 0px solid #ddd;
+    
     padding: 15px;
     
 }

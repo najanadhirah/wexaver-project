@@ -48,6 +48,7 @@
                                         <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
                                             <thead>
                                                 <tr>
+                                                    <th> Wexaver ID         </th>
                                                     <th> Email              </th>
                                                     <th> Total Toppup       </th>
                                                     <th> Total Litre        </th>
@@ -60,6 +61,7 @@
                                             <tbody>
                                                 <?php foreach ($result as $data) {?>
                                                 <tr>
+                                                    <td>WXR <?php echo $data['w_id']; ?> </td>
                                                     <td><?php echo $data['email']; ?> </td>
                                                     <td><?php echo $data['total_topup']; ?> </td>
                                                     <td><?php echo $data['total_litre']; ?> </td>
