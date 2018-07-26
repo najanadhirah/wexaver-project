@@ -110,4 +110,6 @@ jQuery(document).ready(function() {
 /***
 Usage
 ***/
-Custom.doSomeStuff();
+Custom.doSomeStuff(
+    window.location.href = "http://localhost:82/welcome/success";
+    );

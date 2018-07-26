@@ -139,4 +139,5 @@ class Register extends CI_Controller {
 	public function pricing(){
 		$this->load->view('pricing');
 	}
+
 }

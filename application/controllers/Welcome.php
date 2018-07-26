@@ -138,6 +138,9 @@ class Welcome extends CI_Controller {
 		//$this->load->view('loginUser');
 	}
 
+	public function success(){
+		$this->load->view('success');
+	}
 	/****************
 	**  CALLBACKS  ** 
 	*****************/
