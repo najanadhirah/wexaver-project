@@ -63,7 +63,7 @@ var Custom = function () {
 
         	if (data["status"] === "Success")
         	{
-                location.replace("http://192.168.0.106:84/");
+                location.replace("http://localhost:82/welcome/success");
         	}
         	else
         	{
@@ -110,6 +110,4 @@ jQuery(document).ready(function() {
 /***
 Usage
 ***/
-Custom.doSomeStuff(
-    window.location.href = "http://localhost:82/welcome/success";
-    );
+Custom.doSomeStuff();
