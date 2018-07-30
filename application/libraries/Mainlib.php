@@ -12,7 +12,7 @@ class Mainlib {
 	}
 
 	public function setSession($uname) {
-  		$admin = $this->CI->mymodel->getAdmin($uname);
+  		$admin = $this->CI->myadmin->getAdmin($uname);
 
   		$sess_array = array(
         'id'      => $admin['id'],

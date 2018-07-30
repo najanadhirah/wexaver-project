@@ -37,6 +37,7 @@
                                                     <th class="none">Phone Number</th>
                                                     <th class="min-tablet">Wexaver Number</th>
                                                     <th class="none">Fuel Type</th>
+                                                    <th class="min-tablet">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -47,6 +48,7 @@
                                                     <td><?php echo $data['phone_no'];?></td>
                                                     <td><?php echo $data['w_numb'];?></td>
                                                     <td><?php echo $data['type'];?></td>
+                                                    <td><a href="<?php echo base_url()?>admin/editProfile/<?php echo $data['card_numb']?>" class="btn btn-transparent grey-salsa btn-outline btn-sm">Edit Profile</a></td>
                                                 </tr>
                                                 <?php } ?>
                                             </tbody>

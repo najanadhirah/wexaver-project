@@ -9,8 +9,426 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 */
 
 class Upload extends CI_Controller {
+	/*Form Upload*/
+	public function master(){
+		$data['css_page_level_plugins'] ='';
+		$data['css_page_level_styles'] = '';
+		$data['js_page_level_plugins'] = '';
+		$data['js_page_level_scripts'] = '<script src="/assets/custom/js/year.js" type="text/javascript"></script>';
 
-	//upload zip file 
+		//1)if set session success and get roles session equal to 1
+		if ($this->session->userdata('roles') === 'master') {
+			$this->load->view('admin/inc/header',$data);
+			$this->load->view('admin/upload/masterUpload',$data);
+			$this->load->view('admin/inc/footer',$data);
+		}else{
+			$this->session->sess_destroy();
+			redirect('admin/login','refresh');
+		}
+	}
+
+	public function monthly(){
+		$data['css_page_level_plugins'] ='';
+		$data['css_page_level_styles'] = '';
+		$data['js_page_level_plugins'] = '';
+		$data['js_page_level_scripts'] = '<script src="/assets/custom/js/year.js" type="text/javascript"></script>';
+
+		$query 	= $this->db->query('select month from month');
+		$data['month'] = $query->result_array();
+
+		//1)if set session success and get roles session equal to 1
+		if ($this->session->userdata('roles') === 'admin') {
+			$this->load->view('admin/inc/header',$data);
+			$this->load->view('admin/upload/upload',$data);
+			$this->load->view('admin/inc/footer',$data);
+		}else{
+			$this->session->sess_destroy();
+			redirect('admin/login','refresh');
+		}
+	}
+
+	public function fuel(){
+		$data['css_page_level_plugins'] ='';
+		$data['css_page_level_styles'] = '';
+		$data['js_page_level_plugins'] = '';
+		$data['js_page_level_scripts'] = '<script src="/assets/custom/js/year.js" type="text/javascript"></script>';
+
+		$query 	= $this->db->get('month');
+		$data['month'] = $query->result_array();
+
+		//1)if set session success and get roles session equal to 1
+		if ($this->session->userdata('roles') === 'admin') {
+		$this->load->view('admin/header',$data);
+		$this->load->view('admin/upload/fuel',$data);
+		$this->load->view('admin/footer',$data);
+		}else{
+			$this->session->sess_destroy();
+			redirect('admin/login','refresh');
+		}
+	}
+
+	public function grocery(){
+		$data['css_page_level_plugins'] ='';
+		$data['css_page_level_styles'] = '';
+		$data['js_page_level_plugins'] = '';
+		$data['js_page_level_scripts'] = '<script src="/assets/custom/js/year.js" type="text/javascript"></script>';
+
+		$query 	= $this->db->get('month');
+		$data['month'] = $query->result_array();
+
+		//1)if set session success and get roles session equal to 1
+		if ($this->session->userdata('roles') === 'admin') {
+		$this->load->view('admin/header',$data);
+		$this->load->view('admin/upload/grocery',$data);
+		$this->load->view('admin/footer',$data);
+		}else{
+			$this->session->sess_destroy();
+			redirect('admin/login','refresh');
+		}
+	}
+
+	/*end of form upload*/
+
+
+	/*
+		monthly upload
+						*/
+
+	public function monthlyUpload(){
+
+		$month 	= $this->input->post('month');
+		$year	= $this->input->post('year');
+
+		// create folder inside uploads
+		if (!is_dir('uploads/'. $month . $year)) {
+			mkdir('./uploads/' . $month . $year, 0777, TRUE);
+		}
+
+		// set config param for CI Uploads
+		$config['upload_path'] = './uploads/'.$month . $year;
+		$config['allowed_types'] = 'zip';
+		$config['encrypt_name'] = TRUE;
+		$this->load->library('upload', $config);
+
+		// field name from the form
+		$zipfile = "upload"; 
+
+		// show error if upload failed
+		if (!$this->upload->do_upload($zipfile)) {
+			echo '<h1>Error</h1>'.$this->upload->display_errors();
+			return;
+		}else{
+
+			// to get the unzip folder's name
+			// this is a BAD assumption assuming folder name is similar with zip name
+			$file_name = $_FILES['upload']['name'];
+			$array = explode(".", $file_name);
+			$name = $array[0];
+			$ext = $array[1];
+			$udate 		= $month.' '.$year;	
+			// 1) unzip
+			$zip = new ZipArchive;
+
+			if ($zip->open($config['upload_path'].'/'.$this->upload->data('file_name')) === TRUE)
+			{
+				$zip->extractTo($config['upload_path']);
+				$zip->close();
+			}
+			else
+			{
+				echo '<h1>Error unzipping file</h1>';
+			}
+
+			// 2) process csv file -> dbase
+			$this->load->library('csvreader');
+
+			$pathOpen = $config['upload_path'] .'/'.$name.'/';
+			$files = scandir($pathOpen);
+
+			$udate 		= $month.' '.$year;
+
+			$this->db->delete('log', array('upload_date' => $udate));
+
+			$files = scandir($pathOpen);
+			/*echo "<pre>";
+			print_r($files);*/
+			foreach ($files as $i => $file) {
+				$e_ 	= explode('.', $file);
+				
+				// making sure we only process CSV file
+				if ($e_[1] == 'csv') {
+					$result = $this->csvreader->parse_file($pathOpen.$file);
+					foreach ($result as $field) {
+						// Process fields for Petronas
+						$date_time 	= $field['Date Time']; 
+						$tx_type 	= $field['Transaction Type']; 
+						$card_numb  = $field['Card Number'];			 //card number
+						$w_numb 	= $field['Vehicle Number'];			 //wexaver ID
+						//$field['Driver Card Number'];
+						$product 	= $field['Product Type'];            //type of petrol
+						//$field['Billing Type'];
+						$litre 		= $field['Transaction Volume (Litres)'];//transaction litre
+						$tx_amount	= $field['Transaction Amount (RM)']; //transaction amount
+						$st_name 	= $field['Station Name'];			 //station name
+						$odometer 	= $field['Odometer'];				 //odometer
+						//$field['Card Type'];							 //standalone
+						//$field['Cost Centre'];						 //null
+						//$field['Cost Centre Name'];					 //null
+						//$field['Statement Month'];		 //month statement
+						$type 		= 'Petronas';						 //type of petrol
+						$field 		=(explode(" ",$date_time)); 		 //explode date and time to seperate value
+						$date 		= $field[0];						 //date
+						$time		= $field[1];						 //time
+						$tx_amount  = ltrim($tx_amount, '-');
+						$card_numb  = ltrim($card_numb, "'");
+						$w_number 	= explode("WXR",$w_numb);
+						$w_numb     = $w_number[1];
+						$udate ;
+
+						$this->myupload->insertLog($date,$time,$tx_type,$card_numb,$w_numb,$tx_amount,$st_name,$odometer,$litre,$product,$type,$udate);	
+					}
+				}
+			}
+		}
+		// 3) unlink all files inside uploads/xx to avoid web snooping
+		foreach ($files as $i => $file) {
+			if (!in_array($file,array(".",".."))) {
+				unlink($pathOpen.$file);
+			}
+		}
+		rmdir($pathOpen);
+		// 4) show done
+		redirect('statement/monthly','refresh');
+	}
+
+	/*
+	2) MasterUpload 
+					*/
+	public function masterUpload(){
+		$file_name = $_FILES['upload']['name'];
+		if (!is_dir('members/')) {
+			mkdir('./members/', 0777, TRUE);
+		}
+		// set config param for CI Uploads
+		$config['upload_path'] = './members/';
+		$config['allowed_types'] = 'xlsx|csv|xls';
+		$config['encrypt_name'] = TRUE;
+		$this->load->library('upload', $config);
+		$zipfile = "upload"; // field name from the form
+
+		// show error if upload failed
+		if ($this->upload->do_upload($zipfile))
+		{
+			$array = explode(".", $file_name);
+			$name = $array[0];
+			$ext = $array[1];
+
+			// 2) process csv file -> dbase
+			$this->load->library('csvreader');
+
+			$pathOpen = $config['upload_path'] ;
+			$files = scandir($pathOpen);
+
+
+			//print_r($files);
+			foreach ($files as $i => $file) {
+				$e_ 	= explode('.', $file);
+				// making sure we only process CSV file
+				if ($e_[1] == 'xlsx') {
+					$spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load($pathOpen.$file);
+						$writer = new \PhpOffice\PhpSpreadsheet\Writer\Csv($spreadsheet);
+						$writer->setUseBOM(true);
+					$writer->save($pathOpen.'Members.csv');
+				}
+			}
+			//refresh 
+			$files = scandir($pathOpen);
+			foreach ($files as $i => $file) {
+
+				$e_ 	= explode('.', $file);
+				
+				// making sure we only process CSV file
+				if ($e_[1] == 'csv') {
+					$result = $this->csvreader->parse_file($pathOpen.$file);
+					    foreach ($result as $field) {
+					    	$name = $field['Name'];
+					    	if (!empty($name)){
+					    		    //$field[﻿'NO']; 
+    								$acc      	  = $field['ACCOUNT']; 
+    								$card_numb 	  = $field['CARD NUMBER']; 
+    								$w_numb 	  = $field['WeXaver ID NO.']; 
+    								$card_pass    = $field['PIN NO.'];
+    								$name 		  = $field['Name'];
+    								$ic_number 	  = $field['NRIC']; 
+    								$email 		  = $field['EMAIL'];
+    								$phone_no 	  = $field['PHONE']; 
+    								$address 	  = $field['ADDRESS'];
+    								$state 		  = $field['STATE'];  
+    								$postcode 	  = $field['POSTCODE'];
+    								$fuel_type 	  = $field['CHOICE OF FUEL BRAND'];
+    								$avg_spend 	  = $field['AVERAGE FUEL SPEND'];
+    								$grocer_brand = $field['CHOICE OF GROCERY BRAND'];
+    								$name_bnf 	  = $field['Name of Beneficiary'];
+    								$ic_bnf 	  = $field['Beneficiary NRIC'];
+    								$hp_bnf       = $field['Beneficiary Mobile Number']; 
+    								$relationship = $field['Relationship'];
+    								$w_id 	      = $field['Assigned Membership No. '];  
+    								$introducer   = $field['INTRODUCER'];
+    								$date_joined  = $field['DATE JOINED'];
+    								$agent_name   = $field['Agent Name'];
+    								$agent_no     = $field['Agent Number']; 
+    								//$field['Batch Date'];
+    								//$field['Membership Paid by Agent?']; 
+    								//$field['Incentive Paid to Agent?']; 
+    								//$field['Note'];
+    								$w_id 		  = preg_replace('/\s+/', '', $w_id);
+									$this->myupload->insertMembers($acc,$card_numb,$w_numb,$ic_number,$card_pass,$name,$email,$phone_no,$address,$state,$postcode,$fuel_type,$avg_spend,$grocer_brand,$name_bnf,$ic_bnf,$hp_bnf,$relationship,$w_id,$introducer,$date_joined,$agent_name,$agent_no);
+					    	}else{
+					    			//$field[﻿'NO']; 
+    								$acc      	  = $field['ACCOUNT']; 
+    								$card_numb 	  = $field['CARD NUMBER']; 
+    								$w_numb 	  = $field['WeXaver ID NO.']; 
+    								$card_pass    = $field['PIN NO.'];
+    								$name 		  = $field['Name'];
+    								$ic_number 	  = $field['NRIC']; 
+    								$email 		  = $field['EMAIL'];
+    								$phone_no 	  = $field['PHONE']; 
+    								$address 	  = $field['ADDRESS'];
+    								$state 		  = $field['STATE'];  
+    								$postcode 	  = $field['POSTCODE'];
+    								$fuel_type 	  = $field['CHOICE OF FUEL BRAND'];
+    								$avg_spend 	  = $field['AVERAGE FUEL SPEND'];
+    								$grocer_brand = $field['CHOICE OF GROCERY BRAND'];
+    								$name_bnf 	  = $field['Name of Beneficiary'];
+    								$ic_bnf 	  = $field['Beneficiary NRIC'];
+    								$hp_bnf       = $field['Beneficiary Mobile Number']; 
+    								$relationship = $field['Relationship'];
+    								$w_id 	      = $field['Assigned Membership No. '];  
+    								$introducer   = $field['INTRODUCER'];
+    								$date_joined  = $field['DATE JOINED'];
+    								$agent_name   = $field['Agent Name'];
+    								$agent_no 	  = $field['Agent Number']; 
+    								//$field['Batch Date'];
+    								//$field['Membership Paid by Agent?']; 
+    								//$field['Incentive Paid to Agent?']; 
+    								//$field['Note'];
+    								$w_id 		  = preg_replace('/\s+/', '', $w_id);
+									$this->myupload->insertUnassigned($acc,$card_numb,$w_numb,$ic_number,$card_pass,$name,$email,$phone_no,$address,$state,$postcode,$fuel_type,$avg_spend,$grocer_brand,$name_bnf,$ic_bnf,$hp_bnf,$relationship,$w_id,$introducer,$date_joined,$agent_name,$agent_no);
+					    	}
+					    }
+				}	
+			}foreach ($files as $i => $file) {
+				if (!in_array($file,array(".",".."))) {
+					unlink($pathOpen."/".$file);
+				}
+			}
+			rmdir($pathOpen);
+		}	
+	}
+	
+
+	public function delete_directory($path,$name){
+		$pathOpen = $path .'/'.$name.'/';
+		$files = scandir($pathOpen);
+		// "<pre>";print_r($files);
+		foreach ($files as $i => $file) {
+			if (!in_array($file,array(".",".."))) {
+				unlink($pathOpen."/".$file);
+			}
+		}
+		rmdir($pathOpen);
+	}
+
+	public function fuelUpload(){
+
+		// create folder inside uploads
+		if (!is_dir('uploads/images/')) {
+			mkdir('./uploads/images/', 0777, TRUE);
+		}    
+  
+       // set config param for CI Uploads
+		$config['upload_path'] 			= './uploads/images/';
+		$config['allowed_types']        = 'gif|jpg|png';
+		$config['encrypt_name'] 		= TRUE;
+		$this->load->library('upload', $config);
+
+		// field name from the form
+		$zipfile = "upload"; 
+
+		// show error if upload failed
+		if (!$this->upload->do_upload($zipfile)) {
+			echo '<h1>Error</h1>'.$this->upload->display_errors();
+			return;
+		}else{
+            $data = array('upload_data' => $this->upload->data());
+           // print_r($data);
+            foreach ($data as $key => $value) {
+            	$image_path = $value['file_name'];
+            	$name = $this->input->post('name');
+            	$price= $this->input->post('price');
+            	$month= $this->input->post('month'); 
+            	//echo $data;
+				$this->myupload->insertFuel($image_path,$name,$price,$month);
+				redirect('admin/tableFuel','refresh');
+				}
+            }
+        }	
+
+	public function groceryUpload(){
+
+		// create folder inside uploads
+		if (!is_dir('uploads/images/')) {
+			mkdir('./uploads/images/', 0777, TRUE);
+		}    
+  
+       // set config param for CI Uploads
+		$config['upload_path'] 			= './uploads/images/';
+		$config['allowed_types']        = 'gif|jpg|png';
+		$config['encrypt_name'] 		= TRUE;
+		$this->load->library('upload', $config);
+
+		// field name from the form
+		$zipfile = "upload"; 
+
+		// show error if upload failed
+		if (!$this->upload->do_upload($zipfile)) {
+			echo '<h1>Error</h1>'.$this->upload->display_errors();
+			return;
+		}else{
+            $data = array('upload_data' => $this->upload->data());
+           // print_r($data);
+            foreach ($data as $key => $value) {
+            	$image_path = $value['file_name'];
+            	$name = $this->input->post('name');
+            	$price= $this->input->post('price');
+            	$month= $this->input->post('month'); 
+            	//echo $data;
+				$this->myupload->insertGrocery($image_path,$name,$price,$month);
+				redirect('admin/tableGrocery','refresh');
+			}
+        }
+	}	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/*//upload zip file 
 	public function uploadZip(){
 		$month 	= $this->input->post('month');
 		$year	= $this->input->post('year');
@@ -162,144 +580,6 @@ class Upload extends CI_Controller {
 			}
 			rmdir($pathOpen);
 			// 4) show done
-			redirect('admin/tableLogs','refresh');
+			redirect('statement/monthly','refresh');
 		}
-	}
-	/*
-	2) MasterUpload 
-					*/
-	public function masterUpload(){
-		$file_name = $_FILES['upload']['name'];
-		if (!is_dir('members/')) {
-			mkdir('./members/', 0777, TRUE);
-		}
-		// set config param for CI Uploads
-		$config['upload_path'] = './members/';
-		$config['allowed_types'] = 'xlsx|csv|xls';
-		$config['encrypt_name'] = TRUE;
-		$this->load->library('upload', $config);
-		$zipfile = "upload"; // field name from the form
-
-		// show error if upload failed
-		if ($this->upload->do_upload($zipfile))
-		{
-			$array = explode(".", $file_name);
-			$name = $array[0];
-			$ext = $array[1];
-
-			// 2) process csv file -> dbase
-			$this->load->library('csvreader');
-
-			$pathOpen = $config['upload_path'] ;
-			$files = scandir($pathOpen);
-
-
-			//print_r($files);
-			foreach ($files as $i => $file) {
-				$e_ 	= explode('.', $file);
-				// making sure we only process CSV file
-				if ($e_[1] == 'xlsx') {
-					$spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load($pathOpen.$file);
-						$writer = new \PhpOffice\PhpSpreadsheet\Writer\Csv($spreadsheet);
-						$writer->setUseBOM(true);
-					$writer->save($pathOpen.'Members.csv');
-				}
-			}
-			//refresh 
-			$files = scandir($pathOpen);
-			foreach ($files as $i => $file) {
-
-				$e_ 	= explode('.', $file);
-				
-				// making sure we only process CSV file
-				if ($e_[1] == 'csv') {
-					$result = $this->csvreader->parse_file($pathOpen.$file);
-					    foreach ($result as $field) {
-					    	$name = $field['Name'];
-					    	if (!empty($name)){
-					    		    //$field[﻿'NO']; 
-    								$acc      	  = $field['ACCOUNT']; 
-    								$card_numb 	  = $field['CARD NUMBER']; 
-    								$w_numb 	  = $field['WeXaver ID NO.']; 
-    								$card_pass    = $field['PIN NO.'];
-    								$name 		  = $field['Name'];
-    								$ic_number 	  = $field['NRIC']; 
-    								$email 		  = $field['EMAIL'];
-    								$phone_no 	  = $field['PHONE']; 
-    								$address 	  = $field['ADDRESS'];
-    								$state 		  = $field['STATE'];  
-    								$postcode 	  = $field['POSTCODE'];
-    								$fuel_type 	  = $field['CHOICE OF FUEL BRAND'];
-    								$avg_spend 	  = $field['AVERAGE FUEL SPEND'];
-    								$grocer_brand = $field['CHOICE OF GROCERY BRAND'];
-    								$name_bnf 	  = $field['Name of Beneficiary'];
-    								$ic_bnf 	  = $field['Beneficiary NRIC'];
-    								$hp_bnf       = $field['Beneficiary Mobile Number']; 
-    								$relationship = $field['Relationship'];
-    								$w_id 	      = $field['Assigned Membership No. '];  
-    								$introducer   = $field['INTRODUCER'];
-    								$date_joined  = $field['DATE JOINED'];
-    								$agent_name   = $field['Agent Name'];
-    								$agent_no     = $field['Agent Number']; 
-    								//$field['Batch Date'];
-    								//$field['Membership Paid by Agent?']; 
-    								//$field['Incentive Paid to Agent?']; 
-    								//$field['Note'];
-    								$w_id 		  = preg_replace('/\s+/', '', $w_id);
-									$this->mymodel->insertMembers($acc,$card_numb,$w_numb,$ic_number,$card_pass,$name,$email,$phone_no,$address,$state,$postcode,$fuel_type,$avg_spend,$grocer_brand,$name_bnf,$ic_bnf,$hp_bnf,$relationship,$w_id,$introducer,$date_joined,$agent_name,$agent_no);
-					    	}else{
-					    			//$field[﻿'NO']; 
-    								$acc      	  = $field['ACCOUNT']; 
-    								$card_numb 	  = $field['CARD NUMBER']; 
-    								$w_numb 	  = $field['WeXaver ID NO.']; 
-    								$card_pass    = $field['PIN NO.'];
-    								$name 		  = $field['Name'];
-    								$ic_number 	  = $field['NRIC']; 
-    								$email 		  = $field['EMAIL'];
-    								$phone_no 	  = $field['PHONE']; 
-    								$address 	  = $field['ADDRESS'];
-    								$state 		  = $field['STATE'];  
-    								$postcode 	  = $field['POSTCODE'];
-    								$fuel_type 	  = $field['CHOICE OF FUEL BRAND'];
-    								$avg_spend 	  = $field['AVERAGE FUEL SPEND'];
-    								$grocer_brand = $field['CHOICE OF GROCERY BRAND'];
-    								$name_bnf 	  = $field['Name of Beneficiary'];
-    								$ic_bnf 	  = $field['Beneficiary NRIC'];
-    								$hp_bnf       = $field['Beneficiary Mobile Number']; 
-    								$relationship = $field['Relationship'];
-    								$w_id 	      = $field['Assigned Membership No. '];  
-    								$introducer   = $field['INTRODUCER'];
-    								$date_joined  = $field['DATE JOINED'];
-    								$agent_name   = $field['Agent Name'];
-    								$agent_no 	  = $field['Agent Number']; 
-    								//$field['Batch Date'];
-    								//$field['Membership Paid by Agent?']; 
-    								//$field['Incentive Paid to Agent?']; 
-    								//$field['Note'];
-    								$w_id 		  = preg_replace('/\s+/', '', $w_id);
-									$this->mymodel->insertUnassigned($acc,$card_numb,$w_numb,$ic_number,$card_pass,$name,$email,$phone_no,$address,$state,$postcode,$fuel_type,$avg_spend,$grocer_brand,$name_bnf,$ic_bnf,$hp_bnf,$relationship,$w_id,$introducer,$date_joined,$agent_name,$agent_no);
-					    	}
-					    }
-				}	
-			}foreach ($files as $i => $file) {
-				if (!in_array($file,array(".",".."))) {
-					unlink($pathOpen."/".$file);
-				}
-			}
-			rmdir($pathOpen);
-		}	
-	}
-	
-
-	public function delete_directory($path,$name){
-		$pathOpen = $path .'/'.$name.'/';
-		$files = scandir($pathOpen);
-		// "<pre>";print_r($files);
-		foreach ($files as $i => $file) {
-			if (!in_array($file,array(".",".."))) {
-				unlink($pathOpen."/".$file);
-			}
-		}
-		rmdir($pathOpen);
-	}	
-}
+	}*/

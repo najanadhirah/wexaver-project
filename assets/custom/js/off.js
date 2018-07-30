@@ -65,7 +65,7 @@ var Custom = function () {
 
             if (data["status"] === "Success")
             {
-                location.replace("http://192.168.0.106:84/");
+                location.replace("http://192.168.0.106:82/welcome/success");
             }
             else
             {

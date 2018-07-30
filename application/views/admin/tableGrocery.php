@@ -8,7 +8,7 @@
                                     <i class="fa fa-circle"></i>
                                 </li>
                                 <li>
-                                    <span>Summary</span>
+                                    <span>Grocery</span>
                                 </li>
                             </ul>
                         </div>
@@ -24,7 +24,7 @@
                                     <div class="portlet-body">
                                         <div class="table-toolbar">
                                             <div class="row">
-                                                <div class="col-md-6"><h1 class="page-title">Summary</h1></div>
+                                                <div class="col-md-6"><h1 class="page-title">Grocery</h1></div>
                                                 <div class="col-md-6">
                                                     <div class="btn-group pull-right">
                                                         <button class="btn green btn-outline dropdown-toggle" data-toggle="dropdown">Tools
@@ -56,9 +56,9 @@
                                             <tbody>
                                                 <?php foreach ($result as $data ) { ?>
                                                 <tr>
-                                                    <td> <?php echo $data['name']; ?> </td>
-                                                    <td><img src="<?php echo base_url() ?>/<?php echo $data['logo']; ?>" alt="Mountain View">  </td>
-                                                    <td> <?php echo $data['description']; ?> </td>
+                                                    <td> <?php echo $data['brand_name']; ?> </td>
+                                                    <td><img height="150" width="100" src="<?php echo base_url() ?>uploads/images/<?php echo $data['image_path']; ?>" alt="Mountain View">  </td>
+                                                    <td> <?php echo $data['price_perlitre']; ?> </td>
                                                 </tr>
                                                 <?php } ?>
                                             </tbody>

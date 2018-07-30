@@ -18,24 +18,6 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
-	{	
-		$data['css_page_level_plugins'] = '
-		<link href="/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css" rel="stylesheet" type="text/css" />
-        <link href="/assets/global/plugins/morris/morris.css" rel="stylesheet" type="text/css" />
-        <link href="/assets/global/plugins/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css" />
-        <link href="/assets/global/plugins/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css" />
-		';
-		$data['css_page_level_styles'] = '';
-		$data['js_page_level_plugins'] = '';
-		$data['js_page_level_scripts'] = '';
-		//1)if set session success and get roles session equal to 1
-		
-			$this->load->view('admin/header',$data);
-			$this->load->view('admin/welcome_message',$data);
-			$this->load->view('admin/footer',$data);
-		
-	}
 
 	public function home()
 	{	
@@ -94,6 +76,7 @@ class Welcome extends CI_Controller {
 			$petrol_spend = $this->input->post('petrol_spend');
 
 			$this->mymodel->insertSme($company_name,$name,$email,$phone_number,$address,$postcode,$petrol_spend);
+			redirect('welcome/success','refresh');
 		}
 		
 		$this->load->view('header');
