@@ -21,39 +21,39 @@ class Welcome extends CI_Controller {
 
 	public function home()
 	{	
-		$this->load->view('header');
+		$this->load->view('welcome/inc/header');
 		$this->load->view('index');
-		$this->load->view('footer');
+		$this->load->view('welcome/inc/footer');
 	}
 	public function aboutus()
 	{	
-		$this->load->view('header');
+		$this->load->view('welcome/inc/header');
 		$this->load->view('aboutUs');
-
+		$this->load->view('welcome/inc/footer');
 	}
 	public function fuel()
 	{	
-		$this->load->view('header');
+		$this->load->view('welcome/inc/header');
 		$this->load->view('fuel');
-		$this->load->view('footer');
+		$this->load->view('welcome/inc/footer');
 	}
 	public function motor()
 	{	
-		$this->load->view('header');
+		$this->load->view('welcome/inc/header');
 		$this->load->view('motor');
-		$this->load->view('footer');
+		$this->load->view('welcome/inc/footer');
 	}
 	public function grocer()
 	{	
-		$this->load->view('header');
+		$this->load->view('welcome/inc/header');
 		$this->load->view('grocer');
-		$this->load->view('footer');
+		$this->load->view('welcome/inc/footer');
 	}
 	public function insurance()
 	{	
 		$this->load->view('header');
 		$this->load->view('insurance');
-		$this->load->view('footer');
+		$this->load->view('welcome/inc/footer');
 	}
 
 	public function sme(){

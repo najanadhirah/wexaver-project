@@ -4,6 +4,90 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User extends CI_Controller {
 
+	public function index(){
+
+		$email = $this->session->userdata('email');
+
+
+		$data['profile'] = $this->myuser->getUser($email);
+
+
+		if (!empty($this->session->userdata('email'))) {
+				
+			$this->load->view('user/profile',$data);
+
+		}else{
+			$data['error'] = "error";
+			$this->load->view('user/login',$data);
+		}
+		
+	}
+
+	public function funcForgot(){
+		$this->form_validation->set_rules('password', 'New Password', 'trim|required|min_length[5]|max_length[12]');
+		$this->form_validation->set_rules('cpassword', 'Confirm Password', 'trim|required|min_length[5]|max_length[12]|matches[password]');
+
+		if ($this->form_validation->run() === TRUE) {
+			$password = $this->input->post('password');
+			$email = $this->input->post('email');
+
+			$this->myuser->update_password($email,$password);
+
+			$data['error'] = "success";
+			$this->load->view('user/login',$data);
+		}else{
+			$data['error'] = "";
+			$this->load->view('user/login',$data);
+		}
+	}
+
+	public function forgotPass(){
+		$this->form_validation->set_rules('email', 'Email', 'trim|required|callback_checkEmail');
+
+		if ($this->form_validation->run() === TRUE) {
+			$data['css_page_level_plugins'] = 
+			'
+				<link href="/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css" rel="stylesheet" type="text/css" />
+        		<link href="/assets/global/plugins/morris/morris.css" rel="stylesheet" type="text/css" />
+        		<link href="/assets/global/plugins/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css" />
+        		<link href="/assets/global/plugins/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css" />
+			';
+			$data['css_page_level_styles'] = '';
+			$data['js_page_level_plugins'] = '';
+			$data['js_page_level_scripts'] = '';
+
+			$data['Email'] = $this->input->post('email'); 
+
+			$this->load->view('user/forgotPassword',$data);
+
+		}else{
+			$data['error'] = "";
+			$this->load->view('user/login',$data);
+		}
+	}
+
+	public function login(){
+
+		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+		$this->form_validation->set_rules('password', 'Password', 'trim|required|callback_checkUser');
+
+		if ($this->form_validation->run() == TRUE) {
+
+			$email 	  = $this->input->post('email');
+
+			$this->mainlib->setSessionUser($email);
+
+			if (!empty($this->session->userdata('email'))) {
+				
+				$this->index();
+			}
+
+		}else{
+			$data['error'] = "";
+			$this->load->view('user/login',$data);
+		}
+	}
+
 	public function editProfile($id){
 
 		$this->form_validation->set_rules('fullName', 'Full Name', 'trim|required|min_length[5]|max_length[12]');
@@ -63,4 +147,29 @@ class User extends CI_Controller {
       	$parent_data = array('row'=>$data6,'user' => $data,'summaries'=> $data2, 'summary' => $data3,'reload'=>$data5,'purchase'=>$data4);
 		$this->load->view('userPdf',$parent_data);
 	}
+
+
+	/*callbacks*/
+
+	public function checkUser(){
+		$ispassOk = $this->mymodel->userLogin($this->input->post('email'),$this->input->post('password'));
+        if ($ispassOk) {
+          return TRUE;
+        }
+        else{
+        	$this->form_validation->set_message('checkUser', 'You have input the wrong password');
+          return FALSE;
+        }
+	}
+
+	public function checkEmail(){
+  		$issaemailoK = $this->myuser->checkEmail($this->input->post('email'));
+  		if ($issaemailoK) {
+          	return TRUE;
+        }
+        else{
+        	$this->form_validation->set_message('checkEmail', 'You have input the wrong Email');
+          	return FALSE;
+        }
+  	}
 }

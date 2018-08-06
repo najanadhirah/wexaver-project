@@ -1,4 +1,4 @@
-<?php
+  <?php
 
 	/**
 	 *  controller for admin
@@ -75,7 +75,8 @@
 				$this->load->view('admin/forgotPassword',$data);
 
 			}else{
-				$this->load->view('admin/login');
+				$data['success'] = "";
+				$this->load->view('admin/login',$data);
 			}
 		}
 
