@@ -196,23 +196,23 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <div class="col-md-9">
                                                 <div class="row">
                                                     <div class="col-md-8 profile-info">
-                                                        <h1 class="font-green sbold uppercase"><?php echo $row['w_id'];?> [ <?php echo $row['package'] ?> ] </h1>
-                                                        <h1 class="font-green sbold uppercase"><?php echo $row['name'];?></h1>
-                                                        <p> <?php echo $row['address']?></p>
+                                                        <h1 class="font-green sbold uppercase"><?php echo $info['w_id'];?> [ <?php echo $info['package'] ?> ] </h1>
+                                                        <h1 class="font-green sbold uppercase"><?php echo $info['name'];?></h1>
+                                                        <p> <?php echo $info['address']?></p>
                                                         <p>
-                                                            <a href="javascript:;"><?php echo $row['email'];?> </a>
+                                                            <a href="javascript:;"><?php echo $info['email'];?> </a>
                                                         </p>
                                                         <ul class="list-inline">
                                                             <li>
-                                                                <i class="fa fa-map-marker"></i> <?php echo $row['state']; ?> </li>
+                                                                <i class="fa fa-map-marker"></i> <?php echo $info['state']; ?> </li>
                                                             <li>
-                                                                <i class="fa fa-calendar"></i><?php echo $row['date_joined']?></li>
+                                                                <i class="fa fa-calendar"></i><?php echo $info['date_joined']?></li>
                                                             <li>
-                                                                <i class="fa fa-phone"></i> <?php echo $row['phone_no']; ?> </li>
+                                                                <i class="fa fa-phone"></i> <?php echo $info['phone_no']; ?> </li>
                                                             <li>
-                                                                <i class="fa fa-car"></i> <?php echo $row['vmodel']; ?></li>
+                                                                <i class="fa fa-car"></i> <?php echo $info['vmodel']; ?></li>
                                                             <!-- <li>
-                                                                <i class="fa fa-heart"></i> <?php echo $row['vplate']; ?> </li> -->
+                                                                <i class="fa fa-heart"></i> <?php echo $info['vplate']; ?> </li> -->
                                                         </ul>
                                                     </div>
                                                     <!--end col-md-8-->
@@ -616,7 +616,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                            <div class="portlet light bordered">
                                                 <div class="portlet-body form">
                                                     <!-- BEGIN FORM-->
-                                                    <form role="form" action="<?php echo base_url()?>user/editProfile/<?php echo $row['id']?>" method="post">
+                                                    <form role="form" action="<?php echo base_url()?>user/editProfile/<?php echo $info['id']?>" method="post">
                                                         <div class="form-body">
                                                             <h3 class="form-section">Person Info</h3>
                                                             <div class="row">
@@ -839,10 +839,10 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 </tr>
                                             </tfoot>
                                             <tbody>
-                                                 <?php foreach ($user as $key => $row) { ?>
+                                                 <?php foreach ($pdf as $key => $row) { ?>
                                                 <tr>
                                                     <td><?php echo $row['upload_date']?></td>
-                                                    <td><a href="<?php echo base_url()?>user/userPdf/<?php echo $row['upload_date']?>" type="button" class="btn blue btn-outline"> View Pdf</a></td>
+                                                    <td><a href="<?php echo base_url()?>statement/pdf/<?php echo $info['card_numb']?>" type="button" class="btn blue btn-outline"> View Pdf</a></td>
                                                 </tr>
                                             <?php } ?>
                                             </tbody>

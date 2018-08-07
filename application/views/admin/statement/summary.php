@@ -59,7 +59,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?php foreach ($result as $data) {?>
+                                                <?php foreach ($result as $data) { ?>
                                                 <tr>
                                                     <td><?php echo $data['wexaver_id']; ?> </td>
                                                     <td><?php echo $data['email']; ?> </td>
