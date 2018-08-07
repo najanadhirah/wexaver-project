@@ -58,9 +58,9 @@ class Upload extends CI_Controller {
 
 		//1)if set session success and get roles session equal to 1
 		if ($this->session->userdata('roles') === 'admin') {
-		$this->load->view('admin/header',$data);
+		$this->load->view('admin/inc/header',$data);
 		$this->load->view('admin/upload/fuel',$data);
-		$this->load->view('admin/footer',$data);
+		$this->load->view('admin/inc/footer',$data);
 		}else{
 			$this->session->sess_destroy();
 			redirect('admin/login','refresh');
@@ -78,9 +78,9 @@ class Upload extends CI_Controller {
 
 		//1)if set session success and get roles session equal to 1
 		if ($this->session->userdata('roles') === 'admin') {
-		$this->load->view('admin/header',$data);
+		$this->load->view('admin/inc/header',$data);
 		$this->load->view('admin/upload/grocery',$data);
-		$this->load->view('admin/footer',$data);
+		$this->load->view('admin/inc/footer',$data);
 		}else{
 			$this->session->sess_destroy();
 			redirect('admin/login','refresh');

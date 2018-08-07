@@ -4,7 +4,7 @@
                         <div class="page-bar">
                             <ul class="page-breadcrumb">
                                 <li>
-                                    <a href="index.html">Table</a>
+                                    <a href="#">Table</a>
                                     <i class="fa fa-circle"></i>
                                 </li>
                                 <li>

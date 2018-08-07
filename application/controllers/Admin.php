@@ -161,7 +161,7 @@
 			$data['js_page_level_scripts'] = '<script src="/assets/pages/scripts/table-datatables-responsive.min.js" type="text/javascript"></script>';
 			$data['acc_type']	= "admin";
 
-			$data['result'] = $this->mymodel->getMembers();
+			$data['result'] = $this->myadmin->getMembers();
 
 			if ($this->session->userdata('roles') === 'admin' || 'master') {
 				$this->load->view('admin/inc/header',$data);

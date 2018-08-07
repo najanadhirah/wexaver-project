@@ -10,6 +10,11 @@
 		{
 			# code...
 		}*/
+		public function getMembers(){
+			$query = $this->db->get('membership');
+			return $query->result_array();
+		}
+
 		public function getAdmin($username){
 			$query = $this->db->get_where('admin',array('username' => $username));
 			return $query->row_array();
