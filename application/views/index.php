@@ -5,41 +5,45 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 <div id="demo" class="carousel slide" data-ride="carousel">
-  <ul class="carousel-indicators">
+  <!-- <ul class="carousel-indicators">
     <li data-target="#demo" data-slide-to="0" class="active"></li>
     <li data-target="#demo" data-slide-to="1"></li>
     <li data-target="#demo" data-slide-to="2"></li>
-  </ul>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="../assets/home/images/header.jpg" alt="Los Angeles" width="1366"style="max-height: 680px;">
-      <div class="carousel-caption" style="margin-bottom: 10%; ">
-        <h1>PETROL & DIESEL</h1>
-        <p style="font-size: 25px">Jimat 3 sen setiap liter dengan WeXaver !</p>
-      </div>   
-    </div>
-    <div class="carousel-item">
-      <img src="../assets/home/images/header.jpg" alt="Chicago" width="1366" style="max-height: 680px;">
-      <div class="carousel-caption" style="margin-bottom: 10%">
-        <h1>INSURAN KENDERAAN</h1>
-        <p style="font-size: 25px">Jimat 20% dengan WeXaver !</p>
-      </div>   
-    </div>
-    <div class="carousel-item">
-      <img src="../assets/home/images/header.jpg" alt="New York" width="1366" style="max-height: 680px;">
-      <div class="carousel-caption" style="margin-bottom: 10%">
-        <h1>BARANG KEPERLUAN HARIAN</h1>
-        <p style="font-size: 25px">Jimat 30 sen untuk setiap barang dengan WeXaver !</p>
-      </div>   
-    </div>
+  </ul> -->
+
+  <div class="row">
+   
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../assets/home/images/header.jpg" width="1366"style="max-height: 680px;">
+          <div class="carousel-caption">
+            <h1>PETROL & DIESEL</h1>
+            <p >Jimat 3 sen setiap liter dengan WeXaver !</p>
+          </div>   
+        </div>
+        <div class="carousel-item">
+          <img src="../assets/home/images/header.jpg" width="1366" style="max-height: 680px;">
+          <div class="carousel-caption">
+            <h1>INSURAN KENDERAAN</h1>
+            <p >Jimat 20% dengan WeXaver !</p>
+          </div>   
+        </div>
+        <div class="carousel-item">
+          <img src="../assets/home/images/header.jpg" width="1366" style="max-height: 680px;">
+          <div class="carousel-caption" style="padding-top: 50%">
+            <h1>KEPERLUAN HARIAN</h1>
+            <p>Jimat 30 sen untuk setiap barang dengan WeXaver !</p>
+          </div>   
+        </div>
+      </div>
   </div>
-  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#demo" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
-</div>
+      <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
 
 
     <!-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
