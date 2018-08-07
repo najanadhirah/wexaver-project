@@ -13,7 +13,14 @@ class User extends CI_Controller {
 
 
 		if (!empty($this->session->userdata('email'))) {
-				
+			
+			$result = $this->myuser->getUser($email);
+
+			$card_numb = $result['card_numb'];
+
+			$data['info'] = $this->myuser->getUser($email);
+			$data['pdf']  = $this->myuser->getInfo($card_numb);
+
 			$this->load->view('user/profile',$data);
 
 		}else{

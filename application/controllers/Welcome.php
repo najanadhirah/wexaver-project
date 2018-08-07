@@ -79,8 +79,8 @@ class Welcome extends CI_Controller {
 			redirect('welcome/success','refresh');
 		}
 		
-		$this->load->view('header');
-		$this->load->view('sme');
+		$this->load->view('welcome/inc/header');
+		$this->load->view('welcome/sme');
 	}
 
 	public function table(){
@@ -88,55 +88,13 @@ class Welcome extends CI_Controller {
     	$data['row'] = $query->result_array();
     	//var_dump($data);
     	$this->load->view('header');
-		$this->load->view('table1',$data);
+		$this->load->view('user/table1',$data);
 		$this->load->view('footer');
-	}
-
-	public function profile(){
-		$id = $this->session->userdata('id');
-		$query = $this->db->get_where('membership', array('id' => $id));
-    	$data = $query->row_array();
-    	$w_id = $data['w_id'];
-    	$data1 = $this->mymodel->select_upload($w_id);
-    	$parent_data = array('row'=>$data,'user' => $data1);
-		$this->load->view('profile',$parent_data);
-	}
-
-	public function loginUser(){
-		// 1) validate all from input
-		$this->form_validation->set_rules('email', 'Email', 'trim|required');
-		$this->form_validation->set_rules('password', 'Password', 'trim|required|callback_checkUser');
-		// 2) checking the validation input run true or not
-		if ($this->form_validation->run() === TRUE) {
-			// 1) delcare the variable from form input 
-			$email = $this->input->post('email');
-			//2)*** set sessions based on username
-      		$this->mainlib->setSessionUser($email);
-      		//3)*** redirect to welcome page
-            $this->profile();
-		}
-		else{
-			$this->load->view('loginUser');
-		}
-		//$this->load->view('loginUser');
 	}
 
 	public function success(){
 		$this->load->view('success');
 	}
-	/****************
-	**  CALLBACKS  ** 
-	*****************/
 
-	public function checkUser(){
-    	$ispassOk = $this->mymodel->userLogin($this->input->post('email'),$this->input->post('password'));
-        if ($ispassOk) {
-          return TRUE;
-        }
-        else{
-        	$this->form_validation->set_message('checkAdmin', 'You have input the wrong password');
-          return FALSE;
-        }
-  	}
 
 }
