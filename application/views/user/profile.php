@@ -631,8 +631,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                                                     <div class="form-group">
                                                                         <label class="control-label">Phone Number</label>
                                                                         <div class="row">
-                                                                            <div class="col-md-2"><input type="tel" maxlength="3" name="firstTel" class="form-control" placeholder="" required></div>
-                                                                            <div class="col-md-5"><input type="tel" maxlength="8" minlength="7" name="secondTel" class="form-control" placeholder="" required></div>
+                                                                            <div class="col-md-3"><input type="tel" maxlength="3" name="firstTel" class="form-control" placeholder="" required></div>
+                                                                            <div class="col-md-9"><input type="tel" maxlength="8" minlength="7" name="secondTel" class="form-control" placeholder="" required></div>
                                                                         </div>
                                                                     </div>
                                                                 </div>

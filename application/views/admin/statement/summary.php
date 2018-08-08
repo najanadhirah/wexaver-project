@@ -60,7 +60,7 @@
                                             </thead>
                                             <tbody>
                                                 <?php foreach ($result as $data) { 
-                                                    if($data['email']  != null )?>
+                                                   if ( $data['wexaver_id'] != null) { ?>
                                                 <tr>
                                                     <td><?php echo $data['wexaver_id']; ?> </td>
                                                     <td><?php echo $data['email']; ?> </td>
@@ -74,7 +74,7 @@
                                                         <a href="<?php echo base_url()?>statement/pdf/<?php echo $data['card_numb']?>" class="btn dark btn-outline"> View PDF </a>
                                                     </td>
                                                 </tr>
-                                                <?php } } ?>
+                                                <?php  } } ?>
                                             </tbody>
                                         </table>
                                     </div>

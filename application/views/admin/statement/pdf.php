@@ -53,11 +53,23 @@ $tbl ='
  foreach ($usage as $key => $values) {
 
     if ($values['tx_type'] === 'Purchase') {
+      $date             = $values['date'];
+      $time             = $values['time'];
+      $transaction_type = $values['tx_type'];
+      $product          = $values['product'];
+      $litre            = $values['litre'];
+      $tx_amount        = number_format( (float) $values['tx_amount'], 2, '.', '');
+      $st_name          = $values['st_name'];
+      $total_litre      = number_format( (float) $rebate['total_litre'], 2, '.', '');
+      $total_topup      = number_format( (float) $rebate['total_topup'], 2, '.', '');
+      $total_cashback   = number_format( (float) $rebate['total_transaction'], 2, '.', '');
+      $bonus_cashback   = number_format( (float) $rebate['rebate_topup'], 2, '.', '');
+      $usage_cashback   = $total_cashback - $bonus_cashback;
     }
 
     $tbl .= '<tr>
           <td align="center">'.$date.'</td>
-          <td align="center">'.$tx_type.'</td>
+          <td align="center">'.$transaction_type.'</td>
           <td align="center">'.$product.'</td>
           <td align="right">'.$litre.'</td>
           <td align="right">'.$tx_amount.'</td>
@@ -69,7 +81,7 @@ $tbl ='
            <td></td>
            <td align="right" colspan="2" ><b>Total Purchase</b></td>
            <td align="right" ><b> '.$total_litre.' </b></td>
-           <td align="right" ><b>RM '.$amount.'</b></td>
+           <td align="right" ><b>RM '.$total_cashback.'</b></td>
            <td></td>
          </tr>
           <tr>
@@ -98,8 +110,7 @@ $tbl ='
                 <p>Kind Regards, <br><b>WeXaver - Smart Saver </b>';
 
 $pdf->writeHTML($header . $tbl_header . $tbl . $tbl2 . $tbl_footer .$footer, true, false, false, false, '');
-$user = $user['w_numb'];
-$pdf->Output('Usage Details WXR'.$user.' '.$datebeforesplit.'.pdf', 'I'); 
+$pdf->Output('Usage Details WXR'.$profile['w_numb'].'.pdf', 'I');
 
 }else {
 $pdf->AddPage();
@@ -246,7 +257,7 @@ $pdf->writeHTML($tbl_header . $tbl_footer . $tbl_header1 . $tbl1 . $tbl21 . $tbl
 $pdf->setPage(1, true);
 $pdf->setPage(2, true);
 
-$pdf->Output('Usage Details '.$rebate['upload_date'].'.pdf', 'I');
+$pdf->Output('Usage Details WXR'.$profile['w_numb'].'.pdf', 'I');
 }
 
 ?>
