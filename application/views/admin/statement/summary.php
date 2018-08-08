@@ -60,7 +60,12 @@
                                             </thead>
                                             <tbody>
                                                 <?php foreach ($result as $data) { 
+<<<<<<< HEAD
                                                    if ( $data['wexaver_id'] != null) { ?>
+=======
+                                                    if($data['email']  != null ){
+                                                        ?>
+>>>>>>> 9b7252922da934a0655491adf206afbf238cfb34
                                                 <tr>
                                                     <td><?php echo $data['wexaver_id']; ?> </td>
                                                     <td><?php echo $data['email']; ?> </td>
