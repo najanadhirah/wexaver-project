@@ -15,7 +15,7 @@ class Register extends CI_Controller {
 	public function registerOnline($package){
 		$data = $this->uri->segment(3);
 		echo $data;
-		$this->load->view('registerOnline',$data);
+		$this->load->view('user/registerOnline',$data);
 	}
 	/* END OF REGISTER*/
 

@@ -87,9 +87,9 @@ class Welcome extends CI_Controller {
 		$query = $this->db->get('package');
     	$data['row'] = $query->result_array();
     	//var_dump($data);
-    	$this->load->view('inc/header');
+    	
 		$this->load->view('user/table1',$data);
-		$this->load->view('inc/footer');
+		
 	}
 
 	public function success(){

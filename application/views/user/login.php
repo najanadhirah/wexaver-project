@@ -98,7 +98,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 </div>
                 <div class="create-account">
                     <p> Don't have an account yet ?&nbsp;
-                        <a href="javascript:;" id="register-btn"> Create an account </a>
+                        <a href="<?php echo base_url()?>welcome/table" id="register-btn"> Create an account </a>
                     </p>
                 </div>
             </form>
@@ -121,7 +121,7 @@ License: You must have a valid license purchased only from themeforest(the above
         </div>
         <!-- END LOGIN -->
         <!-- BEGIN COPYRIGHT -->
-        <div class="copyright"> 2018 &copy; Wexaver - Admin Dashboard Template. </div>
+        <div class="copyright"> 2018 &copy; Wexaver - User Login. </div>
         <!-- END COPYRIGHT -->
         <!--[if lt IE 9]>
 <script src="../assets/global/plugins/respond.min.js"></script>
