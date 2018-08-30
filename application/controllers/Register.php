@@ -20,7 +20,7 @@ class Register extends CI_Controller {
 	/* END OF REGISTER*/
 
 	public function registerOffline(){
-		$this->load->view('registerOffline');
+		$this->load->view('user/registerOffline');
 	}
 
 	public function ajaxOnline()

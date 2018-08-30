@@ -453,7 +453,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         <br> email ( <b>welcome@wexaver.com</b> ) or whatsapp ( <b>013-2755329</b> ).</p>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="submit" id="register-submit-btn" class="btn dark btn-outline" data-dismiss="modal">Close</button>
+                                                    <button type="submit" id="register-submit-btn" onclick="redirect();" class="btn dark btn-outline" data-dismiss="modal">Close</button>
                                                 </div>
                                             </div>
                                             <!-- /.modal-content -->
@@ -505,7 +505,12 @@ License: You must have a valid license purchased only from themeforest(the above
         <script src="/assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
         <script src="/assets/layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script>
         <!-- END THEME LAYOUT SCRIPTS -->
-
+        <script>
+            function redirect() {                     
+                var base_url= "<?php echo site_url('welcome/success');?>";
+                window.location.href = base_url;
+            }
+        </script>
 <!-- End -->
 </body>
 
