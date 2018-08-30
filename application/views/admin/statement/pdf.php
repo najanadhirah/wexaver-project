@@ -65,7 +65,7 @@ $tbl ='
       $total_cashback   = number_format( (float) $rebate['total_transaction'], 2, '.', '');
       $bonus_cashback   = number_format( (float) $rebate['rebate_topup'], 2, '.', '');
       $usage_cashback   = $total_cashback - $bonus_cashback;
-    }
+    
 
     $tbl .= '<tr>
           <td align="center">'.$date.'</td>
@@ -75,9 +75,8 @@ $tbl ='
           <td align="right">'.$tx_amount.'</td>
           <td align="center">'.$st_name.'</td>
         </tr>';
- }
-
- $tbl2 ='<tr>
+    
+    $tbl2 ='<tr>
            <td></td>
            <td align="right" colspan="2" ><b>Total Purchase</b></td>
            <td align="right" ><b> '.$total_litre.' </b></td>
@@ -105,7 +104,8 @@ $tbl ='
            <td></td>
            <td></td>
          </tr>';
-
+    }
+  }
  $footer = '<p>Your usage cashback amount for period '.$rebate['upload_date'].' have been credited to your fuel card on 1st July 2018.</br> <p>Your promotion bonus cashback amount for period '.$rebate['upload_date'].' will be credited to your fuel card by 10th July 2018.</p>Many thanks for your continuous support to WeXaver.</p>
                 <p>Kind Regards, <br><b>WeXaver - Smart Saver </b>';
 

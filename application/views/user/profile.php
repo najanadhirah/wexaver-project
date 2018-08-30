@@ -178,10 +178,10 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <li>
                                         <a href="#tab_1_6" data-toggle="tab"> History </a>
                                     </li>
-                                    <li>
-                                        <a href="#tab_1_3" data-toggle="tab"> Account </a>
-                                    </li>
-                                    
+                                <!--  <li>
+                                    <a href="#tab_1_3" data-toggle="tab"> Account </a>
+                                </li>
+                                    -->
                                 </ul>
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="tab_1_1">
@@ -842,7 +842,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                  <?php foreach ($pdf as $key => $row) { ?>
                                                 <tr>
                                                     <td><?php echo $row['upload_date']?></td>
-                                                    <td><a href="<?php echo base_url()?>statement/pdf/<?php echo $info['card_numb']?>" type="button" class="btn blue btn-outline"> View Pdf</a></td>
+                                                    <td><a href="<?php echo base_url()?>user/userPdf/<?php echo $info['card_numb']?>/<?php echo $row['refer_date']?>" type="button" target='_blank' class="btn blue btn-outline"> View Pdf</a></td>
                                                 </tr>
                                             <?php } ?>
                                             </tbody>

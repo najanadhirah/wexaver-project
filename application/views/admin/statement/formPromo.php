@@ -75,7 +75,8 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <input type="hidden" name="month" value="<?php echo $month ?>">
+                                                            <input type="hidden" name="month" value="<?php echo $month ?>">
+                                                            <input type="hidden" name="upload_date" value="<?php echo $upload_date ?>">
                                                         <div id="promo-result"></div>
                                                         <div class="form-actions">
                                                             <div class="row">

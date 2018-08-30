@@ -27,6 +27,7 @@ class Mainlib {
   		$user = $this->CI->myuser->getUser($email);
 
   		$sess_array = array(
+        'card_numb'=>$user['card_numb'],
         'id'      => $user['id'],
         'email'   => $user['email'],
   		);

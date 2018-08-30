@@ -69,7 +69,7 @@
     		$this->db->insert('unassigned',$data);
   		}
 
-		public function insertLog($date,$time,$tx_type,$card_numb,$w_numb,$tx_amount,$st_name,$odometer,$litre,$product,$type,$udate){
+		public function insertLog($date,$time,$tx_type,$card_numb,$w_numb,$tx_amount,$st_name,$odometer,$litre,$product,$type,$udate,$month){
 			$data = array(
       			'date'        => $date,
       			'time'        => $time,
@@ -83,6 +83,7 @@
       			'product'     => $product,
       			'type'        => $type,
       			'upload_date' => $udate,
+            'refer_date'  => $month,
       		);
     		$this->db->insert('log',$data);
 		}

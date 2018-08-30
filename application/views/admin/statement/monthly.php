@@ -67,7 +67,7 @@
                                 </div>
                                 <!-- END EXAMPLE TABLE PORTLET-->
                                 <form method="post" action="<?php echo base_url()?>statement/promo/">
-                                    
+                                    <input type="hidden" name="month" value="<?php echo $month ?>">
                                     <input type="hidden" name="upload_date" value="<?php echo $upload_date ?>">                               
                                 <div align="center"><button  class="btn green btn-outline" type="submit" > Submit </button</div>
                                 </form>

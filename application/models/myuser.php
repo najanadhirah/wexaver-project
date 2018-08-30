@@ -18,7 +18,7 @@
 
 		public function getInfo($card_numb){
 			$this->db->distinct();
-			$this->db->select('upload_date');
+			$this->db->select('refer_date,upload_date');
 			$query = $this->db->get_where('log',array('card_numb'=>$card_numb));
 			return $query->result_array();
 		}

@@ -135,24 +135,20 @@ class User extends CI_Controller {
     	redirect('Welcome/loginUser', 'refresh');
 	}
 
-	public function userPdf($date){
-		$id = $this->session->userdata('id');
-		$query = $this->db->get_where('membership', array('id' => $id));
-    	$data = $query->row_array();
-    	$w_id = $data['w_id'];
+	public function userPdf($card_numb){
+		$month = end($this->uri->segment_array());
 		$this->load->library('Pdf');
-      	//$data  = $this->mymodel->getTemps($w_id);
-      	$query =  $this->db->get_where('log', array('w_id' => $w_id,'upload_date' => $date));
-      	$data2 = $query->result_array();
-      	$query =  $this->db->get_where('log', array('w_id' => $w_id,'upload_date' => $date));
-      	$data3 =  $query->row_array();
-      	$data4 = $this->mymodel->select_sump($w_id);
-      	$data5 = $this->mymodel->select_sumr($w_id);
-      	$data6  = $this->mymodel->getTemps($w_id);
 
-      	//$parent_data = array('user' => $data,'summaries'=> $data2, 'summary' => $data3);
-      	$parent_data = array('row'=>$data6,'user' => $data,'summaries'=> $data2, 'summary' => $data3,'reload'=>$data5,'purchase'=>$data4);
-		$this->load->view('userPdf',$parent_data);
+		$query = $this->db->get_where('rebate', array('card_numb' => $card_numb, 'refer_date' => $month));
+		$data['rebate'] = $query->row_array();
+
+		$query = $this->db->get_where('membership', array('card_numb' => $card_numb));
+    	$data['profile'] = $query->row_array();
+
+    	$query = $this->db->get_where('log', array('card_numb' => $card_numb,'refer_date' => $month));
+    	$data['usage']   = $query->result_array();
+
+		$this->load->view('user/userPdf.php',$data);
 	}
 
 

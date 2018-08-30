@@ -23,21 +23,21 @@
       return $result;
     }
 
-    public function select_distinct($month){
+    public function select_distinct($upload_date){
       $this->db->distinct();
       $this->db->select('w_id,card_numb');
-      $query = $this->db->get_where('log',array('upload_date' => $month));
+      $query = $this->db->get_where('log',array('upload_date' => $upload_date));
       return $query->result_array();
     }
 
-    public function sum_total($card_numb,$month){
-      $sql = "SELECT SUM(litre) AS total_litre ,SUM(tx_amount) AS total_transaction FROM log WHERE upload_date = '$month' AND card_numb = '$card_numb' AND tx_type = 'Purchase' ";
+    public function sum_total($card_numb,$upload_date){
+      $sql = "SELECT SUM(litre) AS total_litre ,SUM(tx_amount) AS total_transaction FROM log WHERE upload_date = '$upload_date' AND card_numb = '$card_numb' AND tx_type = 'Purchase' ";
       $query = $this->db->query($sql);
       return $query->result_array();
     }
 
-    public function sum_topup($card_numb,$month){
-      $sql = "SELECT SUM(tx_amount) AS total_topup FROM log WHERE upload_date = '$month' AND card_numb = '$card_numb' AND tx_type = 'Reload' ";
+    public function sum_topup($card_numb,$upload_date){
+      $sql = "SELECT SUM(tx_amount) AS total_topup FROM log WHERE upload_date = '$upload_date' AND card_numb = '$card_numb' AND tx_type = 'Reload' ";
       $query = $this->db->query($sql);
       return $query->result_array();
     }
@@ -49,10 +49,11 @@
       return $query;
     }
 
-    public function insertRebate($card_numb,$month){
+    public function insertRebate($card_numb,$month,$upload_date){
       $data = array(
         'card_numb'   => $card_numb,
-        'upload_date' => $month,
+        'upload_date' => $upload_date,
+        'refer_date'  => $month, 
       );
       $this->db->insert('rebate',$data);
     }

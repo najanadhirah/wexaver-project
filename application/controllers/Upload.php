@@ -184,8 +184,8 @@ class Upload extends CI_Controller {
 						$w_number 	= explode("WXR",$w_numb);
 						$w_numb     = $w_number[1];
 						$udate ;
-
-						$this->myupload->insertLog($date,$time,$tx_type,$card_numb,$w_numb,$tx_amount,$st_name,$odometer,$litre,$product,$type,$udate);	
+						$month;
+						$this->myupload->insertLog($date,$time,$tx_type,$card_numb,$w_numb,$tx_amount,$st_name,$odometer,$litre,$product,$type,$udate,$month);	
 					}
 				}
 			}

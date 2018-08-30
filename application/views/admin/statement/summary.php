@@ -59,10 +59,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?php foreach ($result as $data) { 
-
-                                                   ?>
-                                                    
+                                                <?php foreach ($result as $data) { ?>
 
                                                 <tr>
                                                     <td><?php echo $data['wexaver_id']; ?> </td>
@@ -74,7 +71,7 @@
                                                     <td><?php echo $data['rebate_topup']; ?> </td>
                                                     <td>
                                                         
-                                                        <a href="<?php echo base_url()?>statement/pdf/<?php echo $data['card_numb']?>" class="btn dark btn-outline"> View PDF </a>
+                                                        <a href="<?php echo base_url()?>statement/pdf/<?php echo $data['card_numb']?>/<?php echo $data['refer_date']?>" class="btn dark btn-outline"> View PDF </a>
                                                     </td>
                                                 </tr>
                                                 <?php   } ?>

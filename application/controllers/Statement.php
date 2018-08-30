@@ -36,7 +36,7 @@
 			$upload_date = $month.' '.$year;
 
 			$data['upload_date'] = $upload_date;
-
+			$data['month']  = $month;
 			$data['result'] = $this->mystatement->getMonthlyView($upload_date);
 
 
@@ -92,7 +92,9 @@
 				<script src="/assets/pages/scripts/table-datatables-editable.min.js" type="text/javascript"></script>
 			';
 
-			$query = $this->db->get('rebate');
+			$month = $this->input->post('month');
+
+			$query = $this->db->get_where('rebate', array('refer_date' =>$month));
 
 			$data['result'] = $query->result_array();
 
@@ -119,9 +121,13 @@
         	 <script src="/assets/global/plugins/bootstrap-toastr/toastr.min.js" type="text/javascript"></script>';
 			$data['js_page_level_scripts'] = '<script src="/assets/pages/scripts/portlet-ajax.min.js" type="text/javascript"></script>';
 
+			$month = $this->input->post('month');
+
 			$upload_date = $this->input->post('upload_date');
 
-			$data['month'] = $upload_date;
+			$data['upload_date'] = $upload_date;
+
+			$data['month'] = $month;;
 
 			//1)if set session success and get roles session equal to 1
 			if ($this->session->userdata('roles') === 'admin') {
@@ -163,15 +169,15 @@
         		$topup_rebate  = $this->input->post('rebate_amount');
         		$min_petrol    = $this->input->post('min_petrol');
         		$petrol_rebate = $this->input->post('rebate_petrol');
+        		$upload_date = $this->input->post('upload_date');
         		$month = $this->input->post('month');
-
         		// 2)mkae sure there's no past data by delete the table
-        		$this->db->empty_table('rebate');
+        		$this->db->delete('rebate', array('refer_date' => $month));
         		// 3)create table 
         		$this->mystatement->create();
 
         		//4)select diff data only from table log
-        		$all_user = $this->mystatement->select_distinct($month);
+        		$all_user = $this->mystatement->select_distinct($upload_date);
 
         		
         		if ($all_user != NULL) {
@@ -182,7 +188,7 @@
         				$query = $this->db->get_where('membership', array('card_numb' => $card_numb));
     					$select_master = $query->result_array();
 
-    					$this->mystatement->insertRebate($card_numb,$month);
+    					$this->mystatement->insertRebate($card_numb,$month,$upload_date);
 
     					foreach ($select_master as $key => $value) {
     						$introducer = $value['introducer'];
@@ -198,7 +204,7 @@
         					$this->mystatement->updateRebate($introducer,$wexaver_id,$email,$card_number);
     					}
 
-        				$result_array = $this->mystatement->sum_total($card_numb,$month);	
+        				$result_array = $this->mystatement->sum_total($card_numb,$upload_date);	
         				foreach ($result_array as $key => $value) {
         					$total_litre = $value['total_litre'];
         					$total_transaction = $value['total_transaction'];
@@ -216,7 +222,7 @@
         					$this->mystatement->updateRebate_totalUsage($total_litre,$total_transaction,$rebate_petrol,$card_numb);
         				}
 
-        				$result_topup = $this->mystatement->sum_topup($card_numb,$month);
+        				$result_topup = $this->mystatement->sum_topup($card_numb,$upload_date);
         				foreach ($result_topup as $key => $value) {
         					$total_topup = $value['total_topup'];
         					/*echo "<pre>";
@@ -233,8 +239,8 @@
         				}
         			}
 	        	}
-
-	        	redirect('statement/summary','refresh');
+	        	$this->summary();
+	        	//redirect('statement/summary','refresh');
         	}else{
         		$this->promo();
         	}
@@ -243,15 +249,16 @@
 
 		/*PDF File */
 		public function pdf($card_numb){
+			$month = end($this->uri->segment_array());
 			$this->load->library('Pdf');
 
-			$query = $this->db->get_where('rebate', array('card_numb' => $card_numb));
+			$query = $this->db->get_where('rebate', array('card_numb' => $card_numb, 'refer_date' => $month));
 			$data['rebate'] = $query->row_array();
 
 			$query = $this->db->get_where('membership', array('card_numb' => $card_numb));
     		$data['profile'] = $query->row_array();
 
-    		$query = $this->db->get_where('log', array('card_numb' => $card_numb));
+    		$query = $this->db->get_where('log', array('card_numb' => $card_numb,'refer_date' => $month));
     		$data['usage']   = $query->result_array();
 
     		//1)if set session success and get roles session equal to 1
@@ -262,4 +269,5 @@
 				redirect('admin/login','refresh');
 			}
 		}
+
 	}
