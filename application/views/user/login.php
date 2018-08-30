@@ -21,7 +21,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
     <head>
         <meta charset="utf-8" />
-        <title>Metronic Admin Theme #1 | User Login 4</title>
+        <title>Wexaver Login</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="Preview page of Metronic Admin Theme #1 for " name="description" />
@@ -121,7 +121,7 @@ License: You must have a valid license purchased only from themeforest(the above
         </div>
         <!-- END LOGIN -->
         <!-- BEGIN COPYRIGHT -->
-        <div class="copyright"> 2014 &copy; Metronic - Admin Dashboard Template. </div>
+        <div class="copyright"> 2018 &copy; Wexaver - Admin Dashboard Template. </div>
         <!-- END COPYRIGHT -->
         <!--[if lt IE 9]>
 <script src="../assets/global/plugins/respond.min.js"></script>
